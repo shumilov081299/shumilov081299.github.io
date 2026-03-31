@@ -3,45 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denis Shumilov — Audio Tools</title>
+<title>Select Equal Subpositions — MIDI Script for Studio One & Fender Studio Pro</title>
+<meta name="description" content="The missing Select Equal Subpositions for Studio One and Fender Studio Pro. Select notes at the same bar-relative position across all bars. Three modes, humanize-aware, all time signatures.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
-.wrap{max-width:720px;margin:0 auto;padding:40px 20px}
-h1{font-size:2em;margin-bottom:8px}
-h2{font-size:1.4em;margin:32px 0 12px;color:#58a6ff}
-p{margin:8px 0;color:#8b949e}
-a{color:#58a6ff;text-decoration:none}
-a:hover{text-decoration:underline}
-.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px;margin:20px 0}
-.card h3{font-size:1.2em;margin-bottom:8px}
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7}
+.wrap{max-width:800px;margin:0 auto;padding:40px 20px}
+.hero{text-align:center;padding:40px 0 32px}
+.hero h1{font-size:2.2em;margin-bottom:12px;background:linear-gradient(135deg,#58a6ff,#3fb950);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15em;color:#8b949e;max-width:560px;margin:0 auto}
+.price-box{text-align:center;margin:32px 0;padding:32px;background:#161b22;border:2px solid #238636;border-radius:12px}
+.price{font-size:2.8em;font-weight:700;color:#3fb950}
+.price span{font-size:0.4em;color:#8b949e;font-weight:400}
+.buy-btn{display:inline-block;margin-top:16px;padding:14px 48px;background:#238636;color:#fff;font-size:1.1em;font-weight:600;border-radius:8px;text-decoration:none;transition:background 0.2s}
+.buy-btn:hover{background:#2ea043;text-decoration:none}
+.section{margin:40px 0}
+.section h2{font-size:1.5em;margin-bottom:16px;color:#58a6ff}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.features{grid-template-columns:1fr}}
+.feat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px}
+.feat h3{font-size:1em;margin-bottom:6px;color:#e6edf3}
+.feat p{font-size:0.9em;color:#8b949e;margin:0}
+.modes{margin:24px 0}
+.mode{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin:12px 0}
+.mode h3{color:#e6edf3;margin-bottom:4px}
+.mode p{color:#8b949e;margin:0;font-size:0.95em}
 .badge{display:inline-block;background:#238636;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.85em;margin:4px 4px 4px 0}
-.foot{margin-top:48px;padding-top:16px;border-top:1px solid #30363d;font-size:0.85em;color:#484f58}
+.badge-blue{background:#1f6feb}
+.compat{width:100%;border-collapse:collapse;margin:16px 0}
+.compat th,.compat td{padding:10px 16px;text-align:left;border-bottom:1px solid #30363d}
+.compat th{color:#8b949e;font-weight:500}
+.compat td{color:#e6edf3}
+.check{color:#3fb950}
+.faq{margin:12px 0}
+.faq h3{font-size:1em;color:#e6edf3;margin-bottom:4px}
+.faq p{color:#8b949e;font-size:0.95em}
+.foot{margin-top:48px;padding-top:16px;border-top:1px solid #30363d;font-size:0.85em;color:#484f58;text-align:center}
+.foot a{color:#484f58}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Denis Shumilov</h1>
-<p>Audio production tools for Studio One & Fender Studio Pro</p>
 
-<div class="card">
-<h3>Select Equal Subpositions</h3>
-<p style="color:#e6edf3">The missing "Select Equal Subpositions" for Studio One — inspired by Logic Pro, but smarter.</p>
+<div class="hero">
+<h1>Select Equal Subpositions</h1>
+<p>The missing Logic Pro feature — now in Studio One and Fender Studio Pro. One shortcut to select all notes at the same position in every bar.</p>
+</div>
+
+<div style="text-align:center">
 <span class="badge">Studio One 6</span>
 <span class="badge">Fender Studio Pro 8</span>
-<span class="badge">Windows</span>
-<span class="badge">macOS</span>
-<p>Three modes: All Notes, Same Pitch Any, Same Pitch Exact. Auto time signature detection, humanize-aware matching.</p>
+<span class="badge badge-blue">Windows</span>
+<span class="badge badge-blue">macOS Intel</span>
 </div>
 
-<h2>Links</h2>
-<p><a href="https://github.com/shumilov081299">GitHub</a></p>
-<p><a href="https://ko-fi.com/denisshumilov">Ko-fi</a></p>
+<div class="price-box">
+<div class="price">$19 <span>one-time payment</span></div>
+<p style="color:#8b949e;margin:8px 0 0">Instant download. All future updates included.</p>
+<a href="#" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="section">
+<h2>Three Powerful Modes</h2>
+<div class="modes">
+<div class="mode">
+<h3>All Notes</h3>
+<p>Select a note — instantly select every note at that same beat position in every bar, regardless of pitch. Just like Logic Pro's Select Equal Subpositions.</p>
+</div>
+<div class="mode">
+<h3>Same Pitch — Any</h3>
+<p>Select a note — find that exact pitch at the same position in every bar. Select a C4 on beat 1 — get all C4s on beat 1. Each selected note is searched independently.</p>
+</div>
+<div class="mode">
+<h3>Same Pitch — Exact</h3>
+<p>Select a chord — find only bars where the entire chord appears at the same position. Missing a note in a bar? That bar is skipped. Perfect for editing chord progressions.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Key Features</h2>
+<div class="features">
+<div class="feat">
+<h3>Humanize-Aware</h3>
+<p>Quantized anchor positions with smart tolerance. Works perfectly with humanized MIDI up to +/-50 ticks.</p>
+</div>
+<div class="feat">
+<h3>Auto Time Signature</h3>
+<p>Detects 2/4, 3/4, 4/4, 5/4, 6/4, 7/4, 8/4 automatically from the DAW transport.</p>
+</div>
+<div class="feat">
+<h3>Any Display Mode</h3>
+<p>Works in Bars, Seconds, Samples, and Frames display modes with intelligent fallback detection.</p>
+</div>
+<div class="feat">
+<h3>Safe & Reliable</h3>
+<p>If nothing is found, your original selection is restored. Safe parameter handling on any error.</p>
+</div>
+<div class="feat">
+<h3>Multi-Note Selection</h3>
+<p>Select multiple notes on different beats — the script finds all matching positions independently across every bar.</p>
+</div>
+<div class="feat">
+<h3>One Package, Three Shortcuts</h3>
+<p>Single .package file installs all three modes. Assign keyboard shortcuts to each in Keyboard Shortcuts settings.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Compatibility</h2>
+<table class="compat">
+<tr><th>Host</th><th>Windows</th><th>macOS Intel</th></tr>
+<tr><td>Studio One 6</td><td class="check">Tested</td><td class="check">Tested</td></tr>
+<tr><td>Studio One 7</td><td>Compatible</td><td>Compatible</td></tr>
+<tr><td>Fender Studio Pro 8</td><td class="check">Tested</td><td class="check">Tested</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>How to Install</h2>
+<p style="color:#8b949e">1. Download the <code>.package</code> file after purchase</p>
+<p style="color:#8b949e">2. Copy to your Scripts folder:</p>
+<p style="color:#e6edf3;font-size:0.9em;margin:8px 0 4px"><strong>Windows:</strong> <code>C:\Program Files\PreSonus\Studio One 6\Scripts\</code></p>
+<p style="color:#e6edf3;font-size:0.9em;margin:4px 0"><strong>macOS:</strong> Right-click .app &rarr; Show Package Contents &rarr; <code>Contents/Scripts/</code></p>
+<p style="color:#8b949e">3. Restart your DAW</p>
+<p style="color:#8b949e">4. Go to <strong>Keyboard Shortcuts</strong> &rarr; search "Select Equal Subpositions" &rarr; assign keys</p>
+</div>
+
+<div class="section">
+<h2>FAQ</h2>
+<div class="faq">
+<h3>Does it work with humanized MIDI?</h3>
+<p>Yes. The script quantizes anchor positions to the nearest sixteenth note grid and uses smart tolerance to catch humanized notes up to +/-50 ticks (Studio One's default humanize range).</p>
+</div>
+<div class="faq">
+<h3>What if my song changes time signature?</h3>
+<p>The script detects the time signature at the selected note's position. For songs with changes, it works correctly at the current section. Recommended: use Bars display mode for best accuracy.</p>
+</div>
+<div class="faq">
+<h3>Can I get a refund?</h3>
+<p>If the product doesn't work as described, email denisshumilov@gmail.com within 14 days for a full refund.</p>
+</div>
+<div class="faq">
+<h3>Will I get updates?</h3>
+<p>Yes, all future updates are included with your purchase at no extra cost.</p>
+</div>
+</div>
 
 <div class="foot">
-<p><a href="/terms">Terms of Service</a> · <a href="/privacy">Privacy Policy</a></p>
-<p>Denis Shumilov, Ukraine</p>
+<p><a href="/terms.html">Terms of Service</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="mailto:denisshumilov@gmail.com">Contact</a></p>
+<p style="margin-top:8px">Denis Shumilov, Ukraine</p>
 </div>
+
 </div>
 </body>
 </html>
