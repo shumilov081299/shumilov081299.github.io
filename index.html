@@ -3,248 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>shmlv audio — Select Equal Subpositions</title>
-<meta name="description" content="The missing Select Equal Subpositions for Studio One and Fender Studio Pro. Select notes at the same bar-relative position across all bars.">
-<meta property="og:title" content="Select Equal Subpositions — shmlv">
-<meta property="og:description" content="The missing Logic Pro feature for Studio One & Fender Studio Pro. $15 launch sale.">
-<meta property="og:type" content="product">
+<title>shmlv — Workflow Tools for Studio One & Fender Studio Pro</title>
+<meta name="description" content="Hyper-modern scripts and plugins built to cut clicks and speed up music production. Studio One 6/7 and Fender Studio Pro 8.">
+<meta property="og:title" content="shmlv — Audio Workflow Tools">
+<meta property="og:description" content="Scripts and plugins for Studio One & Fender Studio Pro.">
 <meta property="og:url" content="https://shmlv.com">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Select Equal Subpositions — shmlv">
-<meta name="twitter:description" content="The missing Logic Pro feature for Studio One & Fender Studio Pro. $15 launch sale.">
-<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a}
-#loader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--blue);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.6s}
-#loader img{width:100px;animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:0.8}50%{transform:scale(1.1);opacity:1}}
-#loader.hide{opacity:0;pointer-events:none}
+:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a;--green:#3fb950}
 body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-buy{padding:8px 22px;background:var(--blue);color:var(--white)!important;border-radius:50px;font-size:0.85em;transition:transform 0.2s}
+.nav-buy:hover{transform:scale(1.05)}
+@media(max-width:600px){.nav-links a:not(.nav-buy){display:none}}
+
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 
-/* NAV */
-nav{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:1.6em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
-nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:0.9em;padding:8px 20px;border:2px solid var(--blue);border-radius:50px;transition:all 0.3s}
-nav a:hover{background:var(--blue);color:var(--white)}
-
 /* HERO */
-.hero{text-align:center;padding:80px 0 60px}
-.hero h1{font-size:3.5em;font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px}
+.hero{text-align:center;padding:100px 0 64px}
+.hero h1{font-size:3.8em;font-weight:900;letter-spacing:-0.04em;line-height:1.05;margin-bottom:20px}
 .hero h1 span{color:var(--blue)}
-.hero p{font-size:1.25em;color:var(--gray);max-width:600px;margin:0 auto 32px}
-@media(max-width:600px){.hero h1{font-size:2.2em}.hero p{font-size:1em}}
+.hero p{font-size:1.2em;color:var(--gray);max-width:580px;margin:0 auto 36px}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-block;padding:16px 48px;background:var(--blue);color:var(--white);font-size:1.05em;font-weight:800;border-radius:50px;transition:all 0.3s}
+.btn-primary:hover{transform:scale(1.05);box-shadow:0 8px 32px rgba(0,34,255,0.3)}
+.btn-ghost{display:inline-block;padding:14px 36px;color:var(--gray);font-size:0.95em;font-weight:600;border:2px solid var(--border);border-radius:50px;transition:all 0.2s}
+.btn-ghost:hover{border-color:var(--blue);color:var(--white)}
+.trust{display:flex;gap:24px;justify-content:center;margin-top:28px;font-size:0.8em;color:var(--gray)}
+.trust span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px;vertical-align:middle}
+@media(max-width:600px){.hero h1{font-size:2.4em}.trust{flex-direction:column;gap:8px}}
 
-/* BADGES */
-.badges{text-align:center;margin-bottom:48px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.badge{display:inline-block;padding:6px 16px;border-radius:50px;font-size:0.8em;font-weight:600;letter-spacing:0.02em}
-.badge-green{background:#0a2a12;color:#3fb950;border:1px solid #1a3a22}
-.badge-blue{background:#000a40;color:#4488ff;border:1px solid #0022FF40}
+/* FEATURED */
+.featured{padding:48px 0 64px}
+.featured-label{font-size:0.8em;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;transition:border-color 0.3s}
+.product-card:hover{border-color:var(--blue)}
+@media(max-width:700px){.product-card{grid-template-columns:1fr}}
+.card-info{padding:40px}
+.card-info h2{font-size:1.8em;font-weight:800;margin-bottom:8px}
+.card-info .card-desc{color:var(--gray);font-size:0.95em;margin-bottom:20px}
+.card-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.card-chip{padding:4px 12px;border-radius:50px;font-size:0.75em;font-weight:600;background:#0a2a12;color:var(--green);border:1px solid #1a3a22}
+.card-price{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.card-price .old{text-decoration:line-through;color:#f85149;font-weight:700;opacity:0.6}
+.card-price .new{font-size:2em;font-weight:900}
+.card-sale{display:inline-block;background:#f8514920;color:#f85149;font-weight:700;padding:3px 12px;border-radius:50px;font-size:0.75em;margin-bottom:16px}
+.card-btn{display:inline-block;padding:12px 36px;background:var(--blue);color:var(--white);font-weight:700;border-radius:50px;font-size:0.9em;transition:transform 0.2s}
+.card-btn:hover{transform:scale(1.05)}
+.card-visual{display:flex;align-items:center;justify-content:center;padding:24px;background:#08081a}
+.card-visual img{width:100%;border-radius:10px}
 
-/* PRICE */
-.price-box{text-align:center;margin:0 auto 64px;padding:48px 32px;background:var(--blue);border-radius:20px;max-width:500px;position:relative;overflow:hidden}
-.price-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);pointer-events:none}
-.old-price{font-size:1.8em;font-weight:700;text-decoration:line-through;opacity:0.5}
-.new-price{font-size:4em;font-weight:900;letter-spacing:-0.03em}
-.price-sub{font-size:0.95em;opacity:0.7;margin:4px 0}
-.sale-tag{display:inline-block;background:rgba(255,255,255,0.15);padding:6px 18px;border-radius:50px;font-weight:700;font-size:0.85em;margin:12px 0;letter-spacing:0.05em}
-.buy-btn{display:inline-block;margin-top:20px;padding:16px 56px;background:var(--white);color:var(--blue);font-size:1.1em;font-weight:800;border-radius:50px;text-decoration:none;transition:all 0.3s;letter-spacing:0.02em}
-.buy-btn:hover{transform:scale(1.05);box-shadow:0 8px 32px rgba(0,34,255,0.3)}
+/* VALUES */
+.values{padding:64px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:center}
+@media(max-width:600px){.values{grid-template-columns:1fr}}
+.value h3{font-size:1.1em;font-weight:700;margin-bottom:6px}
+.value p{font-size:0.9em;color:var(--gray)}
 
-/* SECTIONS */
-.section{margin:80px 0}
-.section h2{font-size:2em;font-weight:800;letter-spacing:-0.02em;margin-bottom:32px}
-.section h2 span{color:var(--blue)}
+/* WATCH */
+.watch{padding:48px 0 64px;text-align:center}
+.watch h2{font-size:2em;font-weight:800;margin-bottom:24px}
+.watch h2 span{color:var(--blue)}
+.watch-link{display:inline-block;margin-top:20px;padding:12px 36px;border:2px solid var(--border);border-radius:50px;color:var(--gray);font-weight:600;transition:all 0.2s}
+.watch-link:hover{border-color:var(--blue);color:var(--white)}
 
-/* MODES */
-.mode{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;margin:20px 0;transition:border-color 0.3s}
-.mode:hover{border-color:var(--blue)}
-.mode h3{font-size:1.3em;font-weight:700;margin-bottom:8px}
-.mode p{color:var(--gray);font-size:0.95em;margin-bottom:16px}
-.mode img{width:100%;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:transform 0.3s}
-.mode img:hover{transform:scale(1.01)}
+/* COMPAT STRIP */
+.compat-strip{padding:32px 0;text-align:center;font-size:0.9em;color:var(--gray)}
+.compat-strip strong{color:var(--white)}
 
-/* FEATURES */
-.features{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
-@media(max-width:800px){.features{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.features{grid-template-columns:1fr}}
-.feat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:border-color 0.3s}
-.feat:hover{border-color:var(--blue)}
-.feat h3{font-size:1em;font-weight:700;margin-bottom:6px}
-.feat p{font-size:0.85em;color:var(--gray);margin:0}
+/* ABOUT */
+.about-block{padding:48px 0;max-width:640px;margin:0 auto;text-align:center}
+.about-block h2{font-size:1.6em;font-weight:800;margin-bottom:12px}
+.about-block p{color:var(--gray);font-size:0.95em}
+.about-block a{color:var(--blue);font-weight:600}
 
-/* COMPAT */
-.compat{width:100%;border-collapse:collapse;margin:16px 0}
-.compat th,.compat td{padding:14px 20px;text-align:left;border-bottom:1px solid var(--border);font-size:0.95em}
-.compat th{color:var(--gray);font-weight:600;font-size:0.85em;text-transform:uppercase;letter-spacing:0.05em}
-.check{color:#3fb950}.check::before{content:"\2713  "}
+.divider{border:0;border-top:1px solid var(--border);margin:0}
 
-/* INSTALL */
-.install-step{display:flex;gap:16px;margin:12px 0;align-items:flex-start}
-.step-num{background:var(--blue);color:var(--white);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85em;flex-shrink:0}
-.step-text{color:var(--gray);font-size:0.95em}
-.step-text strong{color:var(--white)}
-.step-text code{background:var(--card);padding:2px 8px;border-radius:4px;font-size:0.85em;color:#4488ff}
-
-/* FAQ */
-.faq{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin:12px 0}
-.faq h3{font-size:1em;font-weight:700;margin-bottom:6px}
-.faq p{color:var(--gray);font-size:0.9em;margin:0}
-
-/* FOOTER */
-.foot{margin-top:80px;padding:32px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.85em;color:var(--gray)}
-.foot a{color:var(--gray);text-decoration:none;margin:0 12px}
-.foot a:hover{color:var(--white)}
+.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
+.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
 @media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
 <nav>
+<div class="nav-wrap">
 <a href="/" class="logo">shmlv<span>.</span></a>
-<a href="#buy">Buy Now</a>
+<div class="nav-links">
+<a href="/products/">Products</a>
+<a href="/learn/">Watch</a>
+<a href="/support/">Support</a>
+<a href="/products/select-equal-subpositions/" class="nav-buy">Buy Now</a>
+</div>
+</div>
 </nav>
 
+<div class="wrap">
+
 <div class="hero">
-<h1>The missing <span>Logic Pro</span> feature for Studio One</h1>
-<p>Select Equal Subpositions. One shortcut to select all notes at the same position in every bar. Three modes. Zero friction.</p>
+<h1>Workflow tools for <span>Studio One</span></h1>
+<p>Hyper-modern scripts and plugins built to cut clicks and speed up production.</p>
+<div class="hero-ctas">
+<a href="/products/select-equal-subpositions/" class="btn-primary">View Featured Tool</a>
+<a href="https://www.youtube.com/@shmlvaudio" class="btn-ghost">Watch on YouTube</a>
 </div>
-
-<div class="badges">
-<span class="badge badge-green">Studio One 6</span>
-<span class="badge badge-green">Studio One 7</span>
-<span class="badge badge-green">Fender Studio Pro 8</span>
-<span class="badge badge-blue">Windows</span>
-<span class="badge badge-blue">macOS Intel</span>
-<span class="badge badge-blue">macOS Apple Silicon</span>
-</div>
-
-<div class="price-box" id="buy">
-<div class="old-price">$19</div>
-<div class="new-price">$15</div>
-<p class="price-sub">one-time payment</p>
-<div class="sale-tag">LAUNCH SALE — SAVE 21%</div>
-<p class="price-sub">Instant download. All future updates included.</p>
-<a href="#" class="buy-btn">Buy Now</a>
-</div>
-
-<div class="section">
-<h2>Three <span>Powerful</span> Modes</h2>
-
-<div class="mode">
-<h3>All Notes</h3>
-<p>Select a note — instantly select every note at that same beat position in every bar, regardless of pitch. Just like Logic Pro.</p>
-<img src="demo_all_notes.gif" alt="All Notes mode demo" onclick="this.requestFullscreen?this.requestFullscreen():this.webkitRequestFullscreen()">
-</div>
-
-<div class="mode">
-<h3>Same Pitch — Any</h3>
-<p>Finds every matching pitch at that beat position across all bars. Each pitch is searched independently — if it exists somewhere, it gets selected.</p>
-<img src="demo_pitch_any.gif" alt="Same Pitch Any mode demo" onclick="this.requestFullscreen?this.requestFullscreen():this.webkitRequestFullscreen()">
-</div>
-
-<div class="mode">
-<h3>Same Pitch — Exact</h3>
-<p>Finds only bars where all selected pitches appear together at that position. Missing even one note — the bar is skipped. Precision tool for surgical MIDI editing.</p>
-<img src="demo_pitch_exact.gif" alt="Same Pitch Exact mode demo" onclick="this.requestFullscreen?this.requestFullscreen():this.webkitRequestFullscreen()">
+<div class="trust">
+<span>Digital delivery</span>
+<span>Secure checkout via Paddle</span>
+<span>Studio One 6/7 + Fender Studio Pro 8</span>
 </div>
 </div>
 
-<div class="section">
-<h2>Key <span>Features</span></h2>
-<div class="features">
-<div class="feat">
-<h3>Humanize-Aware</h3>
-<p>Quantized anchor positions with smart tolerance. Works perfectly with humanized MIDI up to +/-50 ticks.</p>
+<hr class="divider">
+
+<div class="featured">
+<div class="featured-label">Featured Tool</div>
+<a href="/products/select-equal-subpositions/" style="text-decoration:none;color:inherit">
+<div class="product-card">
+<div class="card-info">
+<h2>Select Equal Subpositions</h2>
+<p class="card-desc">Select all notes at the same bar position in one shortcut. Three modes. Humanize-aware.</p>
+<div class="card-chips">
+<span class="card-chip">Studio One 6</span>
+<span class="card-chip">Studio One 7</span>
+<span class="card-chip">FSP 8</span>
 </div>
-<div class="feat">
-<h3>Auto Time Signature</h3>
-<p>Detects 2/4, 3/4, 4/4, 5/4, 6/4, 7/4, 8/4 automatically from the DAW transport.</p>
+<div class="card-price">
+<span class="old">$19</span>
+<span class="new">$15</span>
 </div>
-<div class="feat">
-<h3>Any Display Mode</h3>
-<p>Works in Bars, Seconds, Samples, and Frames display modes with intelligent fallback.</p>
+<div class="card-sale">LAUNCH SALE</div><br>
+<span class="card-btn">View Tool &rarr;</span>
 </div>
-<div class="feat">
-<h3>Safe & Reliable</h3>
-<p>If nothing is found, your original selection is restored. Safe parameter handling on any error.</p>
+<div class="card-visual">
+<img src="/demo_all_notes.gif" alt="Select Equal Subpositions demo">
 </div>
-<div class="feat">
-<h3>Multi-Note Selection</h3>
-<p>Select multiple notes on different beats — finds all matching positions independently across every bar.</p>
 </div>
-<div class="feat">
-<h3>One Package</h3>
-<p>Single .package file installs all three modes. Assign keyboard shortcuts to each.</p>
+</a>
 </div>
+
+<hr class="divider">
+
+<div class="values">
+<div class="value">
+<h3>Built for speed</h3>
+<p>Remove repetitive DAW actions. Do in one click what takes fifty.</p>
+</div>
+<div class="value">
+<h3>Built for real sessions</h3>
+<p>Not novelty tools. Solutions for actual production workflow problems.</p>
+</div>
+<div class="value">
+<h3>Built for specific hosts</h3>
+<p>Clearly versioned. Clearly supported. Tested on every platform.</p>
 </div>
 </div>
 
-<div class="section">
-<h2><span>Tested</span> Everywhere</h2>
-<table class="compat">
-<tr><th>Host</th><th>Windows</th><th>macOS Intel</th><th>macOS Apple Silicon</th></tr>
-<tr><td>Studio One 6</td><td class="check">Tested</td><td class="check">Tested</td><td class="check">Tested</td></tr>
-<tr><td>Studio One 7</td><td class="check">Tested</td><td class="check">Tested</td><td class="check">Tested</td></tr>
-<tr><td>Fender Studio Pro 8</td><td class="check">Tested</td><td class="check">Tested</td><td class="check">Tested</td></tr>
-</table>
+<hr class="divider">
+
+<div class="watch">
+<h2>Watch it <span>work</span></h2>
+<p style="color:var(--gray);max-width:480px;margin:0 auto">Tutorials, demos, and real workflow examples on the shmlv YouTube channel.</p>
+<a href="https://www.youtube.com/@shmlvaudio" class="watch-link">Visit YouTube Channel &rarr;</a>
 </div>
 
-<div class="section">
-<h2>How to <span>Install</span></h2>
-<div class="install-step"><div class="step-num">1</div><div class="step-text"><strong>Download</strong> the <code>.package</code> file after purchase</div></div>
-<div class="install-step"><div class="step-num">2</div><div class="step-text"><strong>Copy</strong> to your Scripts folder:<br>
-<code>C:\Program Files\PreSonus\Studio One 6\Scripts\</code><br>
-<code>C:\Program Files\PreSonus\Studio One 7\Scripts\</code><br>
-<code>C:\Program Files\Fender\Studio Pro 8\Scripts\</code><br>
-<strong>macOS:</strong> Right-click .app &rarr; Show Package Contents &rarr; <code>Contents/Scripts/</code></div></div>
-<div class="install-step"><div class="step-num">3</div><div class="step-text"><strong>Restart</strong> your DAW</div></div>
-<div class="install-step"><div class="step-num">4</div><div class="step-text"><strong>Keyboard Shortcuts</strong> &rarr; search "Select Equal Subpositions" &rarr; assign keys</div></div>
+<hr class="divider">
+
+<div class="compat-strip">
+<strong>Works with:</strong> Studio One 6 &bull; Studio One 7 &bull; Fender Studio Pro 8 &bull; Windows &bull; macOS Intel &bull; macOS Apple Silicon
 </div>
 
-<div class="section">
-<h2><span>FAQ</span></h2>
-<div class="faq">
-<h3>Does it work with humanized MIDI?</h3>
-<p>Yes. The script quantizes anchor positions to the nearest sixteenth note grid and uses smart tolerance to catch humanized notes up to +/-50 ticks.</p>
-</div>
-<div class="faq">
-<h3>What if my song changes time signature?</h3>
-<p>The script detects the time signature at the selected note's position. Pro tip: Bars display mode gives the best accuracy for non-standard time signatures like 3/4 or 7/4.</p>
-</div>
-<div class="faq">
-<h3>Can I get a refund?</h3>
-<p>All sales are final due to the digital nature of the product. If the script doesn't work as described, email support@shmlv.com within 14 days and we'll resolve it.</p>
-</div>
-<div class="faq">
-<h3>Will I get updates?</h3>
-<p>Yes, all future updates are included with your purchase at no extra cost.</p>
-</div>
-</div>
+<hr class="divider">
 
-<div class="price-box" style="margin-top:64px">
-<div class="old-price">$19</div>
-<div class="new-price">$15</div>
-<p class="price-sub">one-time payment</p>
-<div class="sale-tag">LAUNCH SALE — SAVE 21%</div>
-<p class="price-sub">Instant download. All future updates included.</p>
-<a href="#" class="buy-btn">Buy Now</a>
+<div class="about-block">
+<h2>About shmlv</h2>
+<p>One person making tools that solve real problems for producers. No corporate BS. Just workflow scripts and plugins that save you time in the studio.</p>
+<a href="/about/">Learn more &rarr;</a>
 </div>
 
 <div class="foot">
 <div>shmlv &copy; 2026</div>
 <div>
-<a href="/terms.html">Terms</a>
-<a href="/privacy.html">Privacy</a>
-<a href="/refund.html">Refund</a>
+<a href="/products/">Products</a>
+<a href="/learn/">Watch</a>
+<a href="/support/">Support</a>
+<a href="/legal/terms.html">Terms</a>
+<a href="/legal/privacy.html">Privacy</a>
+<a href="/legal/refund.html">Refund</a>
 <a href="mailto:support@shmlv.com">Contact</a>
 </div>
 </div>
-</div>
 
-<script>window.addEventListener('load',function(){var l=document.getElementById('loader');l.classList.add('hide');setTimeout(function(){l.style.display='none'},600)})</script>
+</div>
 </body>
 </html>

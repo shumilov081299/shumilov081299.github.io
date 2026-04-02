@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — shmlv audio</title>
+<meta name="description" content="Audio workflow tools for Studio One and Fender Studio Pro. Scripts, plugins, and utilities.">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a;--green:#3fb950}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-active{color:var(--white)!important}
+@media(max-width:600px){.nav-links a:not(.nav-active){display:none}}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.page-hero{padding:64px 0 40px}
+.page-hero h1{font-size:2.8em;font-weight:900;letter-spacing:-0.03em}
+.page-hero p{color:var(--gray);font-size:1.1em;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;padding:0 0 64px}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color 0.3s;display:flex;flex-direction:column}
+.p-card:hover{border-color:var(--blue)}
+.p-card-img{background:#08081a;padding:16px}
+.p-card-img img{width:100%;border-radius:8px}
+.p-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.p-card-type{font-size:0.75em;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.p-card-body h3{font-size:1.2em;font-weight:700;margin-bottom:6px}
+.p-card-body .desc{color:var(--gray);font-size:0.9em;margin-bottom:16px;flex:1}
+.p-card-chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.p-card-chip{padding:3px 10px;border-radius:50px;font-size:0.7em;font-weight:600;background:#0a2a12;color:var(--green);border:1px solid #1a3a22}
+.p-card-price{display:flex;align-items:baseline;gap:8px;margin-bottom:14px}
+.p-card-price .old{text-decoration:line-through;color:#f85149;font-weight:600;opacity:0.6;font-size:0.9em}
+.p-card-price .new{font-size:1.5em;font-weight:900}
+.p-card-price .tag{font-size:0.7em;background:#f8514920;color:#f85149;padding:2px 8px;border-radius:50px;font-weight:700}
+.p-card-btn{display:inline-block;padding:10px 28px;background:var(--blue);color:var(--white);font-weight:700;border-radius:50px;font-size:0.85em;transition:transform 0.2s}
+.p-card-btn:hover{transform:scale(1.05)}
+.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
+.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
+@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-wrap">
+<a href="/" class="logo">shmlv<span>.</span></a>
+<div class="nav-links">
+<a href="/products/" class="nav-active">Products</a>
+<a href="/learn/">Watch</a>
+<a href="/support/">Support</a>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<div class="page-hero">
+<h1>Products</h1>
+<p>Audio workflow tools for Studio One and Fender Studio Pro.</p>
+</div>
+<div class="grid">
+<a href="/products/select-equal-subpositions/" style="text-decoration:none;color:inherit">
+<div class="p-card">
+<div class="p-card-img"><img src="/demo_all_notes.gif" alt="Select Equal Subpositions"></div>
+<div class="p-card-body">
+<div class="p-card-type">Script &bull; MIDI Editing</div>
+<h3>Select Equal Subpositions</h3>
+<p class="desc">Select all notes at the same bar position in one shortcut. Three modes. Humanize-aware.</p>
+<div class="p-card-chips">
+<span class="p-card-chip">S1 6</span>
+<span class="p-card-chip">S1 7</span>
+<span class="p-card-chip">FSP 8</span>
+</div>
+<div class="p-card-price">
+<span class="old">$19</span>
+<span class="new">$15</span>
+<span class="tag">SALE</span>
+</div>
+<span class="p-card-btn">View Tool &rarr;</span>
+</div>
+</div>
+</a>
+</div>
+<div class="foot">
+<div>shmlv &copy; 2026</div>
+<div>
+<a href="/products/">Products</a>
+<a href="/learn/">Watch</a>
+<a href="/support/">Support</a>
+<a href="/legal/terms.html">Terms</a>
+<a href="/legal/privacy.html">Privacy</a>
+<a href="mailto:support@shmlv.com">Contact</a>
+</div>
+</div>
+</div>
+</body>
+</html>
