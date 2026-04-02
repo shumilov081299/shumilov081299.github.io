@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch — shmlv audio</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}.nav-links a:hover{color:var(--white)}
+.nav-active{color:var(--white)!important}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.page-hero{padding:64px 0 40px;text-align:center}
+.page-hero h1{font-size:2.8em;font-weight:900;letter-spacing:-0.03em}
+.page-hero h1 span{color:var(--blue)}
+.page-hero p{color:var(--gray);font-size:1.1em;margin-top:8px;max-width:500px;margin-left:auto;margin-right:auto}
+.yt-featured{margin:32px auto;max-width:800px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.yt-featured iframe{width:100%;height:100%;border:0}
+.section{padding:48px 0}
+.section h2{font-size:1.6em;font-weight:800;margin-bottom:24px}
+.section h2 span{color:var(--blue)}
+.vid-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:600px){.vid-grid{grid-template-columns:1fr}}
+.vid-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color 0.3s}
+.vid-card:hover{border-color:var(--blue)}
+.vid-card h3{font-size:1em;font-weight:700;margin-bottom:6px}
+.vid-card p{color:var(--gray);font-size:0.9em;margin-bottom:12px}
+.vid-card a{font-weight:600;font-size:0.9em}
+.yt-btn{display:inline-block;margin-top:32px;padding:14px 40px;background:var(--blue);color:var(--white);font-weight:700;border-radius:50px;font-size:0.95em;transition:transform 0.2s}
+.yt-btn:hover{transform:scale(1.05)}
+.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
+.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
+@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav><div class="nav-wrap"><a href="/" class="logo">shmlv<span>.</span></a><div class="nav-links"><a href="/products/">Products</a><a href="/learn/" class="nav-active">Watch</a><a href="/support/">Support</a></div></div></nav>
+<div class="wrap">
+<div class="page-hero">
+<h1>Watch it <span>work</span></h1>
+<p>Tutorials, demos, and real workflow examples from the shmlv YouTube channel.</p>
+</div>
+
+<div style="text-align:center">
+<a href="https://www.youtube.com/@shmlvaudio" class="yt-btn">Subscribe on YouTube &rarr;</a>
+</div>
+
+<div class="section">
+<h2>Product <span>Demos</span></h2>
+<div class="vid-grid">
+<div class="vid-card">
+<h3>Select Equal Subpositions — All Notes</h3>
+<p>See how one shortcut selects every note at the same beat position across all bars.</p>
+<a href="/products/select-equal-subpositions/">View product &rarr;</a>
+</div>
+<div class="vid-card">
+<h3>Same Pitch Any vs Exact</h3>
+<p>The difference between independent search and full chord matching.</p>
+<a href="/products/select-equal-subpositions/">View product &rarr;</a>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Workflow <span>Tips</span></h2>
+<div class="vid-grid">
+<div class="vid-card">
+<h3>Editing drums faster in Studio One</h3>
+<p>How to use All Notes mode to adjust velocity on every downbeat in seconds.</p>
+<a href="https://www.youtube.com/@shmlvaudio">Watch &rarr;</a>
+</div>
+<div class="vid-card">
+<h3>Finding chords across your arrangement</h3>
+<p>Use Same Pitch Exact to locate every C major chord in a 4-minute song.</p>
+<a href="https://www.youtube.com/@shmlvaudio">Watch &rarr;</a>
+</div>
+</div>
+</div>
+
+<div class="foot">
+<div>shmlv &copy; 2026</div>
+<div><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="mailto:support@shmlv.com">Contact</a></div>
+</div>
+</div>
+</body>
+</html>

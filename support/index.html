@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — shmlv audio</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a;--green:#3fb950}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}.nav-links a:hover{color:var(--white)}
+.nav-active{color:var(--white)!important}
+.wrap{max-width:800px;margin:0 auto;padding:0 24px}
+.page-hero{padding:64px 0 40px}
+.page-hero h1{font-size:2.8em;font-weight:900;letter-spacing:-0.03em}
+.page-hero h1 span{color:var(--blue)}
+.page-hero p{color:var(--gray);font-size:1.1em;margin-top:8px}
+.section{padding:32px 0}
+.section h2{font-size:1.4em;font-weight:800;margin-bottom:16px}
+.section h2 span{color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin:12px 0}
+.card h3{font-size:1em;font-weight:700;margin-bottom:6px}
+.card p{color:var(--gray);font-size:0.9em;margin:0}
+.card code{background:#0a0a2a;padding:2px 8px;border-radius:4px;font-size:0.85em;color:#4488ff}
+.contact-box{background:var(--blue);border-radius:16px;padding:40px;text-align:center;margin:32px 0}
+.contact-box h2{font-size:1.6em;margin-bottom:8px}
+.contact-box p{opacity:0.8;margin-bottom:16px}
+.contact-box a{display:inline-block;padding:12px 36px;background:var(--white);color:var(--blue);font-weight:700;border-radius:50px;transition:transform 0.2s}
+.contact-box a:hover{transform:scale(1.05)}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;cursor:pointer}
+.faq-item h3{font-size:1em;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.faq-item h3::after{content:"+";font-size:1.3em;color:var(--blue);transition:transform 0.3s}
+.faq-item.open h3::after{transform:rotate(45deg)}
+.faq-item p{color:var(--gray);font-size:0.9em;margin:0;max-height:0;overflow:hidden;transition:max-height 0.3s,padding 0.3s}
+.faq-item.open p{max-height:300px;padding-top:12px}
+.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
+.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
+@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
+</style>
+</head>
+<body>
+<nav><div class="nav-wrap"><a href="/" class="logo">shmlv<span>.</span></a><div class="nav-links"><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/" class="nav-active">Support</a></div></div></nav>
+<div class="wrap">
+<div class="page-hero">
+<h1><span>Support</span></h1>
+<p>Installation help, compatibility info, and answers to common questions.</p>
+</div>
+
+<div class="section">
+<h2>Installation <span>Guide</span></h2>
+<div class="card">
+<h3>Windows</h3>
+<p>Copy the <code>.package</code> file to your Scripts folder:<br>
+<code>C:\Program Files\PreSonus\Studio One 6\Scripts\</code><br>
+<code>C:\Program Files\PreSonus\Studio One 7\Scripts\</code><br>
+<code>C:\Program Files\Fender\Studio Pro 8\Scripts\</code><br>
+Restart your DAW. Go to Keyboard Shortcuts and assign keys.</p>
+</div>
+<div class="card">
+<h3>macOS</h3>
+<p>Right-click the .app &rarr; Show Package Contents &rarr; <code>Contents/Scripts/</code><br>
+<code>/Applications/Studio One 6.app/Contents/Scripts/</code><br>
+<code>/Applications/Studio One 7.app/Contents/Scripts/</code><br>
+<code>/Applications/Fender Studio Pro.app/Contents/Scripts/</code><br>
+Restart your DAW. Go to Keyboard Shortcuts and assign keys.</p>
+</div>
+</div>
+
+<div class="section">
+<h2><span>FAQ</span></h2>
+<div class="faq-item"><h3>Does it work with humanized MIDI?</h3><p>Yes. Smart tolerance catches humanized notes up to +/-50 ticks (Studio One's default humanize range).</p></div>
+<div class="faq-item"><h3>What about time signature changes?</h3><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures like 3/4 or 7/4.</p></div>
+<div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. Install on all computers you personally own and use.</p></div>
+<div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One Professional and Artist editions that support scripts.</p></div>
+<div class="faq-item"><h3>Will I get updates?</h3><p>Yes, all future updates are included at no extra cost.</p></div>
+<div class="faq-item"><h3>The script doesn't appear in Keyboard Shortcuts</h3><p>Make sure the .package file is in the correct Scripts folder and you've restarted the DAW completely (not just the project).</p></div>
+<div class="faq-item"><h3>Nothing happens when I run the script</h3><p>Make sure you have at least one note selected in the Piano Roll before running the shortcut.</p></div>
+</div>
+
+<div class="contact-box">
+<h2>Need help?</h2>
+<p>Can't find your answer? Reach out directly.</p>
+<a href="mailto:support@shmlv.com">support@shmlv.com</a>
+</div>
+
+<div class="foot">
+<div>shmlv &copy; 2026</div>
+<div><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="mailto:support@shmlv.com">Contact</a></div>
+</div>
+</div>
+<script>document.querySelectorAll('.faq-item').forEach(function(i){i.addEventListener('click',function(){this.classList.toggle('open')})})</script>
+</body>
+</html>
