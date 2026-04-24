@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-.v-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.v-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:700px){.v-grid{grid-template-columns:1fr}}
 .v-card{display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
 .v-card:hover{transform:translateY(-2px)}
@@ -34,9 +34,12 @@
 .v-body h3{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
 .v-body p{color:var(--fg-dim);font-size:13px;line-height:1.55;margin:0}
 .v-body .btn{margin-top:16px;align-self:flex-start;padding:10px 14px;font-size:12px}
-.featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:20px;align-items:stretch}
-.featured-copy{display:flex;flex-direction:column;justify-content:center}
+.featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:18px;align-items:start}
+.featured-copy{display:flex;flex-direction:column;justify-content:flex-start}
+.featured-copy .hero-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:10px}
+.featured-copy .hero-actions .btn{width:100%}
 @media(max-width:900px){.featured-watch{grid-template-columns:1fr}.featured-copy{text-align:center}.featured-copy .hero-actions{justify-content:center}}
+@media(max-width:520px){.featured-copy .hero-actions{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -65,16 +68,16 @@
 
 <main id="main">
 
-<section style="padding:56px 0 28px">
+<section style="padding:44px 0 22px">
   <div class="wrap" style="max-width:960px;text-align:center">
     <div class="kicker plain" style="margin-bottom:20px;justify-content:center;display:inline-flex">Demos</div>
     <h1 class="h-lg" style="margin-bottom:16px">See it <span class="serif-italic blue">work</span>.</h1>
-    <p class="lede" style="margin:0 auto 32px">Demos and workflow examples for the same-beat MIDI selection workflow in Studio One and Fender Studio Pro.</p>
+    <p class="lede" style="margin:0 auto 24px">Demos and workflow examples for the same-beat MIDI selection workflow in Studio One and Fender Studio Pro.</p>
   </div>
 </section>
 
 <!-- Featured video -->
-<section style="padding:0 0 64px">
+<section style="padding:0 0 48px">
   <div class="wrap" style="max-width:1080px">
     <div class="featured-watch">
       <div class="glass watch-frame yt-lite" style="padding:0;overflow:hidden;position:relative;aspect-ratio:16/9">
@@ -99,7 +102,7 @@
 <!-- Demos -->
 <section class="section-sm">
   <div class="wrap">
-    <div style="margin-bottom:28px">
+    <div style="margin-bottom:22px">
       <div class="section-label">Product demos</div>
       <h2 class="h-md">Product <span class="serif-italic blue">demos</span>.</h2>
     </div>
@@ -131,7 +134,7 @@
 <!-- Workflow tips -->
 <section class="section-sm">
   <div class="wrap">
-    <div style="margin-bottom:28px">
+    <div style="margin-bottom:22px">
       <div class="section-label">Workflow tips</div>
       <h2 class="h-md">Workflow <span class="serif-italic blue">tips</span>.</h2>
     </div>

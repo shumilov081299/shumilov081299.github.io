@@ -20,29 +20,30 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-.p-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:18px;align-items:start}
-.p-grid .p-card:first-child{align-self:start}
+.p-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.p-grid .p-card:first-child{grid-column:1/-1;align-self:start}
 .p-card{min-width:0;display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
 .p-card:hover{transform:translateY(-2px)}
-.p-card.featured .p-card-body{padding:24px 26px}
+.p-card.featured .p-card-body{padding:22px 24px}
 .p-card.featured .p-card-type::after{content:"Available";display:inline-flex;margin-left:10px;padding:3px 8px;border:1px solid rgba(59,214,123,.25);border-radius:var(--r-xs);color:var(--green);background:rgba(59,214,123,.08)}
-.p-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.p-card-body{padding:20px;display:flex;flex-direction:column;flex:1}
 .p-card-type{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px}
 .p-card h3{font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
-.p-card .desc{color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:16px;flex:1}
+.p-card .desc{color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:16px;flex:0}
 .p-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
 .p-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--line);flex-wrap:wrap}
 .p-price{display:flex;align-items:baseline;gap:8px}
 .p-price .old{font-size:14px;text-decoration:line-through;color:var(--red);opacity:.6;font-weight:600}
 .p-price .new{font-family:var(--ff-display);font-weight:900;font-size:24px;letter-spacing:-0.02em}
-.coming{position:relative;opacity:0.72;pointer-events:none;grid-column:2}
+.coming{position:relative;opacity:0.72;pointer-events:none;grid-column:auto}
 .coming::after{content:"Coming soon";position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.15em;background:var(--glass-light);border:1px solid var(--glass-border);padding:4px 10px;border-radius:var(--r-xs);z-index:2}
 .coming .p-card-body{padding:18px}
 .coming h3{font-size:17px}
 .coming .desc{font-size:13px;margin-bottom:12px}
+.roadmap-bottom{display:none}
 @media(max-width:1040px){.p-grid{grid-template-columns:1fr 1fr}.p-grid .p-card:first-child{grid-column:1/-1}.coming{grid-column:auto}}
 @media(max-width:620px){.p-grid{grid-template-columns:minmax(0,1fr)}.p-grid .p-card:first-child{grid-column:auto}}
-@media(max-width:460px){.p-bottom{align-items:stretch}.p-bottom .btn{width:100%}.p-price{width:100%;justify-content:space-between}}
+@media(max-width:460px){.p-bottom{align-items:stretch}.p-bottom .btn{width:100%}.p-price{width:auto;justify-content:flex-start;flex-wrap:wrap}}
 </style>
 </head>
 <body>
@@ -71,7 +72,7 @@
 
 <main id="main">
 
-<section style="padding:56px 0 28px">
+<section style="padding:44px 0 22px">
   <div class="wrap">
     <div class="kicker" style="margin-bottom:20px">Products</div>
     <h1 class="h-lg" style="margin-bottom:16px">Products.</h1>
@@ -79,7 +80,7 @@
   </div>
 </section>
 
-<section style="padding:0 0 64px">
+<section style="padding:0 0 48px">
   <div class="wrap">
     <div class="p-grid">
 
@@ -106,7 +107,7 @@
           <h3>Arrangement tool</h3>
           <p class="desc">Next workflow tool in the pipeline. Stay tuned for the announcement.</p>
           <div class="p-chips"><span class="chip">S1 · Fender Studio Pro</span></div>
-          <div class="p-bottom">
+          <div class="p-bottom roadmap-bottom">
             <div class="p-price"><span class="new" style="color:var(--fg-mute)">TBA</span></div>
             <span></span>
           </div>
@@ -119,7 +120,7 @@
           <h3>Next utility script</h3>
           <p class="desc">Another small surgical tool for producers. Details soon.</p>
           <div class="p-chips"><span class="chip">TBA</span></div>
-          <div class="p-bottom">
+          <div class="p-bottom roadmap-bottom">
             <div class="p-price"><span class="new" style="color:var(--fg-mute)">TBA</span></div>
             <span></span>
           </div>
@@ -128,7 +129,7 @@
 
     </div>
 
-    <div style="margin-top:28px;padding:24px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-md);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="margin-top:22px;padding:20px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-md);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
       <div>
         <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:6px">New tools</div>
         <h3 class="h-sm">Get notified when new tools ship.</h3>
