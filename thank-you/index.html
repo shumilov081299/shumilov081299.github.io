@@ -2,92 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Thank You — shmlv audio</title>
 <link rel="icon" href="/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--card:#0a0a1a;--border:#1a1a3a;--green:#3fb950}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}.nav-links a:hover{color:var(--white)}
-.wrap{max-width:700px;margin:0 auto;padding:0 24px}
-.hero{text-align:center;padding:100px 0 48px}
-.hero h1{font-size:3em;font-weight:900;letter-spacing:-0.03em;margin-bottom:16px}
-.hero h1 span{color:var(--green)}
-.hero p{font-size:1.15em;color:var(--gray);margin-bottom:32px}
-.section{padding:32px 0}
-.section h2{font-size:1.4em;font-weight:800;margin-bottom:16px}.section h2 span{color:var(--blue)}
-.step{display:flex;gap:16px;margin:16px 0;align-items:flex-start}
-.step-num{background:var(--blue);color:var(--white);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85em;flex-shrink:0}
-.step-text{color:var(--gray);font-size:0.95em}
-.step-text strong{color:var(--white)}
-.step-text code{background:var(--card);padding:2px 8px;border-radius:4px;font-size:0.85em;color:#4488ff}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
-.card h3{font-size:1em;font-weight:700;margin-bottom:6px}
-.card p{color:var(--gray);font-size:0.9em;margin:0}
-.cta-box{text-align:center;padding:48px 0}
-.btn{display:inline-block;padding:14px 36px;border:2px solid var(--border);border-radius:50px;color:var(--gray);font-weight:600;font-size:0.9em;margin:6px;transition:all 0.2s}
-.btn:hover{border-color:var(--blue);color:var(--white)}
-.btn-primary{background:var(--blue);border-color:var(--blue);color:var(--white)}
-.btn-primary:hover{transform:scale(1.05)}
-.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
-.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
-@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/shmlv.css">
 </head>
 <body>
-<nav><div class="nav-wrap"><a href="/" class="logo">shmlv<span>.</span></a><div class="nav-links"><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a></div></div></nav>
-<div class="wrap">
 
-<div class="hero">
-<h1><span>Thank you!</span></h1>
-<p>Your purchase is complete. Check your email for the download link — it should arrive within a few minutes.</p>
-</div>
+<div class="ambient"></div>
+<div class="grid-overlay"></div>
+<div class="scan-lines"></div>
 
-<div class="section">
-<h2>Getting <span>started</span></h2>
-<div class="step"><div class="step-num">1</div><div class="step-text"><strong>Download</strong> the <code>.package</code> file from your email</div></div>
-<div class="step"><div class="step-num">2</div><div class="step-text"><strong>Copy</strong> to your Scripts folder:<br>
-<strong>Windows:</strong><br>
-<code>C:\Program Files\PreSonus\Studio One 6\Scripts\</code><br>
-<code>C:\Program Files\PreSonus\Studio One 7\Scripts\</code><br>
-<code>C:\Program Files\Fender\Studio Pro 8\Scripts\</code><br>
-<strong>macOS:</strong> Right-click .app &rarr; Show Package Contents &rarr; <code>Contents/Scripts/</code></div></div>
-<div class="step"><div class="step-num">3</div><div class="step-text"><strong>Restart</strong> your DAW completely</div></div>
-<div class="step"><div class="step-num">4</div><div class="step-text"><strong>Keyboard Shortcuts</strong> &rarr; search "Select Equal Subpositions" &rarr; assign shortcuts to all three modes</div></div>
-<div class="step"><div class="step-num">5</div><div class="step-text"><strong>Open Piano Roll</strong>, select a note, press your shortcut — done!</div></div>
-</div>
+<div class="page">
 
-<div class="section">
-<h2>Quick <span>tips</span></h2>
-<div class="card">
-<h3>Assign three different shortcuts</h3>
-<p>Each mode is a separate command: All Notes, Same Pitch Any, Same Pitch Exact. Assign a key to each for fast switching.</p>
-</div>
-<div class="card">
-<h3>Use Bars display mode</h3>
-<p>For best accuracy with non-standard time signatures (3/4, 5/4, 7/4), set your transport display to Bars.</p>
-</div>
-<div class="card">
-<h3>Works with humanized MIDI</h3>
-<p>No need to quantize first. The script handles humanized notes up to +/-50 ticks automatically.</p>
-</div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
+    <div class="nav-links">
+      <a href="/products/">Products</a>
+      <a href="/learn/">Watch</a>
+      <a href="/support/">Support</a>
+      <a href="/about/">About</a>
+      <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="status-bar">
+  <div class="status-bar-inner">
+    <span class="live">ORDER CONFIRMED</span>
+    <span>DOWNLOAD · SENT BY EMAIL</span>
+    <span>LICENSE · ACTIVE</span>
+  </div>
 </div>
 
-<div class="cta-box">
-<p style="color:var(--gray);margin-bottom:16px">Need help? Have a question?</p>
-<a href="/support/" class="btn">Support & FAQ</a>
-<a href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn">Watch tutorial</a>
-<a href="mailto:support@shmlv.com" target="_blank" class="btn btn-primary">Contact support</a>
+<section style="padding:80px 0 48px">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <div class="reveal kicker plain" style="justify-content:center;display:inline-flex;margin-bottom:24px;color:var(--green)">● ORDER COMPLETE</div>
+    <h1 class="reveal-2 h-xl" style="margin-bottom:20px">Thank <span class="serif-italic blue">you</span>.</h1>
+    <p class="reveal-3 lede" style="margin:0 auto 36px">Your purchase is complete. Check your email for the download link — it should arrive within a few minutes.</p>
+    <div class="reveal-4 glass glass-md" style="max-width:520px;margin:0 auto;display:flex;align-items:center;gap:16px;text-align:left">
+      <div style="width:48px;height:48px;background:linear-gradient(180deg,var(--blue-2),var(--blue));border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 24px -8px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,0.2);font-family:var(--ff-mono);font-weight:900;color:#fff">✓</div>
+      <div>
+        <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:2px">RECEIVED</div>
+        <div style="font-weight:700">Select Equal Subpositions</div>
+        <div style="color:var(--fg-dim);font-size:13px">Download link sent to your email</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section-sm">
+  <div class="wrap" style="max-width:880px">
+    <div style="margin-bottom:32px">
+      <div class="section-label">01 · GETTING STARTED</div>
+      <h2 class="h-md" style="margin-bottom:12px">Getting <span class="serif-italic blue">started</span>.</h2>
+      <p class="body">Five steps from download to first shortcut. Under three minutes.</p>
+    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Download the .package file</strong>Check your email for the download link (check spam if not arrived).</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body">
+      <strong>Copy to your Scripts folder</strong>
+      <div class="mono" style="font-size:12px;color:var(--fg-mute);margin:6px 0 4px;letter-spacing:0.08em;text-transform:uppercase">Windows</div>
+      <code class="code-block">C:\\Program Files\\PreSonus\\Studio One 6\\Scripts\\</code>
+      <code class="code-block">C:\\Program Files\\PreSonus\\Studio One 7\\Scripts\\</code>
+      <code class="code-block">C:\\Program Files\\Fender\\Studio\\Scripts\\</code>
+      <div class="mono" style="font-size:12px;color:var(--fg-mute);margin:10px 0 4px;letter-spacing:0.08em;text-transform:uppercase">macOS</div>
+      <div style="color:var(--fg-dim);font-size:13px">Right-click .app → Show Package Contents → <code>Contents/Scripts/</code></div>
+    </div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Restart your DAW completely</strong>Close and reopen — not just the project.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Assign keyboard shortcuts</strong>Keyboard Shortcuts → search "Select Equal Subpositions" → assign shortcuts to all three modes.</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Open Piano Roll, select a note, press your shortcut</strong>Done.</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section-sm">
+  <div class="wrap" style="max-width:880px">
+    <div style="margin-bottom:28px">
+      <div class="section-label">02 · QUICK TIPS</div>
+      <h2 class="h-md" style="margin-bottom:12px">Quick <span class="serif-italic blue">tips</span>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px" class="tips-grid">
+      <div class="glass glass-md"><div class="mono" style="font-size:10px;color:var(--blue-2);letter-spacing:0.12em;margin-bottom:10px">TIP · 01</div><h3 class="h-sm" style="font-size:16px;margin-bottom:6px">Assign three shortcuts</h3><p class="body" style="font-size:13px">Each mode is a separate command: All Notes, Same Pitch Any, Same Pitch Exact. Assign a key to each.</p></div>
+      <div class="glass glass-md"><div class="mono" style="font-size:10px;color:var(--blue-2);letter-spacing:0.12em;margin-bottom:10px">TIP · 02</div><h3 class="h-sm" style="font-size:16px;margin-bottom:6px">Use Bars display mode</h3><p class="body" style="font-size:13px">For best accuracy with non-standard time signatures (3/4, 5/4, 7/4), set your transport display to Bars.</p></div>
+      <div class="glass glass-md"><div class="mono" style="font-size:10px;color:var(--blue-2);letter-spacing:0.12em;margin-bottom:10px">TIP · 03</div><h3 class="h-sm" style="font-size:16px;margin-bottom:6px">Works with humanized MIDI</h3><p class="body" style="font-size:13px">No need to quantize first. The script handles humanized notes up to ±50 ticks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:720px;text-align:center">
+    <p class="body" style="margin-bottom:20px">Need help? Have a question?</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <a href="/support/" class="btn btn-ghost">Support &amp; FAQ</a>
+      <a href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost">Watch tutorial</a>
+      <a href="mailto:support@shmlv.com" class="btn btn-primary">Contact support <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a href="/support/">Installation</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+    </div>
+    <div class="foot-bar">
+      <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
+      <div class="meta"><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/refund.html">Refund</a></div>
+    </div>
+  </div>
+</footer>
+
 </div>
 
-<div class="foot"><div>shmlv &copy; 2026</div><div><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a><a href="mailto:support@shmlv.com" target="_blank">Contact</a></div></div>
-</div>
+<style>@media(max-width:700px){.tips-grid{grid-template-columns:1fr!important}}</style>
+
 </body>
 </html>

@@ -2,62 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>About — shmlv audio</title>
-<meta name="description" content="One person making workflow tools for music producers. Scripts and plugins for Studio One and Fender Studio Pro.">
-<meta property="og:title" content="About — shmlv audio">
-<meta property="og:description" content="One person making tools that solve real problems for producers.">
-<meta property="og:url" content="https://shmlv.com/about/">
+<meta name="description" content="One person making workflow tools for music producers. Scripts and plugins for Studio One and Fender Studio.">
 <link rel="icon" href="/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--border:#1a1a3a}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}.nav-links a:hover{color:var(--white)}
-.wrap{max-width:700px;margin:0 auto;padding:0 24px}
-.page-hero{padding:80px 0 48px;text-align:center}
-.page-hero h1{font-size:2.8em;font-weight:900;letter-spacing:-0.03em}
-.page-hero h1 span{color:var(--blue)}
-.content{padding:0 0 64px}
-.content p{color:var(--gray);font-size:1.05em;margin-bottom:20px}
-.content strong{color:var(--white)}
-.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
-.link-btn{padding:12px 28px;border:2px solid var(--border);border-radius:50px;color:var(--gray);font-weight:600;font-size:0.9em;transition:all 0.2s}
-.link-btn:hover{border-color:var(--blue);color:var(--white)}
-.foot{border-top:1px solid var(--border);padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
-.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
-@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/shmlv.css">
 </head>
 <body>
-<nav><div class="nav-wrap"><a href="/" class="logo">shmlv<span>.</span></a><div class="nav-links"><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a></div></div></nav>
-<div class="wrap">
-<div class="page-hero">
-<h1>About <span>shmlv</span></h1>
+
+<div class="ambient"></div>
+<div class="grid-overlay"></div>
+<div class="scan-lines"></div>
+
+<div class="page">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
+    <div class="nav-links">
+      <a href="/products/">Products</a>
+      <a href="/learn/">Watch</a>
+      <a href="/support/">Support</a>
+      <a href="/about/" class="active">About</a>
+      <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding:96px 0 48px">
+  <div class="wrap" style="max-width:860px">
+    <div class="kicker" style="margin-bottom:28px">ABOUT · SHMLV.COM</div>
+    <h1 class="h-xl" style="margin-bottom:32px">One person.<br>Real tools.<br><span class="serif-italic blue">No filler.</span></h1>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:56px" class="stats">
+      <div class="glass glass-md">
+        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">FOUNDER</div>
+        <div class="h-sm">shmlv</div>
+        <div class="body" style="font-size:13px;margin-top:4px">solo developer</div>
+      </div>
+      <div class="glass glass-md">
+        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">FOCUS</div>
+        <div class="h-sm">DAW scripts</div>
+        <div class="body" style="font-size:13px;margin-top:4px">plugins, utilities</div>
+      </div>
+      <div class="glass glass-md">
+        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">SINCE</div>
+        <div class="h-sm">2026</div>
+        <div class="body" style="font-size:13px;margin-top:4px">shipping &amp; growing</div>
+      </div>
+    </div>
+
+    <div style="font-size:18px;color:var(--fg-dim);line-height:1.75;text-wrap:pretty">
+      <p style="margin-bottom:24px"><span class="em">shmlv is my one-person audio tools brand.</span> I started it because a lot of the problems that slow producers down are not huge, glamorous problems — they're the tiny workflow gaps you hit every day when you're editing MIDI, building arrangements, and trying to move fast without breaking your focus.</p>
+      <p style="margin-bottom:24px">So instead of waiting for someone else to fix them, I build the tools myself.</p>
+      <p style="margin-bottom:24px">I focus on practical music-production tools: scripts, plugins, presets, templates, and other utilities that do one useful job well. <span class="em">No bloated feature lists. No fake company voice. No product committee trying to turn a simple idea into a platform.</span></p>
+      <p style="margin-bottom:24px">Everything here is built by one developer, tested in real use, and made for producers who care about speed, clarity, and getting back to making music.</p>
+      <p><span class="em">The name?</span> <span class="mono" style="color:var(--blue-2)">shmlv = Shumilov, minus the vowels.</span> Keep it short, keep it sharp.</p>
+    </div>
+
+    <div style="margin-top:56px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="/products/" class="btn btn-primary">View products <span class="arrow">→</span></a>
+      <a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener" class="btn btn-ghost">YouTube</a>
+      <a href="mailto:support@shmlv.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a href="/support/">Installation</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+    </div>
+    <div class="foot-bar">
+      <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
+      <div class="meta"><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/refund.html">Refund</a></div>
+    </div>
+  </div>
+</footer>
+
 </div>
-<div class="content">
-<p><strong>One person. Real tools. No filler.</strong></p>
-<p>shmlv is my one-person audio tools brand. I started it because a lot of the problems that slow producers down are not huge, glamorous problems — they're the tiny workflow gaps you hit every day when you're editing MIDI, building arrangements, and trying to move fast without breaking your focus.</p>
-<p>So instead of waiting for someone else to fix them, I build the tools myself.</p>
-<p>I focus on practical music-production tools: scripts, plugins, presets, templates, and other utilities that do one useful job well. No bloated feature lists. No fake company voice. No product committee trying to turn a simple idea into a platform.</p>
-<p>Everything here is built by one developer, tested in real use, and made for producers who care about speed, clarity, and getting back to making music.</p>
-<p><strong>The name?</strong> shmlv = Shumilov, minus the vowels. Keep it short, keep it sharp.</p>
-<div class="links">
-<a href="/products/" class="link-btn">View Products</a>
-<a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener" class="link-btn">YouTube</a>
-<a href="mailto:support@shmlv.com" target="_blank" class="link-btn">Get in touch</a>
-</div>
-</div>
-<div class="foot">
-<div>shmlv &copy; 2026</div>
-<div><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="mailto:support@shmlv.com" target="_blank">Contact</a></div>
-</div>
-</div>
+
+<style>@media(max-width:700px){.stats{grid-template-columns:1fr!important}}</style>
+
 </body>
 </html>

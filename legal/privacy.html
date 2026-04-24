@@ -2,54 +2,80 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Privacy Policy — shmlv audio</title>
 <link rel="icon" href="/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#0022FF;--dark:#050510;--white:#fff;--gray:#8892a6;--border:#1a1a3a}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-wrap{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;font-size:1.5em;letter-spacing:-0.03em;color:var(--white);text-decoration:none}.logo span{color:var(--blue)}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{color:var(--gray);font-size:0.9em;font-weight:600;transition:color 0.2s}.nav-links a:hover{color:var(--white)}
-.wrap{max-width:700px;margin:0 auto;padding:0 24px}
-h1{font-size:2em;font-weight:900;padding:48px 0 8px}
-h2{font-size:1.15em;font-weight:700;margin:32px 0 8px;color:var(--blue)}
-h3{font-size:0.95em;font-weight:700;margin:16px 0 4px}
-p,li{margin:6px 0;color:var(--gray);font-size:0.92em}
-ul{padding-left:20px;margin:8px 0}
-.foot{border-top:1px solid var(--border);margin-top:48px;padding:32px 0;display:flex;justify-content:space-between;font-size:0.85em;color:var(--gray)}
-.foot a{color:var(--gray);margin:0 12px;text-decoration:none}.foot a:hover{color:var(--white)}
-@media(max-width:600px){.foot{flex-direction:column;gap:12px;text-align:center}}
+.doc{max-width:760px;margin:0 auto;padding:0 24px}
+.doc h1{font-family:var(--ff-display);font-weight:900;font-size:clamp(36px,5vw,56px);line-height:1;letter-spacing:-0.035em;margin-bottom:14px}
+.doc .meta{display:flex;gap:16px;align-items:center;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.doc h2{font-family:var(--ff-display);font-weight:800;font-size:20px;letter-spacing:-0.015em;color:var(--fg);margin:40px 0 14px;display:flex;gap:14px;align-items:baseline}
+.doc h2 .num{font-family:var(--ff-mono);font-size:12px;color:var(--blue-2);font-weight:700;letter-spacing:0.1em;min-width:28px}
+.doc h3{font-family:var(--ff-display);font-weight:700;font-size:15px;margin:20px 0 6px;color:var(--fg)}
+.doc p, .doc li{font-size:15px;color:var(--fg-dim);line-height:1.75;margin:8px 0}
+.doc ul{padding-left:24px;margin:10px 0}
+.doc ul li{list-style:none;position:relative}
+.doc ul li::before{content:"—";position:absolute;left:-20px;color:var(--blue-2);font-family:var(--ff-mono)}
+.doc a{color:var(--blue-2);border-bottom:1px solid var(--glass-border-hot);transition:all .2s}
+.doc a:hover{color:var(--fg);border-bottom-color:var(--blue-2)}
+.doc .contact-block{margin-top:40px;padding:24px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-sm);font-family:var(--ff-mono);font-size:13px;color:var(--fg-dim);line-height:1.8}
+.doc .contact-block strong{color:var(--fg);font-weight:700;display:block;margin-bottom:6px;letter-spacing:0.05em;text-transform:uppercase;font-size:11px}
+.legal-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.legal-nav a{padding:6px 14px;font-family:var(--ff-mono);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg-mute);border:1px solid var(--glass-border);border-radius:var(--r-xs);transition:all .2s}
+.legal-nav a:hover{color:var(--fg);border-color:var(--glass-border-hot)}
+.legal-nav a.active{color:var(--fg);background:var(--glass-light);border-color:var(--glass-border-hot)}
 </style>
 </head>
 <body>
-<nav><div class="nav-wrap"><a href="/" class="logo">shmlv<span>.</span></a><div class="nav-links"><a href="/products/">Products</a><a href="/learn/">Watch</a><a href="/support/">Support</a></div></div></nav>
-<div class="wrap">
-<h1>Privacy Policy</h1>
-<p>Effective date: April 2, 2026</p>
+
+<div class="ambient"></div>
+<div class="grid-overlay"></div>
+<div class="scan-lines"></div>
+
+<div class="page">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
+    <div class="nav-links">
+      <a href="/products/">Products</a>
+      <a href="/learn/">Watch</a>
+      <a href="/support/">Support</a>
+      <a href="/about/">About</a>
+      <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding:64px 0 40px">
+  <div class="doc">
+    <div class="kicker" style="margin-bottom:20px">LEGAL · SHMLV.COM</div>
+    <nav class="legal-nav">
+      <a href="/legal/terms.html">Terms of Service</a>
+      <a href="/legal/privacy.html" class="active">Privacy Policy</a>
+      <a href="/legal/refund.html">Refund Policy</a>
+    </nav>
+    
+<h1>Privacy <span class="serif-italic blue">Policy</span></h1>
+<div class="meta"><span>EFFECTIVE · APRIL 2 · 2026</span><span>·</span><span>v1.0</span></div>
 
 <p>shmlv is operated by Denis Shumilov, an independent developer based in Ukraine ("shmlv", "I", "me", "my").</p>
 
-<h2>1. What I collect</h2>
-
+<h2><span class="num">01</span>What I collect</h2>
 <h3>a. Website data</h3>
 <p>I do not use analytics, advertising pixels, or tracking cookies on this site. The hosting provider may process basic technical data such as IP address and request logs to keep the site running and secure.</p>
-
 <h3>b. Order and billing data</h3>
 <p>Payments are processed by a third-party checkout provider. When you buy a Product, the provider and I may process data such as your name, email address, country, transaction identifiers, the Product purchased, and tax information.</p>
-
 <h3>c. Support data</h3>
 <p>If you contact me for support, I may receive the information you send, including your name, email, order details, DAW and OS information, message content, and any screenshots or files you choose to share.</p>
-
 <h3>d. Optional marketing data</h3>
 <p>I do not send newsletters or marketing emails unless you clearly opt in.</p>
 
-<h2>2. How I use your data</h2>
+<h2><span class="num">02</span>How I use your data</h2>
 <ul>
 <li>Deliver Products and confirm purchases</li>
 <li>Verify licenses and prevent fraud or abuse</li>
@@ -59,28 +85,50 @@ ul{padding-left:20px;margin:8px 0}
 </ul>
 <p>I do not sell your personal data. I do not use your data for automated decision-making or profiling.</p>
 
-<h2>3. How data is shared</h2>
+<h2><span class="num">03</span>How data is shared</h2>
 <p>I only share data when needed to run the business or comply with law. That may include the checkout provider (for billing and refunds), the hosting provider, email providers, and professional advisers or authorities where required.</p>
 
-<h2>4. Retention</h2>
+<h2><span class="num">04</span>Retention</h2>
 <p>I keep purchase and billing records for as long as reasonably needed for tax, accounting, and legal purposes. Support emails are kept as long as needed to resolve your request.</p>
 
-<h2>5. Your rights</h2>
-<p>Depending on your location, you may have the right to access, correct, delete, restrict, or port your personal data. To exercise any of these rights, email support@shmlv.com.</p>
+<h2><span class="num">05</span>Your rights</h2>
+<p>Depending on your location, you may have the right to access, correct, delete, restrict, or port your personal data. To exercise any of these rights, email <a href="mailto:support@shmlv.com">support@shmlv.com</a>.</p>
 
-<h2>6. Cookies and tracking</h2>
+<h2><span class="num">06</span>Cookies and tracking</h2>
 <p>I do not use analytics cookies, advertising cookies, or tracking pixels on this site. Third-party checkout services may use their own cookies under their own policies.</p>
 
-<h2>7. Children's privacy</h2>
+<h2><span class="num">07</span>Children's privacy</h2>
 <p>shmlv Products are not directed to children. Do not submit personal data or make purchases if you are under the required age in your country.</p>
 
-<h2>8. Changes</h2>
+<h2><span class="num">08</span>Changes</h2>
 <p>I may update this Privacy Policy from time to time. The latest version posted on the site applies from its stated effective date.</p>
 
-<h2>9. Contact</h2>
-<p>Denis Shumilov<br>Kyiv, Ukraine<br>support@shmlv.com</p>
+<h2><span class="num">09</span>Contact</h2>
+<div class="contact-block">
+<strong>Contact</strong>
+Denis Shumilov<br>
+Kyiv, Ukraine<br>
+<a href="mailto:support@shmlv.com" style="border:0;color:var(--blue-2)">support@shmlv.com</a>
+</div>
 
-<div class="foot"><div>shmlv &copy; 2026</div><div><a href="/products/">Products</a><a href="/support/">Support</a><a href="/legal/terms.html">Terms</a><a href="/legal/refund.html">Refund</a></div></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a href="/support/">Installation</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+    </div>
+    <div class="foot-bar">
+      <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
+      <div class="meta"><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/refund.html">Refund</a></div>
+    </div>
+  </div>
+</footer>
+
 </div>
 </body>
 </html>
