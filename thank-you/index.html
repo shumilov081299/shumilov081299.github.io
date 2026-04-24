@@ -41,7 +41,7 @@
       <a href="/learn/">Watch</a>
       <a href="/support/">Support</a>
       <a href="/about/">About</a>
-      <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
+      <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="nav-cta">Open docs <span class="arrow">→</span></a>
     </div>
   </div>
 </nav>
@@ -50,7 +50,7 @@
   <div class="status-bar-inner">
     <span class="live">ORDER CONFIRMED</span>
     <span>DOWNLOAD · SENT BY EMAIL</span>
-    <span>LICENSE · ACTIVE</span>
+    <span>NO LICENSE KEY NEEDED</span>
   </div>
 </div>
 
@@ -58,7 +58,7 @@
   <div class="wrap" style="max-width:780px;text-align:center">
     <div class="reveal kicker plain" style="justify-content:center;display:inline-flex;margin-bottom:24px;color:var(--green)">● ORDER COMPLETE</div>
     <h1 class="reveal-2 h-xl" style="margin-bottom:20px">Thank <span class="serif-italic blue">you</span>.</h1>
-    <p class="reveal-3 lede" style="margin:0 auto 36px">Your purchase is complete. Check your email for the download link — it should arrive within a few minutes.</p>
+    <p class="reveal-3 lede" style="margin:0 auto 36px">If you just purchased, check your email for the download link — it should arrive within a few minutes.</p>
     <div class="reveal-4 glass glass-md" style="max-width:520px;margin:0 auto;display:flex;align-items:center;gap:16px;text-align:left">
       <div style="width:48px;height:48px;background:linear-gradient(180deg,var(--blue-2),var(--blue));border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 24px -8px var(--blue-glow),inset 0 1px 0 rgba(255,255,255,0.2);font-family:var(--ff-mono);font-weight:900;color:#fff">✓</div>
       <div>
@@ -78,7 +78,7 @@
       <div>
         <div class="section-label">DOWNLOAD EMAIL</div>
         <h2 class="h-sm" style="margin-bottom:8px">No email after 10 minutes?</h2>
-        <p class="body" style="font-size:14px">Check spam/promotions first. If it is still missing, email support with the purchase email and I will help recover the download. No license key or account is needed to run the package.</p>
+        <p class="body" style="font-size:14px">Search your inbox for Payhip, shmlv, or Select Equal Subpositions, then check spam/promotions. If it is still missing, email support from the purchase email and I will help recover the download. No license key or account is needed to run the package.</p>
       </div>
       <a data-event="Support Clicked" data-event-label="Thank you order help" href="mailto:support@shmlv.com?subject=Download%20email%20help" class="btn btn-primary">Get help <span class="arrow">→</span></a>
     </div>
@@ -98,15 +98,16 @@
     <div class="step"><div class="step-num">2</div><div class="step-body">
       <strong>Copy to your Scripts folder</strong>
       <div class="mono" style="font-size:12px;color:var(--fg-mute);margin:6px 0 4px;letter-spacing:0.08em;text-transform:uppercase">Windows</div>
-      <code class="code-block">C:\\Program Files\\PreSonus\\Studio One 6\\Scripts\\</code>
-      <code class="code-block">C:\\Program Files\\PreSonus\\Studio One 7\\Scripts\\</code>
-      <code class="code-block">C:\\Program Files\\Fender\\Studio\\Scripts\\</code>
+      <code class="code-block">C:\Program Files\PreSonus\Studio One 6\Scripts\</code>
+      <code class="code-block">C:\Program Files\PreSonus\Studio One 7\Scripts\</code>
+      <code class="code-block">C:\Program Files\Fender\Studio\Scripts\</code>
+      <p class="body" style="font-size:13px;margin-top:10px">You may need admin permission on Windows. Keep a backup of the downloaded <code>.package</code> file in case a DAW update overwrites unmanaged app folders.</p>
       <div class="mono" style="font-size:12px;color:var(--fg-mute);margin:10px 0 4px;letter-spacing:0.08em;text-transform:uppercase">macOS</div>
       <div style="color:var(--fg-dim);font-size:13px">Right-click .app → Show Package Contents → <code>Contents/Scripts/</code></div>
     </div></div>
     <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Restart your DAW completely</strong>Close and reopen — not just the project.</div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Assign keyboard shortcuts</strong>Keyboard Shortcuts → search "Select Equal Subpositions" → assign shortcuts to all three modes.</div></div>
-    <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Open Piano Roll, select a note, press your shortcut</strong>Done.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Assign keyboard shortcuts</strong>Keyboard Shortcuts → search "Select Equal Subpositions" → you should see three commands. Assign a shortcut to each mode.</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Open Piano Roll, select a note, press your shortcut</strong>If the command appears but nothing happens, make sure a MIDI part is open and at least one note is selected.</div></div>
   </div>
 </section>
 
@@ -115,7 +116,27 @@
 <section class="section-sm">
   <div class="wrap" style="max-width:880px">
     <div style="margin-bottom:28px">
-      <div class="section-label">02 · QUICK TIPS</div>
+      <div class="section-label">02 · FIRST 60 SECONDS</div>
+      <h2 class="h-md" style="margin-bottom:12px">Quick <span class="serif-italic blue">check</span>.</h2>
+    </div>
+    <div class="glass glass-md">
+      <ul style="display:grid;gap:10px;color:var(--fg-dim);font-size:14px;line-height:1.65;padding-left:18px">
+        <li>Copy the <code>.package</code> file itself, not the ZIP or a folder.</li>
+        <li>Use the exact Scripts folder for your host app.</li>
+        <li>Fully quit and reopen the DAW after copying the file.</li>
+        <li>Open Keyboard Shortcuts and search "Select Equal Subpositions".</li>
+        <li>If a command appears but does nothing, open a MIDI part and select at least one note first.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section-sm">
+  <div class="wrap" style="max-width:880px">
+    <div style="margin-bottom:28px">
+      <div class="section-label">03 · QUICK TIPS</div>
       <h2 class="h-md" style="margin-bottom:12px">Quick <span class="serif-italic blue">tips</span>.</h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px" class="tips-grid">
@@ -128,11 +149,11 @@
 
 <section class="section">
   <div class="wrap" style="max-width:720px;text-align:center">
-    <p class="body" style="margin-bottom:20px">Need help? Have a question?</p>
+    <p class="body" style="margin-bottom:20px">Need help? Include the purchase email, Payhip receipt/order ID, DAW version, OS, install path, search term, and a screenshot if possible.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
       <a href="/support/" class="btn btn-ghost">Support &amp; FAQ</a>
       <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost">Read docs</a>
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost">Watch tutorial</a>
+      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">Watch tutorial</a>
       <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com" class="btn btn-primary">Contact support <span class="arrow">→</span></a>
     </div>
   </div>
@@ -143,8 +164,8 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>

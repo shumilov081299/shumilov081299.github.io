@@ -22,6 +22,50 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://shmlv.com/support/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does it work with humanized MIDI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Smart tolerance catches humanized notes up to ±50 ticks (Studio One's default humanize range)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What about time signature changes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures like 3/4 or 7/4." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it on multiple machines?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which editions are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get updates?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes." }
+    },
+    {
+      "@type": "Question",
+      "name": "The script doesn't appear in Keyboard Shortcuts",
+      "acceptedAnswer": { "@type": "Answer", "text": "Make sure the .package file is in the correct Scripts folder and you've restarted the DAW completely (not just the project)." }
+    },
+    {
+      "@type": "Question",
+      "name": "Nothing happens when I run the script",
+      "acceptedAnswer": { "@type": "Answer", "text": "Make sure you have at least one note selected in the Piano Roll before running the shortcut." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -49,7 +93,7 @@
   <div class="wrap" style="max-width:900px">
     <div class="kicker" style="margin-bottom:20px">HELP CENTER · EMAIL SUPPORT</div>
     <h1 class="h-lg" style="margin-bottom:16px"><span class="serif-italic blue">Support</span>.</h1>
-    <p class="lede">Installation help, compatibility info, and answers to common questions. Usually reply within 24 hours.</p>
+    <p class="lede">Installation help, compatibility info, and answers to common questions. I aim to reply within 24 hours.</p>
   </div>
 </section>
 
@@ -87,11 +131,11 @@
       <div class="glass glass-md">
         <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;background:var(--blue);border-radius:50%"></span>WINDOWS</div>
         <h3 class="h-sm" style="margin-bottom:12px">Copy to Scripts folder</h3>
-        <p class="body" style="font-size:13px;margin-bottom:12px">Place the <code>.package</code> file in your Studio One Scripts folder:</p>
+        <p class="body" style="font-size:13px;margin-bottom:12px">Place the <code>.package</code> file in your host app's Scripts folder:</p>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 6\Scripts\</code>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 7\Scripts\</code>
         <code class="code-block">C:\Program Files\Fender\Studio\Scripts\</code>
-        <p class="body" style="font-size:13px;margin-top:12px">Restart your DAW. Go to Keyboard Shortcuts and assign keys.</p>
+        <p class="body" style="font-size:13px;margin-top:12px">You may need admin permission. Restart your DAW, then go to Keyboard Shortcuts and assign keys. Keep a backup of the downloaded <code>.package</code> file in case a DAW update overwrites unmanaged app folders.</p>
       </div>
       <div class="glass glass-md">
         <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;background:var(--blue);border-radius:50%"></span>MACOS</div>
@@ -100,7 +144,7 @@
         <code class="code-block">/Applications/Studio One 6.app/Contents/Scripts/</code>
         <code class="code-block">/Applications/Studio One 7.app/Contents/Scripts/</code>
         <code class="code-block">/Applications/Fender Studio.app/Contents/Scripts/</code>
-        <p class="body" style="font-size:13px;margin-top:12px">Restart your DAW. Go to Keyboard Shortcuts and assign keys.</p>
+        <p class="body" style="font-size:13px;margin-top:12px">Restart your DAW. Go to Keyboard Shortcuts and assign keys. Keep a backup of the downloaded <code>.package</code> file in case a DAW update overwrites unmanaged app folders.</p>
       </div>
     </div>
     <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
@@ -112,19 +156,40 @@
 
 <hr class="divider">
 
+<!-- QUICK CHECK -->
+<section class="section-sm">
+  <div class="wrap" style="max-width:900px">
+    <div style="margin-bottom:28px">
+      <div class="section-label">02 · FIRST 60 SECONDS</div>
+      <h2 class="h-md" style="margin-bottom:12px">Quick <span class="serif-italic blue">check</span>.</h2>
+    </div>
+    <div class="glass glass-md">
+      <ul style="display:grid;gap:10px;color:var(--fg-dim);font-size:14px;line-height:1.65;padding-left:18px">
+        <li>Copy the <code>.package</code> file itself, not the ZIP or a folder.</li>
+        <li>Use the exact Scripts folder for your host app.</li>
+        <li>Fully quit and reopen the DAW after copying the file.</li>
+        <li>Open Keyboard Shortcuts and search "Select Equal Subpositions".</li>
+        <li>If a command appears but does nothing, open a MIDI part and select at least one note first.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <!-- FAQ -->
 <section class="section-sm">
   <div class="wrap" style="max-width:900px">
     <div style="margin-bottom:28px">
-      <div class="section-label">02 · COMMON QUESTIONS</div>
+      <div class="section-label">03 · COMMON QUESTIONS</div>
       <h2 class="h-md" style="margin-bottom:12px"><span class="serif-italic blue">FAQ</span>.</h2>
     </div>
     <div>
       <div class="faq-item"><h3>Does it work with humanized MIDI?</h3><p>Yes. Smart tolerance catches humanized notes up to ±50 ticks (Studio One's default humanize range).</p></div>
       <div class="faq-item"><h3>What about time signature changes?</h3><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures like 3/4 or 7/4.</p></div>
-      <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. Install on all computers you personally own and use.</p></div>
-      <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One Professional and Artist editions that support scripts.</p></div>
-      <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, v1.x updates are included at no extra cost.</p></div>
+      <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it.</p></div>
+      <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support.</p></div>
+      <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes.</p></div>
       <div class="faq-item"><h3>The script doesn't appear in Keyboard Shortcuts</h3><p>Make sure the .package file is in the correct Scripts folder and you've restarted the DAW completely (not just the project).</p></div>
       <div class="faq-item"><h3>Nothing happens when I run the script</h3><p>Make sure you have at least one note selected in the Piano Roll before running the shortcut.</p></div>
     </div>
@@ -138,9 +203,9 @@
       <div class="corners"></div>
       <div style="position:absolute;top:-60%;right:-20%;width:80%;height:200%;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 60%);filter:blur(40px);pointer-events:none"></div>
       <div style="position:relative;text-align:center;max-width:520px;margin:0 auto">
-        <div class="section-label">03 · DIRECT CONTACT</div>
+        <div class="section-label">04 · DIRECT CONTACT</div>
         <h2 class="h-md" style="margin-bottom:12px">Need <span class="serif-italic blue">help?</span></h2>
-        <p class="body" style="margin-bottom:24px">Can't find your answer? Reach out — I personally read and reply to every email.</p>
+        <p class="body" style="margin-bottom:24px">Can't find your answer? Include the purchase email, product name, DAW version, OS, install path, Keyboard Shortcuts search term, and a screenshot if possible.</p>
         <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com" class="btn btn-primary btn-lg">support@shmlv.com <span class="arrow">→</span></a>
       </div>
     </div>
@@ -152,8 +217,8 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>

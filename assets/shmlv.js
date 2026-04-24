@@ -3,14 +3,40 @@
   const menuButton = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
 
+  document.querySelectorAll(".nav-links a.active").forEach((link) => {
+    link.setAttribute("aria-current", "page");
+  });
+
   if (menuButton && navLinks) {
+    const navItems = Array.from(navLinks.querySelectorAll("a, button"));
+    const mobileMenuQuery = window.matchMedia?.("(max-width: 820px)");
+    const syncMenuFocus = (open) => {
+      const isMobile = mobileMenuQuery?.matches ?? window.innerWidth <= 820;
+      if (!isMobile) {
+        navLinks.removeAttribute("aria-hidden");
+        if ("inert" in navLinks) navLinks.inert = false;
+        navItems.forEach((item) => item.removeAttribute("tabindex"));
+        return;
+      }
+      navLinks.setAttribute("aria-hidden", String(!open));
+      if ("inert" in navLinks) navLinks.inert = !open;
+      navItems.forEach((item) => {
+        if (open) item.removeAttribute("tabindex");
+        else item.setAttribute("tabindex", "-1");
+      });
+    };
+
     const setOpen = (open) => {
+      const focusWasInMenu = navLinks.contains(document.activeElement);
       body.classList.toggle("nav-open", open);
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
       menuButton.textContent = open ? "Close" : "Menu";
+      syncMenuFocus(open);
+      if (!open && focusWasInMenu) menuButton.focus({ preventScroll: true });
     };
 
+    setOpen(false);
     menuButton.addEventListener("click", () => setOpen(!body.classList.contains("nav-open")));
     navLinks.addEventListener("click", (event) => {
       if (event.target.closest("a")) setOpen(false);
@@ -18,6 +44,7 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setOpen(false);
     });
+    mobileMenuQuery?.addEventListener?.("change", () => syncMenuFocus(body.classList.contains("nav-open")));
   }
 
   document.querySelectorAll(".faq-item").forEach((item, index) => {
@@ -31,11 +58,13 @@
     item.setAttribute("tabindex", "0");
     item.setAttribute("aria-controls", panelId);
     item.setAttribute("aria-expanded", String(item.classList.contains("open")));
+    panel.setAttribute("aria-hidden", String(!item.classList.contains("open")));
 
     const toggle = () => {
       const open = !item.classList.contains("open");
       item.classList.toggle("open", open);
       item.setAttribute("aria-expanded", String(open));
+      panel.setAttribute("aria-hidden", String(!open));
       track("FAQ Opened", { question: heading.textContent.trim(), open });
     };
 
@@ -79,9 +108,9 @@
 
     const finalPurchase = document.querySelector(".final-purchase");
     let heroPassed = false;
-    let finalVisible = false;
+    let finalActive = false;
     const syncStickyBuy = () => {
-      body.classList.toggle("show-mobile-buy", heroPassed && !finalVisible);
+      body.classList.toggle("show-mobile-buy", heroPassed && !finalActive);
     };
 
     if ("IntersectionObserver" in window) {
@@ -93,7 +122,7 @@
 
       if (finalPurchase) {
         const finalObserver = new IntersectionObserver(([entry]) => {
-          finalVisible = entry.isIntersecting;
+          finalActive = entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight;
           syncStickyBuy();
         }, { threshold: 0.05 });
         finalObserver.observe(finalPurchase);
@@ -101,7 +130,7 @@
     } else {
       const update = () => {
         heroPassed = heroBuy.getBoundingClientRect().bottom < 0;
-        finalVisible = finalPurchase ? finalPurchase.getBoundingClientRect().top < window.innerHeight : false;
+        finalActive = finalPurchase ? finalPurchase.getBoundingClientRect().top < window.innerHeight : false;
         syncStickyBuy();
       };
       update();
@@ -112,18 +141,34 @@
   document.addEventListener("click", (event) => {
     const target = event.target.closest("[data-event]");
     if (!target) return;
+    const href = target.getAttribute("href") || "";
+    let linkType = "internal";
+    let linkDomain = "";
+    let linkPath = "";
+    if (href.startsWith("mailto:")) {
+      linkType = "email";
+    } else if (href.startsWith("http")) {
+      try {
+        const url = new URL(href);
+        linkDomain = url.hostname;
+        linkPath = url.pathname;
+        linkType = linkDomain.includes("payhip.com") ? "checkout" : "external";
+      } catch {
+        linkType = "external";
+      }
+    } else {
+      linkPath = href;
+    }
     track(target.dataset.event, {
       label: target.dataset.eventLabel || target.textContent.trim(),
-      href: target.getAttribute("href") || ""
+      link_type: linkType,
+      link_domain: linkDomain,
+      link_path: linkPath
     });
   });
 
   function track(name, props = {}) {
     if (!name) return;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: name, ...props });
-    if (typeof window.plausible === "function") window.plausible(name, { props });
-    if (typeof window.gtag === "function") window.gtag("event", name, props);
-    if (window.posthog && typeof window.posthog.capture === "function") window.posthog.capture(name, props);
+    document.dispatchEvent(new CustomEvent("shmlv:event", { detail: { name, ...props } }));
   }
 })();

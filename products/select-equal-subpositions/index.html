@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Select Equal Subpositions — shmlv audio</title>
-<meta name="description" content="Select all MIDI notes at the same bar position in one shortcut. Three modes, humanize-aware. For Studio One 6/7 and Fender Studio.">
+<title>Select Equal Subpositions — same-beat MIDI selection for Studio One | shmlv.</title>
+<meta name="description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <link rel="canonical" href="https://shmlv.com/products/select-equal-subpositions/">
 <meta property="og:type" content="product">
-<meta property="og:title" content="Select Equal Subpositions — shmlv audio">
-<meta property="og:description" content="Select all MIDI notes at the same bar position in one shortcut. Three modes, humanize-aware. For Studio One 6/7 and Fender Studio.">
+<meta property="og:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One">
+<meta property="og:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta property="og:url" content="https://shmlv.com/products/select-equal-subpositions/">
 <meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Select Equal Subpositions — shmlv audio">
-<meta name="twitter:description" content="Select all MIDI notes at the same bar position in one shortcut. Three modes, humanize-aware. For Studio One 6/7 and Fender Studio.">
+<meta name="twitter:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One">
+<meta name="twitter:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
       "image": [
         "https://shmlv.com/assets/og-shmlv.png"
       ],
-      "description": "A MIDI editing script that selects notes at matching bar positions in Studio One and Fender Studio.",
+      "description": "A MIDI editing script that selects notes at matching beat positions in Studio One and Fender Studio Pro.",
       "offers": {
         "@type": "Offer",
         "price": "15.00",
@@ -67,7 +67,15 @@
           "name": "Does it work with humanized MIDI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Smart tolerance catches humanized notes up to +/-50 ticks, Studio One's default humanize range."
+            "text": "Yes. Smart tolerance catches humanized notes up to ±50 ticks — Studio One's default humanize range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about time signature changes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures."
           }
         },
         {
@@ -75,7 +83,7 @@
           "name": "Can I use it on multiple machines?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, install it on computers you personally own and use."
+            "text": "Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it."
           }
         },
         {
@@ -83,7 +91,15 @@
           "name": "Which editions are supported?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Studio One Professional and Artist editions that support scripts. Fender Studio is supported."
+            "text": "Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I get updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes."
           }
         },
         {
@@ -91,7 +107,7 @@
           "name": "Can I get a refund?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Digital download sales are generally final once access begins. If the product is faulty or not as described on a supported setup, email support@shmlv.com."
+            "text": "Because this is an immediately delivered digital download, sales are generally final once the product has been delivered, downloaded, accessed, or used, except where required by law or the checkout provider's buyer terms. If the product is faulty, not as described, or cannot be used as described on a supported setup, email support@shmlv.com and I'll help fix it or provide the appropriate remedy under applicable law."
           }
         }
       ]
@@ -129,9 +145,9 @@
 .final-purchase p{margin:0}
 @media(max-width:700px){.final-purchase{grid-template-columns:1fr;text-align:center}.final-purchase .price-row{justify-content:center}.final-purchase .btn{width:100%}}
 .mode-block{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:center;padding:32px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(24px);box-shadow:var(--glass-highlight),var(--glass-shadow);margin-bottom:20px;position:relative}
-.mode-block:nth-child(even){grid-template-columns:1.3fr 1fr}
-.mode-block:nth-child(even) .mode-body{order:2}
-@media(max-width:900px){.mode-block,.mode-block:nth-child(even){grid-template-columns:1fr;padding:24px}.mode-block:nth-child(even) .mode-body{order:1}}
+.mode-block.is-reverse{grid-template-columns:1.3fr 1fr}
+.mode-block.is-reverse .mode-body{order:2}
+@media(max-width:900px){.mode-block,.mode-block.is-reverse{grid-template-columns:1fr;padding:24px}.mode-block.is-reverse .mode-body{order:1}}
 .mode-media{background:var(--ink-2);padding:10px;border-radius:var(--r-sm);border:1px solid var(--line)}
 .mode-media img{width:100%;border-radius:var(--r-xs);cursor:pointer;display:block}
 .mode-number{font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.2em;margin-bottom:10px}
@@ -168,7 +184,7 @@
 .mobile-buy{position:fixed;bottom:0;left:0;right:0;background:rgba(5,6,11,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:14px 20px;display:none;justify-content:space-between;align-items:center;z-index:99;gap:12px;transform:translateY(100%);pointer-events:none;transition:transform .22s var(--ease)}
 .mobile-buy .price{font-family:var(--ff-display);font-weight:900;font-size:24px}
 body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
-@media(max-width:640px){.mobile-buy{display:flex;padding-bottom:calc(14px + env(safe-area-inset-bottom))}body.has-mobile-buy{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}
+@media(max-width:640px){.mobile-buy{display:flex;padding-bottom:calc(14px + env(safe-area-inset-bottom))}body.has-mobile-buy{padding-bottom:calc(88px + env(safe-area-inset-bottom))}}
 @media(min-width:641px){.mobile-buy{display:none}body.has-mobile-buy{padding-bottom:0}}
 </style>
 </head>
@@ -220,16 +236,16 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       Select Equal <span class="serif-italic blue">Subpositions</span>
     </h1>
     <p class="reveal-2 lede" style="margin-bottom:28px">
-      Select one MIDI note and instantly find every matching bar position across the part. <span class="em">Three assignable commands: all notes, same pitch, or exact chord shape.</span>
+      Select one MIDI note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
     </p>
 
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
       <span class="chip chip-green">Studio One 6</span>
       <span class="chip chip-green">Studio One 7</span>
-      <span class="chip chip-green">Fender Studio</span>
+      <span class="chip chip-green">Fender Studio Pro</span>
       <span class="chip chip-blue">Windows</span>
       <span class="chip chip-blue">macOS Intel</span>
-      <span class="chip chip-blue">macOS Silicon</span>
+      <span class="chip chip-blue">macOS Apple Silicon</span>
     </div>
 
     <div class="purchase-card">
@@ -239,18 +255,19 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       </div>
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
         <span class="sale-tag">INTRO PRICE · SAVE 21%</span>
-        <span class="purchase-note">Payhip checkout · One-time · v1.x updates</span>
+        <span class="purchase-note">$15 before tax · Payhip checkout · v1.x updates</span>
       </div>
       <div class="pdp-actions">
-        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="buy">Buy now — $15 <span class="arrow">→</span></a>
-        <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Watch demo</a>
+        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy now — $15 <span class="arrow">→</span></a>
+        <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost btn-lg">Watch demo</a>
         <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost btn-lg">Docs</a>
       </div>
+      <p class="purchase-note" style="margin-top:14px;line-height:1.7">Instant delivery by email · Digital download/refund policy applies · No account or license key needed to run</p>
     </div>
 
     <div class="reveal-4 trust-row">
-      <span>Instant digital delivery</span>
-      <span>No account required to run</span>
+      <span>Download link by email</span>
+      <span>No account or license key</span>
       <span>No telemetry or license daemon</span>
     </div>
   </div>
@@ -281,7 +298,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">01 · THE PROBLEM</div>
       <h2 class="h-md" style="margin-bottom:14px">What it <span class="serif-italic blue">solves</span>.</h2>
-      <p class="body">Four everyday MIDI editing headaches — each eliminated by one keyboard shortcut.</p>
+      <p class="body">Four everyday MIDI editing headaches — each reduced to a focused keyboard command.</p>
     </div>
     <div class="pains">
       <div class="pain">
@@ -290,7 +307,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       </div>
       <div class="pain">
         <div class="pain-num">02</div>
-        <div><h3>No built-in subposition select</h3><p>Logic Pro has it. Cubase has similar tools. Studio One doesn't — until now.</p></div>
+        <div><h3>No native beat-position select</h3><p>Studio One has no native command that selects MIDI notes by matching beat position across every bar in the part.</p></div>
       </div>
       <div class="pain">
         <div class="pain-num">03</div>
@@ -298,7 +315,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       </div>
       <div class="pain">
         <div class="pain-num">04</div>
-        <div><h3>Chord editing is surgical work</h3><p>Finding every C major chord across a 4-minute song? That's not editing, that's hunting.</p></div>
+        <div><h3>Repeated chord hits are easy to miss</h3><p>Finding every matching C-major hit that recurs at the same beat position? That's not editing, that's hunting.</p></div>
       </div>
     </div>
   </div>
@@ -311,7 +328,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   <div class="wrap">
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">02 · HOW IT WORKS</div>
-      <h2 class="h-md" style="margin-bottom:14px">Three <span class="serif-italic blue">powerful</span> modes.</h2>
+      <h2 class="h-md" style="margin-bottom:14px">Three <span class="serif-italic blue">focused</span> modes.</h2>
       <p class="body">One package. Three assignable shortcuts. Each does exactly one job — precisely.</p>
     </div>
 
@@ -319,12 +336,12 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <div class="mode-body">
         <div class="mode-number">MODE 01</div>
         <h3 class="h-sm">All Notes</h3>
-        <p>Select a note — instantly select every note at that same beat position in every bar, regardless of pitch. Just like Logic Pro. Great for velocity sweeps, muting downbeats, bulk transposition.</p>
+        <p>Select a note — instantly select every note at that same beat position in every bar, regardless of pitch. Built for velocity sweeps, muting downbeats, and bulk transposition.</p>
       </div>
       <div class="mode-media"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="All Notes mode"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
     </div>
 
-    <div class="mode-block">
+    <div class="mode-block is-reverse">
       <div class="mode-media"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_pitch_any.webp" aria-label="Same Pitch Any mode"><source src="/demo_pitch_any.mp4" type="video/mp4"></video></div>
       <div class="mode-body">
         <div class="mode-number">MODE 02</div>
@@ -337,7 +354,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <div class="mode-body">
         <div class="mode-number">MODE 03</div>
         <h3 class="h-sm">Same Pitch — Exact</h3>
-        <p>Finds only bars where all selected pitches appear together at that position. Missing even one note — the bar is skipped. Precision tool for surgical MIDI editing: every C major chord in a song, every 3-note voicing, every identical hit.</p>
+        <p>Selects only bars where the full selected pitch set appears together at the same beat position: every repeated C-major hit on beat 1, every identical voicing, every matching accent.</p>
       </div>
       <div class="mode-media"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_pitch_exact.webp" aria-label="Same Pitch Exact mode"><source src="/demo_pitch_exact.mp4" type="video/mp4"></video></div>
     </div>
@@ -352,13 +369,13 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">03 · WHAT'S INSIDE</div>
       <h2 class="h-md" style="margin-bottom:14px">Key <span class="serif-italic blue">features</span>.</h2>
-      <p class="body">Built for real MIDI — humanized, variable time signatures, any display mode.</p>
+      <p class="body">Built for real MIDI — humanized notes, common time signatures, and practical Studio One display modes.</p>
     </div>
     <div class="features">
-      <div class="feat"><h3>Humanize-Aware</h3><p>Quantized anchor positions with smart tolerance. Works perfectly with humanized MIDI up to ±50 ticks.</p></div>
+      <div class="feat"><h3>Humanize-Aware</h3><p>Matches humanized notes within ±50 ticks of the target position.</p></div>
       <div class="feat"><h3>Auto Time Signature</h3><p>Detects 2/4, 3/4, 4/4, 5/4, 6/4, 7/4, 8/4 automatically from the DAW transport.</p></div>
-      <div class="feat"><h3>Any Display Mode</h3><p>Works in Bars, Seconds, Samples, and Frames with intelligent fallback detection.</p></div>
-      <div class="feat"><h3>Safe &amp; Reliable</h3><p>If nothing is found, your original selection is restored. Safe parameter handling on any error.</p></div>
+      <div class="feat"><h3>Display Modes</h3><p>Works in common transport display modes. For unusual time signatures, use Bars display mode for best accuracy.</p></div>
+      <div class="feat"><h3>Safe &amp; Reliable</h3><p>If no match is found, your original note selection is restored.</p></div>
       <div class="feat"><h3>Multi-Note Selection</h3><p>Select multiple notes on different beats — finds all matching positions independently.</p></div>
       <div class="feat"><h3>One Package</h3><p>Single <code>.package</code> file installs all three modes. Assign separate keyboard shortcuts to each.</p></div>
     </div>
@@ -379,7 +396,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <div class="proof-card">
         <h3>Included files</h3>
         <ul>
-          <li>One <code>.package</code> file for Studio One and Fender Studio</li>
+          <li>One <code>.package</code> file for Studio One and Fender Studio Pro</li>
           <li>Three separate commands: All Notes, Same Pitch Any, Same Pitch Exact</li>
           <li>Install instructions and support contact</li>
         </ul>
@@ -411,7 +428,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   <div class="wrap">
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">05 · BEFORE / AFTER</div>
-      <h2 class="h-md" style="margin-bottom:14px">Manual selection vs <span class="serif-italic blue">one shortcut</span>.</h2>
+      <h2 class="h-md" style="margin-bottom:14px">Manual selection vs <span class="serif-italic blue">one shortcut cluster</span>.</h2>
       <p class="body">The point is not another feature. The point is removing the repeated micro-work that breaks editing flow.</p>
     </div>
     <div class="compare">
@@ -444,8 +461,8 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   <div class="wrap">
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">06 · COMPATIBILITY</div>
-      <h2 class="h-md" style="margin-bottom:14px"><span class="serif-italic blue">Tested</span> everywhere.</h2>
-      <p class="body">Every supported host, every platform. Verified working before release.</p>
+      <h2 class="h-md" style="margin-bottom:14px"><span class="serif-italic blue">Tested</span> on the listed hosts.</h2>
+      <p class="body">Verified before v1.0 release on Studio One 6, Studio One 7, and Fender Studio Pro across Windows, macOS Intel, and Apple Silicon.</p>
     </div>
     <div class="tbl-wrap">
       <table class="tbl">
@@ -453,7 +470,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         <tbody>
           <tr><td>Studio One 6</td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td></tr>
           <tr><td>Studio One 7</td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td></tr>
-          <tr><td>Fender Studio</td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td></tr>
+          <tr><td>Fender Studio Pro</td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td><td><span class="yes">Tested</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -474,8 +491,8 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <div class="proof-card">
         <h3>Good fit</h3>
         <ul>
-          <li>You edit MIDI in Studio One 6 or 7</li>
-          <li>You use Studio One Professional or Artist with scripting support</li>
+          <li>You edit MIDI in Studio One 6, Studio One 7, or Fender Studio Pro</li>
+          <li>You use a host edition with scripting support</li>
           <li>You want keyboard-shortcut workflow, not a visual plugin window</li>
         </ul>
       </div>
@@ -483,7 +500,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         <h3>Not for</h3>
         <ul>
           <li>Studio One editions without script support</li>
-          <li>DAWs outside Studio One and Fender Studio</li>
+          <li>DAWs outside Studio One and Fender Studio Pro</li>
           <li>Audio-event editing, arrangement editing, or note generation</li>
         </ul>
       </div>
@@ -507,7 +524,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     <div style="margin-bottom:40px">
       <div class="section-label">08 · SETUP</div>
       <h2 class="h-md" style="margin-bottom:14px">How to <span class="serif-italic blue">install</span>.</h2>
-      <p class="body">Four steps. Under two minutes from download to first shortcut.</p>
+      <p class="body">Four steps from download to first shortcut. The install is simple, but host app updates can affect unmanaged Scripts folders, so keep a backup of the package file.</p>
     </div>
     <div class="step">
       <div class="step-num">1</div>
@@ -517,6 +534,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <div class="step-num">2</div>
       <div class="step-body">
         <strong>Copy to your Scripts folder</strong>
+        <div class="note" style="margin:0 0 12px">This is the manual host Scripts folder install route. You may need admin permission on Windows, and major DAW updates can overwrite unmanaged app folders, so keep a backup of the downloaded <code>.package</code> file.</div>
         <div class="mono" style="font-size:12px;color:var(--fg-mute);margin-bottom:6px;letter-spacing:0.08em;text-transform:uppercase">Windows</div>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 6\Scripts\</code>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 7\Scripts\</code>
@@ -548,10 +566,10 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     <div>
       <div class="faq-item"><h3>Does it work with humanized MIDI?</h3><p>Yes. Smart tolerance catches humanized notes up to ±50 ticks — Studio One's default humanize range.</p></div>
       <div class="faq-item"><h3>What about time signature changes?</h3><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures.</p></div>
-      <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes, install on all computers you personally own and use.</p></div>
-      <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One Professional and Artist editions that support scripts. Fender Studio fully supported.</p></div>
+      <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it.</p></div>
+      <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support.</p></div>
       <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes.</p></div>
-      <div class="faq-item"><h3>Can I get a refund?</h3><p>Because this is a digital download, sales are generally final once access begins. If the product is faulty or not as described, email support@shmlv.com and I'll help fix it or provide the appropriate remedy under applicable law.</p></div>
+      <div class="faq-item"><h3>Can I get a refund?</h3><p>Because this is an immediately delivered digital download, sales are generally final once the product has been delivered, downloaded, accessed, or used, except where required by law or the checkout provider's buyer terms. If the product is faulty, not as described, or cannot be used as described on a supported setup, email support@shmlv.com and I'll help fix it or provide the appropriate remedy under applicable law.</p></div>
     </div>
   </div>
 </section>
@@ -563,7 +581,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   <div class="wrap" style="max-width:720px;text-align:center">
     <div class="section-label">10 · READY?</div>
     <h2 class="h-lg" style="margin-bottom:20px">Stop <span class="serif-italic blue">clicking</span>.<br>Start <span class="serif-italic">editing</span>.</h2>
-    <p class="lede" style="margin:0 auto 36px">One shortcut, three modes, every session faster. Instant download. v1.x updates included.</p>
+    <p class="lede" style="margin:0 auto 36px">Three assignable shortcuts, one focused MIDI workflow. Instant delivery by email. v1.x updates included.</p>
 
     <div class="glass final-purchase">
       <div class="price-row">
@@ -572,9 +590,9 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       </div>
       <div>
         <span class="sale-tag">INTRO PRICE · SAVE 21%</span>
-        <p class="mono" style="font-size:11px;color:var(--fg-mute);margin-top:10px;letter-spacing:0.1em;text-transform:uppercase">Payhip checkout · Instant delivery · v1.x updates</p>
+        <p class="mono" style="font-size:11px;color:var(--fg-mute);margin-top:10px;letter-spacing:0.1em;text-transform:uppercase">$15 before tax · Payhip checkout · Refund policy applies</p>
       </div>
-      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Buy now <span class="arrow">→</span></a>
+      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg">Buy now <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -588,8 +606,8 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         <p style="margin-top:12px">Small, surgical workflow tools for music producers. Scripts and plugins built by one developer.</p>
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
@@ -606,8 +624,8 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 
 <!-- MOBILE STICKY BUY -->
 <div class="mobile-buy">
-  <div style="display:flex;flex-direction:column"><span class="price" style="line-height:1">$15</span><span class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.1em">SAVE 21%</span></div>
-  <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener" class="btn btn-primary">Buy now <span class="arrow">→</span></a>
+  <div style="display:flex;flex-direction:column"><span class="price" style="line-height:1">$15</span><span class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.1em">BEFORE TAX</span></div>
+  <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary">Buy now <span class="arrow">→</span></a>
 </div>
 
 <script src="/assets/shmlv.js" defer></script>

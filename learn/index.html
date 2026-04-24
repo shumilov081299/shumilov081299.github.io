@@ -36,6 +36,9 @@
 .v-type{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px}
 .v-body h3{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
 .v-body p{color:var(--fg-dim);font-size:13px;line-height:1.55;margin:0}
+.featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:20px;align-items:stretch}
+.featured-copy{display:flex;flex-direction:column;justify-content:center}
+@media(max-width:900px){.featured-watch{grid-template-columns:1fr}.featured-copy{text-align:center}.featured-copy .hero-actions{justify-content:center}}
 </style>
 </head>
 <body>
@@ -71,12 +74,20 @@
 <!-- Featured video -->
 <section style="padding:0 0 64px">
   <div class="wrap" style="max-width:1080px">
-    <div class="glass watch-frame" style="padding:0;overflow:hidden;position:relative;aspect-ratio:16/9">
-      <div class="corners"></div>
-      <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/zcJn9W7NcEM" title="Select Equal Subpositions — Full Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;border:0"></iframe>
-    </div>
-    <div style="text-align:center;margin-top:24px">
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener" class="btn btn-primary">Subscribe on YouTube <span class="arrow">→</span></a>
+    <div class="featured-watch">
+      <div class="glass watch-frame" style="padding:0;overflow:hidden;position:relative;aspect-ratio:16/9">
+        <div class="corners"></div>
+        <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/zcJn9W7NcEM" title="Select Equal Subpositions — Full Demo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" style="display:block;border:0"></iframe>
+      </div>
+      <div class="glass glass-md featured-copy">
+        <div class="section-label">FEATURED DEMO</div>
+        <h2 class="h-sm" style="margin-bottom:10px">Select Equal Subpositions for Studio One</h2>
+        <p class="body" style="font-size:14px;margin-bottom:20px">Watch the same-beat selection workflow: all notes, same pitch, and exact selected pitch set.</p>
+        <div class="hero-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+          <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary">Subscribe <span class="arrow">→</span></a>
+          <a href="/products/select-equal-subpositions/" class="btn btn-ghost">Product page</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -121,7 +132,7 @@
       <h2 class="h-md">Workflow <span class="serif-italic blue">tips</span>.</h2>
     </div>
     <div class="v-grid">
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="glass v-card">
+      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="glass v-card">
         <div class="v-thumb"><span class="badge">TIP · 01</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Product demo video"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Drum Editing · Studio One</div>
@@ -129,12 +140,12 @@
           <p>How to use All Notes mode to adjust velocity on every downbeat in seconds.</p>
         </div>
       </a>
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="glass v-card">
+      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="glass v-card">
         <div class="v-thumb"><span class="badge">TIP · 02</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_pitch_exact.webp" aria-label="Product demo video"><source src="/demo_pitch_exact.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Chord Editing</div>
-          <h3>Finding chords across your arrangement</h3>
-          <p>Use Same Pitch Exact to locate every C major chord in a 4-minute song.</p>
+          <h3>Finding repeated chord hits</h3>
+          <p>Use Same Pitch Exact to locate matching C-major hits that recur at the same beat position.</p>
         </div>
       </a>
     </div>
@@ -146,8 +157,8 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>

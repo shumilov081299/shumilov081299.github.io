@@ -23,10 +23,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-.doc-layout{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.doc-layout{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:48px;align-items:start}
 .doc-rail-spacer{display:block}
 .doc-nav{position:sticky;top:96px;display:grid;gap:8px}
-.doc-nav a{font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute);padding:9px 10px;border:1px solid var(--glass-border);border-radius:var(--r-xs);background:var(--glass-light)}
+.doc-nav a{font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute);padding:9px 10px;border:1px solid var(--glass-border);border-radius:var(--r-xs);background:var(--glass-light);overflow-wrap:anywhere}
 .doc-nav a:hover{color:var(--fg);border-color:var(--glass-border-hot)}
 .doc-main{max-width:780px}
 .doc-main h2{font-size:28px;font-weight:900;letter-spacing:-.025em;margin:48px 0 14px}
@@ -84,7 +84,7 @@
         <h2>Requirements</h2>
         <ul>
           <li>Studio One 6 or Studio One 7 with scripting support.</li>
-          <li>Fender Studio with scripting support.</li>
+          <li>Fender Studio Pro with scripting support.</li>
           <li>Windows or macOS, Intel or Apple Silicon.</li>
           <li>A MIDI editor / Piano Roll selection. The command works from selected notes.</li>
         </ul>
@@ -96,6 +96,7 @@
         <code class="code-block">C:\Program Files\PreSonus\Studio One 6\Scripts\</code>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 7\Scripts\</code>
         <code class="code-block">C:\Program Files\Fender\Studio\Scripts\</code>
+        <div class="note" style="margin-top:14px">This is the manual host Scripts folder install route. You may need admin permission on Windows, and major DAW updates can overwrite unmanaged app folders, so keep a backup of the downloaded <code>.package</code> file.</div>
 
         <h3>macOS</h3>
         <p>Right-click the app, choose Show Package Contents, then open:</p>
@@ -131,7 +132,7 @@
 
       <section id="support">
         <h2>Support</h2>
-        <p>Email <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a> with your DAW version, operating system, and a short description of the issue.</p>
+        <p>Email <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a> with your purchase email, DAW version, operating system, install path, Keyboard Shortcuts search term, and a short description of the issue.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
           <a href="/support/" class="btn btn-ghost">Support page</a>
           <a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/" class="btn btn-ghost">Changelog</a>
@@ -147,8 +148,8 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
