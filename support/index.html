@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Support — shmlv audio</title>
 <meta name="description" content="Installation help, compatibility info, and FAQ for shmlv audio tools.">
+<link rel="canonical" href="https://shmlv.com/support/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Support — shmlv audio">
+<meta property="og:description" content="Installation help, compatibility info, and FAQ for shmlv audio tools.">
+<meta property="og:url" content="https://shmlv.com/support/">
+<meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support — shmlv audio">
+<meta name="twitter:description" content="Installation help, compatibility info, and FAQ for shmlv audio tools.">
+<meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +34,8 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
       <a href="/products/">Products</a>
       <a href="/learn/">Watch</a>
       <a href="/support/" class="active">Support</a>
@@ -34,9 +47,9 @@
 
 <section style="padding:72px 0 40px">
   <div class="wrap" style="max-width:900px">
-    <div class="kicker" style="margin-bottom:20px">HELP CENTER · 24/7 EMAIL</div>
+    <div class="kicker" style="margin-bottom:20px">HELP CENTER · EMAIL SUPPORT</div>
     <h1 class="h-lg" style="margin-bottom:16px"><span class="serif-italic blue">Support</span>.</h1>
-    <p class="lede">Installation help, compatibility info, and answers to common questions. Usually reply within a day.</p>
+    <p class="lede">Installation help, compatibility info, and answers to common questions. Usually reply within 24 hours.</p>
   </div>
 </section>
 
@@ -68,6 +81,10 @@
         <p class="body" style="font-size:13px;margin-top:12px">Restart your DAW. Go to Keyboard Shortcuts and assign keys.</p>
       </div>
     </div>
+    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+      <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost">Full docs</a>
+      <a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/" class="btn btn-ghost">Changelog</a>
+    </div>
   </div>
 </section>
 
@@ -85,7 +102,7 @@
       <div class="faq-item"><h3>What about time signature changes?</h3><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures like 3/4 or 7/4.</p></div>
       <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. Install on all computers you personally own and use.</p></div>
       <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One Professional and Artist editions that support scripts.</p></div>
-      <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, all future updates are included at no extra cost.</p></div>
+      <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, v1.x updates are included at no extra cost.</p></div>
       <div class="faq-item"><h3>The script doesn't appear in Keyboard Shortcuts</h3><p>Make sure the .package file is in the correct Scripts folder and you've restarted the DAW completely (not just the project).</p></div>
       <div class="faq-item"><h3>Nothing happens when I run the script</h3><p>Make sure you have at least one note selected in the Piano Roll before running the shortcut.</p></div>
     </div>
@@ -102,7 +119,7 @@
         <div class="section-label">03 · DIRECT CONTACT</div>
         <h2 class="h-md" style="margin-bottom:12px">Need <span class="serif-italic blue">help?</span></h2>
         <p class="body" style="margin-bottom:24px">Can't find your answer? Reach out — I personally read and reply to every email.</p>
-        <a href="mailto:support@shmlv.com" class="btn btn-primary btn-lg">support@shmlv.com <span class="arrow">→</span></a>
+        <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com" class="btn btn-primary btn-lg">support@shmlv.com <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -112,9 +129,9 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
-      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a href="/support/">Installation</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
@@ -127,7 +144,6 @@
 
 <style>@media(max-width:700px){.install-grid{grid-template-columns:1fr!important}}</style>
 
-<script>document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=>i.classList.toggle('open')));</script>
-
+<script src="/assets/shmlv.js" defer></script>
 </body>
 </html>

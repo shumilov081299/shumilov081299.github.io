@@ -5,14 +5,47 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>shmlv — Audio workflow tools for Studio One &amp; Fender Studio</title>
 <meta name="description" content="Small, surgical workflow tools for producers. Scripts and plugins that cut clicks and speed up your DAW.">
-<meta property="og:title" content="shmlv — Audio Workflow Tools">
-<meta property="og:description" content="Scripts and plugins for Studio One &amp; Fender Studio.">
-<meta property="og:url" content="https://shmlv.com">
+<link rel="canonical" href="https://shmlv.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="shmlv — Audio workflow tools for Studio One &amp; Fender Studio">
+<meta property="og:description" content="Small, surgical workflow tools for producers. Scripts and plugins that cut clicks and speed up your DAW.">
+<meta property="og:url" content="https://shmlv.com/">
+<meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="shmlv — Audio workflow tools for Studio One &amp; Fender Studio">
+<meta name="twitter:description" content="Small, surgical workflow tools for producers. Scripts and plugins that cut clicks and speed up your DAW.">
+<meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shmlv.com/#organization",
+      "name": "shmlv",
+      "url": "https://shmlv.com/",
+      "logo": "https://shmlv.com/logo.png",
+      "email": "support@shmlv.com",
+      "sameAs": ["https://www.youtube.com/@shmlvaudio"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shmlv.com/#website",
+      "url": "https://shmlv.com/",
+      "name": "shmlv",
+      "description": "Small, surgical workflow tools for producers using Studio One and Fender Studio.",
+      "publisher": { "@id": "https://shmlv.com/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -25,7 +58,8 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
       <a href="/products/">Products</a>
       <a href="/learn/">Watch</a>
       <a href="/support/">Support</a>
@@ -37,7 +71,7 @@
 
 <div class="status-bar">
   <div class="status-bar-inner">
-    <span class="live">LIVE — LAUNCH SALE</span>
+    <span class="live">LIVE — INTRO PRICE</span>
     <span>v1.0 STABLE</span>
     <span>STUDIO ONE 6 / 7</span>
     <span>FENDER STUDIO</span>
@@ -60,12 +94,12 @@
         </p>
         <div class="reveal-3" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
           <a href="/products/select-equal-subpositions/" class="btn btn-primary btn-lg">View featured tool <span class="arrow">→</span></a>
-          <a href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Watch demo</a>
+          <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Watch demo</a>
         </div>
         <div class="reveal-4 trust-row">
           <span>Digital delivery</span>
           <span>Secure checkout</span>
-          <span>All updates included</span>
+          <span>v1.x updates included</span>
         </div>
       </div>
 
@@ -95,7 +129,7 @@
           </div>
         </div>
         <div style="border-top:1px solid var(--line);background:var(--ink-2);padding:8px">
-          <img src="/demo_all_notes.gif" alt="Select Equal Subpositions demo" style="border-radius:var(--r-xs);width:100%">
+          <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/demo_all_notes.gif" aria-label="Select Equal Subpositions demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
         </div>
       </div>
     </div>
@@ -146,10 +180,10 @@
     </div>
     <div class="glass" style="padding:0;overflow:hidden;max-width:960px;margin:0 auto;aspect-ratio:16/9;position:relative">
       <div class="corners"></div>
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zcJn9W7NcEM" title="Select Equal Subpositions demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;border:0"></iframe>
+      <iframe loading="lazy" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/zcJn9W7NcEM" title="Select Equal Subpositions demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;border:0"></iframe>
     </div>
     <div style="text-align:center;margin-top:32px">
-      <a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener" class="btn btn-ghost">Visit YouTube channel <span class="arrow">→</span></a>
+      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener" class="btn btn-ghost">Visit YouTube channel <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -200,22 +234,22 @@
         <ul>
           <li><a href="/products/">All products</a></li>
           <li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li>
-          <li><a href="/support/">Installation</a></li>
+          <li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Learn</h4>
         <ul>
           <li><a href="/learn/">Watch</a></li>
-          <li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="/support/">FAQ</a></li>
+          <li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Follow</h4>
         <ul>
-          <li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li>
+          <li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li>
           <li><a href="/about/">About</a></li>
         </ul>
       </div>
@@ -241,5 +275,6 @@
 }
 </style>
 
+<script src="/assets/shmlv.js" defer></script>
 </body>
 </html>

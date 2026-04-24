@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Thank You — shmlv audio</title>
+<meta name="description" content="Purchase confirmation and installation checklist for shmlv audio tools.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://shmlv.com/thank-you/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thank You — shmlv audio">
+<meta property="og:description" content="Purchase confirmation and installation checklist for shmlv audio tools.">
+<meta property="og:url" content="https://shmlv.com/thank-you/">
+<meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thank You — shmlv audio">
+<meta name="twitter:description" content="Purchase confirmation and installation checklist for shmlv audio tools.">
+<meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +35,8 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
       <a href="/products/">Products</a>
       <a href="/learn/">Watch</a>
       <a href="/support/">Support</a>
@@ -101,8 +116,9 @@
     <p class="body" style="margin-bottom:20px">Need help? Have a question?</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
       <a href="/support/" class="btn btn-ghost">Support &amp; FAQ</a>
-      <a href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost">Watch tutorial</a>
-      <a href="mailto:support@shmlv.com" class="btn btn-primary">Contact support <span class="arrow">→</span></a>
+      <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost">Read docs</a>
+      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener" class="btn btn-ghost">Watch tutorial</a>
+      <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com" class="btn btn-primary">Contact support <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -111,9 +127,9 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
-      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a href="/support/">Installation</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
       <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
@@ -126,5 +142,6 @@
 
 <style>@media(max-width:700px){.tips-grid{grid-template-columns:1fr!important}}</style>
 
+<script src="/assets/shmlv.js" defer></script>
 </body>
 </html>
