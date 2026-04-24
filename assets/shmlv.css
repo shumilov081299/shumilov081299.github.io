@@ -230,5 +230,4 @@ code{font-family:var(--ff-mono);font-size:13px;background:var(--ink-2);border:1p
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
-  .ambient,.grid-overlay,.scan-lines{display:none}
 }
