@@ -3,24 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Watch — shmlv audio</title>
-<meta name="description" content="Tutorials, demos, and workflow tips for shmlv audio tools.">
+<title>Select Equal Subpositions Demo for Studio One — shmlv.</title>
+<meta name="description" content="Watch the same-beat MIDI selection workflow for Studio One and Fender Studio Pro: all notes, same pitch, and exact selected pitch set.">
 <link rel="canonical" href="https://shmlv.com/learn/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Watch — shmlv audio">
-<meta property="og:description" content="Tutorials, demos, and workflow tips for shmlv audio tools.">
+<meta property="og:title" content="Select Equal Subpositions Demo for Studio One — shmlv.">
+<meta property="og:description" content="Watch the same-beat MIDI selection workflow for Studio One and Fender Studio Pro: all notes, same pitch, and exact selected pitch set.">
 <meta property="og:url" content="https://shmlv.com/learn/">
 <meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Watch — shmlv audio">
-<meta name="twitter:description" content="Tutorials, demos, and workflow tips for shmlv audio tools.">
+<meta name="twitter:title" content="Select Equal Subpositions Demo for Studio One — shmlv.">
+<meta name="twitter:description" content="Watch the same-beat MIDI selection workflow for Studio One and Fender Studio Pro: all notes, same pitch, and exact selected pitch set.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
 .v-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -32,10 +29,11 @@
 .v-thumb::after{content:"▶";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:32px;color:#fff;background:rgba(0,0,0,0.25);opacity:0;transition:opacity .2s}
 .v-card:hover .v-thumb::after{opacity:1}
 .v-thumb .badge{position:absolute;top:12px;left:12px;font-family:var(--ff-mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--r-xs);color:var(--fg)}
-.v-body{padding:20px}
+.v-body{padding:20px;display:flex;flex-direction:column;align-items:flex-start}
 .v-type{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px}
 .v-body h3{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
 .v-body p{color:var(--fg-dim);font-size:13px;line-height:1.55;margin:0}
+.v-body .btn{margin-top:16px;align-self:flex-start;padding:10px 14px;font-size:12px}
 .featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:20px;align-items:stretch}
 .featured-copy{display:flex;flex-direction:column;justify-content:center}
 @media(max-width:900px){.featured-watch{grid-template-columns:1fr}.featured-copy{text-align:center}.featured-copy .hero-actions{justify-content:center}}
@@ -49,7 +47,9 @@
 
 <div class="page">
 
-<nav class="nav">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
@@ -63,11 +63,13 @@
   </div>
 </nav>
 
+<main id="main">
+
 <section style="padding:72px 0 40px">
   <div class="wrap" style="max-width:960px;text-align:center">
     <div class="kicker plain" style="margin-bottom:20px;justify-content:center;display:inline-flex">YOUTUBE · @SHMLVAUDIO</div>
     <h1 class="h-lg" style="margin-bottom:16px">Watch it <span class="serif-italic blue">work</span>.</h1>
-    <p class="lede" style="margin:0 auto 32px">Tutorials, demos, and real workflow examples from the shmlv YouTube channel.</p>
+    <p class="lede" style="margin:0 auto 32px">Demos and workflow examples for the same-beat MIDI selection workflow in Studio One and Fender Studio Pro.</p>
   </div>
 </section>
 
@@ -80,7 +82,7 @@
         <button type="button" class="yt-lite-button" data-event="YouTube Embed Played" data-event-label="Watch featured demo" data-youtube-id="zcJn9W7NcEM" data-youtube-title="Select Equal Subpositions — Full Demo" aria-label="Play Select Equal Subpositions full demo"></button>
       </div>
       <div class="glass glass-md featured-copy">
-        <div class="section-label">FEATURED DEMO</div>
+        <div class="section-label">60-SEC DEMO</div>
         <h2 class="h-sm" style="margin-bottom:10px">Select Equal Subpositions for Studio One</h2>
         <p class="body" style="font-size:14px;margin-bottom:20px">Watch the same-beat selection workflow: all notes, same pitch, and exact selected pitch set.</p>
         <div class="hero-actions" style="display:flex;gap:10px;flex-wrap:wrap">
@@ -102,22 +104,24 @@
       <h2 class="h-md">Product <span class="serif-italic blue">demos</span>.</h2>
     </div>
     <div class="v-grid">
-      <a href="/products/select-equal-subpositions/" class="glass v-card">
+      <article class="glass v-card">
         <div class="v-thumb"><span class="badge">DEMO · 01</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="All Notes"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Select Equal Subpositions</div>
           <h3>All Notes — one shortcut, every beat</h3>
           <p>How one shortcut selects every note at the same beat position across all bars.</p>
+          <a href="/products/select-equal-subpositions/" class="btn btn-ghost">Product page</a>
         </div>
-      </a>
-      <a href="/products/select-equal-subpositions/" class="glass v-card">
+      </article>
+      <article class="glass v-card">
         <div class="v-thumb"><span class="badge">DEMO · 02</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_pitch_any.webp" aria-label="Same Pitch Any"><source src="/demo_pitch_any.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Select Equal Subpositions</div>
           <h3>Same Pitch — Any vs Exact</h3>
           <p>The difference between independent search and full chord matching.</p>
+          <a href="/products/select-equal-subpositions/" class="btn btn-ghost">Product page</a>
         </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
@@ -132,25 +136,29 @@
       <h2 class="h-md">Workflow <span class="serif-italic blue">tips</span>.</h2>
     </div>
     <div class="v-grid">
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="glass v-card">
+      <article class="glass v-card">
         <div class="v-thumb"><span class="badge">TIP · 01</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Product demo video"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Drum Editing · Studio One</div>
           <h3>Editing drums faster in Studio One</h3>
           <p>How to use All Notes mode to adjust velocity on every downbeat in seconds.</p>
+          <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">Watch on YouTube</a>
         </div>
-      </a>
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="glass v-card">
+      </article>
+      <article class="glass v-card">
         <div class="v-thumb"><span class="badge">TIP · 02</span><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_pitch_exact.webp" aria-label="Product demo video"><source src="/demo_pitch_exact.mp4" type="video/mp4"></video></div>
         <div class="v-body">
           <div class="v-type">Chord Editing</div>
           <h3>Finding repeated chord hits</h3>
           <p>Use Same Pitch Exact to locate matching C-major hits that recur at the same beat position.</p>
+          <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">Watch on YouTube</a>
         </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="foot">
   <div class="wrap">

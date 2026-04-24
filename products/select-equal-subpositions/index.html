@@ -3,24 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Select Equal Subpositions — same-beat MIDI selection for Studio One | shmlv.</title>
+<title>Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro | shmlv.</title>
 <meta name="description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <link rel="canonical" href="https://shmlv.com/products/select-equal-subpositions/">
 <meta property="og:type" content="product">
-<meta property="og:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One">
+<meta property="og:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro">
 <meta property="og:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta property="og:url" content="https://shmlv.com/products/select-equal-subpositions/">
 <meta property="og:image" content="https://shmlv.com/assets/og-shmlv.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One">
+<meta name="twitter:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro">
 <meta name="twitter:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
 <link rel="icon" href="/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <script type="application/ld+json">
 {
@@ -136,8 +133,12 @@
 .hero-visual .caption{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.1em;text-transform:uppercase}
 .hero-crumb{flex-wrap:wrap;min-width:0}
 .purchase-card{min-width:0;padding:22px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:18px}
-.pdp-actions{display:grid;grid-template-columns:minmax(180px,1fr) auto auto;gap:10px;align-items:stretch}
-.pdp-actions .btn{min-width:0}
+.pdp-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:stretch}
+.pdp-actions .btn{min-width:0;width:100%}
+.purchase-links{margin-top:14px;color:var(--fg-dim);font-size:13px;line-height:1.65}
+.purchase-links a{color:var(--blue-text);text-decoration:underline;text-underline-offset:3px}
+.checkout-proof{margin-top:16px;padding:14px 16px;border:1px solid var(--glass-border-hot);border-radius:var(--r-sm);background:rgba(77,123,255,.08);color:var(--fg-dim);font-size:13px;line-height:1.6}
+.checkout-proof strong{display:block;color:var(--fg);font-size:13px;margin-bottom:4px}
 .purchase-note{font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:640px){.pdp-actions{grid-template-columns:minmax(0,1fr)}.pdp-actions .btn{width:100%;max-width:100%;white-space:normal}.pdp-hero .h-lg{font-size:clamp(34px,12vw,52px);line-height:1.02}.pdp-hero .lede{font-size:16px;overflow-wrap:anywhere}.pdp-page .wrap,.pdp-hero,.purchase-card,.hero-visual{max-width:100%;overflow:hidden}.hero-crumb{font-size:10px;letter-spacing:.1em}}
 .final-purchase{max-width:680px;margin:0 auto 24px;padding:24px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;text-align:left}
@@ -196,7 +197,9 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 
 <div class="page">
 
-<nav class="nav">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
@@ -209,6 +212,8 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     </div>
   </div>
 </nav>
+
+<main id="main">
 
 <div class="status-bar">
   <div class="status-bar-inner">
@@ -236,7 +241,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       Select Equal <span class="serif-italic blue">Subpositions</span>
     </h1>
     <p class="reveal-2 lede" style="margin-bottom:22px">
-      Select one MIDI note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
+      Logic-style same-beat MIDI selection for Studio One and Fender Studio Pro. Select one note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
     </p>
 
     <div class="purchase-card">
@@ -249,11 +254,11 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         <span class="purchase-note">$15 before tax · Payhip checkout · v1.x updates</span>
       </div>
       <div class="pdp-actions">
-        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy now — $15 <span class="arrow">→</span></a>
-        <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost btn-lg">Watch demo</a>
-        <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost btn-lg">Docs</a>
+        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy now — $15 before tax <span class="arrow">→</span></a>
       </div>
-      <p class="purchase-note" style="margin-top:14px;line-height:1.7">Instant delivery by email · Digital download/refund policy applies · No account or license key needed to run</p>
+      <p class="purchase-links">Need proof? <a href="#demo">Watch the demo</a>. Need setup details? <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Read the docs</a>.</p>
+      <div class="checkout-proof"><strong>Before checkout</strong>Works with Studio One 6/7 and Fender Studio Pro hosts that support scripting. Windows/macOS tested. One <code>.package</code> file. No account, license key, telemetry, or daemon.</div>
+      <p class="purchase-note" style="margin-top:14px;line-height:1.7">Instant delivery by email · Payhip adds VAT/sales tax where required and shows the final total before payment · Refund policy applies</p>
     </div>
 
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
@@ -273,7 +278,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   </div>
 
   <!-- right visual -->
-  <div class="glass hero-visual" style="position:relative">
+  <div class="glass hero-visual" id="demo" style="position:relative">
     <div class="corners"></div>
     <div class="caption">
       <span>DEMO · ALL NOTES MODE</span>
@@ -462,7 +467,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     <div style="max-width:720px;margin-bottom:40px">
       <div class="section-label">06 · COMPATIBILITY</div>
       <h2 class="h-md" style="margin-bottom:14px"><span class="serif-italic blue">Tested</span> on the listed hosts.</h2>
-      <p class="body">Verified before v1.0 release on Studio One 6, Studio One 7, and Fender Studio Pro across Windows, macOS Intel, and Apple Silicon.</p>
+      <p class="body">Verified before v1.0 release on Studio One 6, Studio One 7, and Fender Studio Pro across Windows, macOS Intel, and Apple Silicon. This is an independent third-party script; shmlv is not affiliated with PreSonus, Fender, or Studio One.</p>
     </div>
     <div class="tbl-wrap">
       <table class="tbl">
@@ -565,12 +570,12 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
       <h2 class="h-md" style="margin-bottom:14px"><span class="serif-italic blue">FAQ</span>.</h2>
     </div>
     <div>
-      <div class="faq-item"><h3>Does it work with humanized MIDI?</h3><p>Yes. Smart tolerance catches humanized notes up to ±50 ticks — Studio One's default humanize range.</p></div>
-      <div class="faq-item"><h3>What about time signature changes?</h3><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures.</p></div>
-      <div class="faq-item"><h3>Can I use it on multiple machines?</h3><p>Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it.</p></div>
-      <div class="faq-item"><h3>Which editions are supported?</h3><p>Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support.</p></div>
-      <div class="faq-item"><h3>Will I get updates?</h3><p>Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes.</p></div>
-      <div class="faq-item"><h3>Can I get a refund?</h3><p>Because this is an immediately delivered digital download, sales are generally final once the product has been delivered, downloaded, accessed, or used, except where required by law or the checkout provider's buyer terms. If the product is faulty, not as described, or cannot be used as described on a supported setup, email support@shmlv.com and I'll help fix it or provide the appropriate remedy under applicable law.</p></div>
+      <details class="faq-item"><summary>Does it work with humanized MIDI?</summary><p>Yes. Smart tolerance catches humanized notes up to ±50 ticks — Studio One's default humanize range.</p></details>
+      <details class="faq-item"><summary>What about time signature changes?</summary><p>The script detects time signature at the selected note's position. Bars display mode gives best accuracy for non-standard signatures.</p></details>
+      <details class="faq-item"><summary>Can I use it on multiple machines?</summary><p>Yes. One purchase is for one user. You may install it on a reasonable number of computers you own or control, as long as only you use it.</p></details>
+      <details class="faq-item"><summary>Which editions are supported?</summary><p>Studio One editions with scripting support are supported, including Studio One 6, Studio One Pro 7, and Fender Studio Pro with scripting support.</p></details>
+      <details class="faq-item"><summary>Will I get updates?</summary><p>Yes, v1.x updates are included at no extra cost. Future major versions may be separate products if the scope changes.</p></details>
+      <details class="faq-item"><summary>Can I get a refund?</summary><p>Because this is an immediately delivered digital download, sales are generally final once the product has been delivered, downloaded, accessed, or used, except where required by law or the checkout provider's buyer terms. If the product is faulty, not as described, or cannot be used as described on a supported setup, email support@shmlv.com and I'll help fix it or provide the appropriate remedy under applicable law.</p></details>
     </div>
   </div>
 </section>
@@ -593,12 +598,15 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         <span class="sale-tag">INTRO PRICE · SAVE 21%</span>
         <p class="mono" style="font-size:11px;color:var(--fg-mute);margin-top:10px;letter-spacing:0.1em;text-transform:uppercase">$15 before tax · Payhip checkout · Refund policy applies</p>
       </div>
-      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg">Buy now <span class="arrow">→</span></a>
+      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg">Buy now — $15 before tax <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+
+</main>
+
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">

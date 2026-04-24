@@ -6,9 +6,6 @@
 <title>Page not found — shmlv audio</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
 </head>
 <body>
@@ -16,7 +13,9 @@
 <div class="grid-overlay"></div>
 <div class="scan-lines"></div>
 <div class="page">
-<nav class="nav">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
@@ -30,6 +29,7 @@
   </div>
 </nav>
 
+<main id="main">
 <section class="section-lg" style="min-height:calc(100vh - 260px);display:flex;align-items:center">
   <div class="wrap" style="max-width:760px;text-align:center">
     <div class="kicker plain" style="justify-content:center;display:inline-flex;margin-bottom:24px">404 · PAGE NOT FOUND</div>
@@ -42,6 +42,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="foot">
   <div class="wrap">

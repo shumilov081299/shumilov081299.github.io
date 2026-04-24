@@ -3,8 +3,17 @@
   const menuButton = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
 
-  document.querySelectorAll(".nav-links a.active").forEach((link) => {
-    link.setAttribute("aria-current", "page");
+  const currentPath = `${window.location.pathname.replace(/\/index\.html$/, "/").replace(/\/$/, "")}/`;
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+    const targetPath = `${new URL(href, window.location.origin).pathname.replace(/\/index\.html$/, "/").replace(/\/$/, "")}/`;
+    if (targetPath === currentPath) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    } else if (link.classList.contains("active")) {
+      link.setAttribute("aria-current", "location");
+    }
   });
 
   if (menuButton && navLinks) {
@@ -47,33 +56,11 @@
     mobileMenuQuery?.addEventListener?.("change", () => syncMenuFocus(body.classList.contains("nav-open")));
   }
 
-  document.querySelectorAll(".faq-item").forEach((item, index) => {
-    const heading = item.querySelector("h3");
-    const panel = item.querySelector("p");
-    if (!heading || !panel) return;
-
-    const panelId = panel.id || `faq-panel-${index + 1}`;
-    panel.id = panelId;
-    item.setAttribute("role", "button");
-    item.setAttribute("tabindex", "0");
-    item.setAttribute("aria-controls", panelId);
-    item.setAttribute("aria-expanded", String(item.classList.contains("open")));
-    panel.setAttribute("aria-hidden", String(!item.classList.contains("open")));
-
-    const toggle = () => {
-      const open = !item.classList.contains("open");
-      item.classList.toggle("open", open);
-      item.setAttribute("aria-expanded", String(open));
-      panel.setAttribute("aria-hidden", String(!open));
-      track("FAQ Opened", { question: heading.textContent.trim(), open });
-    };
-
-    item.addEventListener("click", toggle);
-    item.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        toggle();
-      }
+  document.querySelectorAll("details.faq-item").forEach((item) => {
+    const summary = item.querySelector("summary");
+    if (!summary) return;
+    item.addEventListener("toggle", () => {
+      track("FAQ Toggled", { question: summary.textContent.trim(), open: item.open });
     });
   });
 
@@ -101,6 +88,34 @@
   syncVideoMotion();
   reducedMotion?.addEventListener?.("change", syncVideoMotion);
 
+  document.querySelectorAll("video[autoplay]").forEach((video, index) => {
+    const parent = video.parentElement;
+    if (!parent || parent.querySelector(".video-toggle")) return;
+    parent.classList.add("video-shell");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "video-toggle";
+    const syncButton = () => {
+      button.setAttribute("aria-pressed", String(!video.paused));
+      button.textContent = video.paused ? "Play" : "Pause";
+      button.setAttribute("aria-label", `${button.textContent} demo video ${index + 1}`);
+    };
+    syncButton();
+    button.addEventListener("click", () => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+      syncButton();
+      track("Demo Video Toggled", { label: video.getAttribute("aria-label") || `Demo video ${index + 1}`, playing: !video.paused });
+    });
+    video.addEventListener("play", syncButton);
+    video.addEventListener("pause", syncButton);
+    parent.appendChild(button);
+    requestAnimationFrame(syncButton);
+  });
+
   document.querySelectorAll("[data-youtube-id]").forEach((button) => {
     const frame = button.closest(".yt-lite");
     if (!frame) return;
@@ -114,8 +129,10 @@
       iframe.allowFullscreen = true;
       iframe.loading = "lazy";
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.tabIndex = -1;
       frame.appendChild(iframe);
       button.hidden = true;
+      iframe.focus({ preventScroll: true });
     });
   });
 
