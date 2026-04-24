@@ -32,14 +32,14 @@
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
+    <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Open menu</button>
     <div class="nav-links" id="nav-links">
       <a href="/products/">Products</a>
       <a href="/learn/">Demos</a>
       <a href="/support/">Support</a>
       <a href="/about/" class="active">About</a>
-      <a href="/products/select-equal-subpositions/" class="nav-cta">Get script <span class="arrow">→</span></a>
+      <a href="/products/select-equal-subpositions/" class="nav-cta">Get script</a>
     </div>
   </div>
 </nav>
@@ -51,21 +51,21 @@
     <div class="kicker" style="margin-bottom:28px">ABOUT · SHMLV.COM</div>
     <h1 class="h-xl" style="margin-bottom:32px">One person.<br>Real tools.<br><span class="serif-italic blue">No filler.</span></h1>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:56px" class="stats">
-      <div class="glass glass-md">
-        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">FOUNDER</div>
-        <div class="h-sm">shmlv</div>
-        <div class="body" style="font-size:13px;margin-top:4px">solo developer</div>
+    <div class="about-stats stats">
+      <div class="glass about-stat">
+        <div class="about-stat-label">Founder</div>
+        <div class="about-stat-value">shmlv</div>
+        <div class="about-stat-copy">solo developer, product support</div>
       </div>
-      <div class="glass glass-md">
-        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">FOCUS</div>
-        <div class="h-sm">DAW scripts</div>
-        <div class="body" style="font-size:13px;margin-top:4px">plugins, utilities</div>
+      <div class="glass about-stat">
+        <div class="about-stat-label">Focus</div>
+        <div class="about-stat-value">DAW scripts</div>
+        <div class="about-stat-copy">MIDI tools, plugins, utilities</div>
       </div>
-      <div class="glass glass-md">
-        <div class="mono" style="font-size:10px;color:var(--fg-mute);letter-spacing:0.14em;margin-bottom:8px">SINCE</div>
-        <div class="h-sm">2026</div>
-        <div class="body" style="font-size:13px;margin-top:4px">shipping &amp; growing</div>
+      <div class="glass about-stat">
+        <div class="about-stat-label">Since</div>
+        <div class="about-stat-value">2026</div>
+        <div class="about-stat-copy">shipping focused audio tools</div>
       </div>
     </div>
 
@@ -78,7 +78,7 @@
     </div>
 
     <div style="margin-top:56px;display:flex;gap:12px;flex-wrap:wrap">
-      <a href="/products/" class="btn btn-primary">View products <span class="arrow">→</span></a>
+      <a href="/products/" class="btn btn-primary">View products</a>
       <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">YouTube</a>
       <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com" class="btn btn-ghost">Contact</a>
     </div>
@@ -90,7 +90,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
       <div class="foot-col"><h4>Demos</h4><ul><li><a href="/learn/">Demos</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
       <div class="foot-col"><h4>Contact</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
@@ -104,7 +104,14 @@
 
 </div>
 
-<style>@media(max-width:700px){.stats{grid-template-columns:1fr!important}}</style>
+<style>
+.about-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 44px;align-items:start}
+.about-stat{align-self:start;min-height:0!important;height:auto;padding:18px 20px;display:grid;gap:6px}
+.about-stat-label{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.14em;text-transform:uppercase}
+.about-stat-value{font-family:var(--ff-display);font-size:22px;font-weight:900;line-height:1.1;letter-spacing:-0.02em}
+.about-stat-copy{color:var(--fg-dim);font-size:13px;line-height:1.35}
+@media(max-width:700px){.stats{grid-template-columns:1fr!important}.about-stat{padding:16px 18px}}
+</style>
 
 <script src="/assets/shmlv.js" defer></script>
 </body>
