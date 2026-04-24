@@ -23,8 +23,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:24px}
-.p-card{display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
+.p-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.825fr) minmax(0,.825fr);gap:24px}
+.p-card{min-width:0;display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
 .p-card:hover{transform:translateY(-2px)}
 .p-card-img{background:var(--ink-2);padding:12px;border-bottom:1px solid var(--line)}
 .p-card-img img{width:100%;border-radius:var(--r-xs)}
@@ -33,15 +33,18 @@
 .p-card h3{font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
 .p-card .desc{color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:16px;flex:1}
 .p-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
-.p-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.p-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
 .p-price{display:flex;align-items:baseline;gap:8px}
 .p-price .old{font-size:14px;text-decoration:line-through;color:var(--red);opacity:.6;font-weight:600}
 .p-price .new{font-family:var(--ff-display);font-weight:900;font-size:24px;letter-spacing:-0.02em}
-.coming{position:relative;opacity:0.5;pointer-events:none}
+.coming{position:relative;opacity:0.38;pointer-events:none}
 .coming::after{content:"COMING SOON";position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.15em;background:var(--glass-light);border:1px solid var(--glass-border);padding:4px 10px;border-radius:var(--r-xs);z-index:2}
-.coming .p-card-img{background:repeating-linear-gradient(45deg,var(--ink-2),var(--ink-2) 8px,var(--ink-3) 8px,var(--ink-3) 16px);min-height:180px;display:flex;align-items:center;justify-content:center}
+.coming .p-card-img{background:repeating-linear-gradient(45deg,var(--ink-2),var(--ink-2) 8px,var(--ink-3) 8px,var(--ink-3) 16px);min-height:140px;display:flex;align-items:center;justify-content:center}
 .coming .p-card-img::before{content:"TBA";font-family:var(--ff-mono);font-size:40px;font-weight:900;color:var(--fg-mute);letter-spacing:0.1em;opacity:0.4}
 .coming .p-card-img img{display:none}
+@media(max-width:1040px){.p-grid{grid-template-columns:1fr 1fr}.p-grid .p-card:first-child{grid-column:1/-1}}
+@media(max-width:620px){.p-grid{grid-template-columns:minmax(0,1fr)}.p-grid .p-card:first-child{grid-column:auto}}
+@media(max-width:460px){.p-bottom{align-items:stretch}.p-bottom .btn{width:100%}.p-price{width:100%;justify-content:space-between}}
 </style>
 </head>
 <body>
@@ -54,7 +57,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
+    <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
       <a href="/products/" class="active">Products</a>
@@ -79,11 +82,11 @@
     <div class="p-grid">
 
       <a href="/products/select-equal-subpositions/" class="glass p-card">
-        <div class="p-card-img"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/demo_all_notes.gif" aria-label="Select Equal Subpositions"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
+        <div class="p-card-img"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
         <div class="p-card-body">
           <div class="p-card-type">Script · MIDI Editing</div>
           <h3>Select Equal Subpositions</h3>
-          <p class="desc">Select all notes at the same bar position in one shortcut. Three modes. Humanize-aware.</p>
+          <p class="desc">Select matching MIDI notes by bar position in one shortcut. Three commands. Humanize-aware.</p>
           <div class="p-chips">
             <span class="chip chip-green">S1 6</span>
             <span class="chip chip-green">S1 7</span>
@@ -142,7 +145,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
       <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
       <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>

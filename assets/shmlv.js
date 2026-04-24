@@ -7,6 +7,7 @@
     const setOpen = (open) => {
       body.classList.toggle("nav-open", open);
       menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
       menuButton.textContent = open ? "Close" : "Menu";
     };
 
@@ -58,6 +59,55 @@
       }
     });
   });
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+  const syncVideoMotion = () => {
+    document.querySelectorAll("video[autoplay]").forEach((video) => {
+      if (reducedMotion?.matches) {
+        video.pause();
+        video.removeAttribute("autoplay");
+      }
+    });
+  };
+  syncVideoMotion();
+  reducedMotion?.addEventListener?.("change", syncVideoMotion);
+
+  const mobileBuy = document.querySelector(".mobile-buy");
+  const heroBuy = document.querySelector("#buy");
+  if (mobileBuy && heroBuy) {
+    body.classList.add("has-mobile-buy");
+
+    const finalPurchase = document.querySelector(".final-purchase");
+    let heroPassed = false;
+    let finalVisible = false;
+    const syncStickyBuy = () => {
+      body.classList.toggle("show-mobile-buy", heroPassed && !finalVisible);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        heroPassed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        syncStickyBuy();
+      }, { threshold: 0.15 });
+      heroObserver.observe(heroBuy);
+
+      if (finalPurchase) {
+        const finalObserver = new IntersectionObserver(([entry]) => {
+          finalVisible = entry.isIntersecting;
+          syncStickyBuy();
+        }, { threshold: 0.05 });
+        finalObserver.observe(finalPurchase);
+      }
+    } else {
+      const update = () => {
+        heroPassed = heroBuy.getBoundingClientRect().bottom < 0;
+        finalVisible = finalPurchase ? finalPurchase.getBoundingClientRect().top < window.innerHeight : false;
+        syncStickyBuy();
+      };
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+    }
+  }
 
   document.addEventListener("click", (event) => {
     const target = event.target.closest("[data-event]");

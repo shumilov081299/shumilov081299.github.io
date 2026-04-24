@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
 .doc-layout{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.doc-rail-spacer{display:block}
 .doc-nav{position:sticky;top:96px;display:grid;gap:8px}
 .doc-nav a{font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute);padding:9px 10px;border:1px solid var(--glass-border);border-radius:var(--r-xs);background:var(--glass-light)}
 .doc-nav a:hover{color:var(--fg);border-color:var(--glass-border-hot)}
@@ -33,7 +34,7 @@
 .doc-main p,.doc-main li{color:var(--fg-dim);font-size:15px;line-height:1.75}
 .doc-main ul{display:grid;gap:8px;margin:12px 0 0;padding-left:20px}
 .note{padding:18px 20px;border:1px solid var(--glass-border-hot);background:rgba(77,123,255,.08);border-radius:var(--r-sm);color:var(--fg-dim);font-size:14px;line-height:1.65}
-@media(max-width:900px){.doc-layout{grid-template-columns:1fr}.doc-nav{position:static;grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.doc-layout{grid-template-columns:1fr}.doc-rail-spacer{display:none}.doc-nav{position:static;grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.doc-nav{grid-template-columns:1fr}}
 </style>
 </head>
@@ -44,12 +45,12 @@
 <div class="page">
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a>
+    <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
     <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
-      <a href="/products/">Products</a>
+      <a href="/products/" class="active">Products</a>
       <a href="/learn/">Watch</a>
-      <a href="/support/" class="active">Support</a>
+      <a href="/support/">Support</a>
       <a href="/about/">About</a>
       <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
     </div>
@@ -57,10 +58,13 @@
 </nav>
 
 <section style="padding:72px 0 40px">
-  <div class="wrap">
-    <div class="kicker" style="margin-bottom:20px">DOCS · SELECT EQUAL SUBPOSITIONS</div>
-    <h1 class="h-lg" style="margin-bottom:16px">Install. Assign. <span class="serif-italic blue">Edit.</span></h1>
-    <p class="lede">The practical manual for Select Equal Subpositions: what to install, where to put it, how each command behaves, and what to check if something does not appear.</p>
+  <div class="wrap doc-layout">
+    <div class="doc-rail-spacer"></div>
+    <div class="doc-main">
+      <div class="kicker" style="margin-bottom:20px">DOCS · SELECT EQUAL SUBPOSITIONS</div>
+      <h1 class="h-lg" style="margin-bottom:16px">Install. Assign. <span class="serif-italic blue">Edit.</span></h1>
+      <p class="lede">The practical manual for Select Equal Subpositions: what to install, where to put it, how each command behaves, and what to check if something does not appear.</p>
+    </div>
   </div>
 </section>
 
@@ -80,7 +84,7 @@
         <h2>Requirements</h2>
         <ul>
           <li>Studio One 6 or Studio One 7 with scripting support.</li>
-          <li>Fender Studio Pro 8 with scripting support.</li>
+          <li>Fender Studio with scripting support.</li>
           <li>Windows or macOS, Intel or Apple Silicon.</li>
           <li>A MIDI editor / Piano Roll selection. The command works from selected notes.</li>
         </ul>
@@ -141,9 +145,9 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="dot"></span>shmlv<span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
+      <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
       <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
