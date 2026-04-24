@@ -20,12 +20,12 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
-.p-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.65fr);gap:24px;align-items:start}
+.p-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:18px;align-items:start}
 .p-grid .p-card:first-child{align-self:start}
 .p-card{min-width:0;display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
 .p-card:hover{transform:translateY(-2px)}
 .p-card.featured .p-card-body{padding:24px 26px}
-.p-card.featured .p-card-type::after{content:"AVAILABLE NOW";display:inline-flex;margin-left:10px;padding:3px 8px;border:1px solid rgba(59,214,123,.25);border-radius:var(--r-xs);color:var(--green);background:rgba(59,214,123,.08)}
+.p-card.featured .p-card-type::after{content:"Available";display:inline-flex;margin-left:10px;padding:3px 8px;border:1px solid rgba(59,214,123,.25);border-radius:var(--r-xs);color:var(--green);background:rgba(59,214,123,.08)}
 .p-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
 .p-card-type{font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px}
 .p-card h3{font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
@@ -36,7 +36,7 @@
 .p-price .old{font-size:14px;text-decoration:line-through;color:var(--red);opacity:.6;font-weight:600}
 .p-price .new{font-family:var(--ff-display);font-weight:900;font-size:24px;letter-spacing:-0.02em}
 .coming{position:relative;opacity:0.72;pointer-events:none;grid-column:2}
-.coming::after{content:"COMING SOON";position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.15em;background:var(--glass-light);border:1px solid var(--glass-border);padding:4px 10px;border-radius:var(--r-xs);z-index:2}
+.coming::after{content:"Coming soon";position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.15em;background:var(--glass-light);border:1px solid var(--glass-border);padding:4px 10px;border-radius:var(--r-xs);z-index:2}
 .coming .p-card-body{padding:18px}
 .coming h3{font-size:17px}
 .coming .desc{font-size:13px;margin-bottom:12px}
@@ -58,28 +58,28 @@
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a>
-    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">Open menu</button>
     <div class="nav-links" id="nav-links">
       <a href="/products/" class="active">Products</a>
-      <a href="/learn/">Watch</a>
+      <a href="/learn/">Demos</a>
       <a href="/support/">Support</a>
       <a href="/about/">About</a>
-      <a href="/products/select-equal-subpositions/" class="nav-cta">Buy $15 <span class="arrow">→</span></a>
+      <a href="/products/select-equal-subpositions/" class="nav-cta">Get script <span class="arrow">→</span></a>
     </div>
   </div>
 </nav>
 
 <main id="main">
 
-<section style="padding:72px 0 40px">
+<section style="padding:56px 0 28px">
   <div class="wrap">
-    <div class="kicker" style="margin-bottom:20px">CATALOG · 01 OF 01 SHIPPING</div>
+    <div class="kicker" style="margin-bottom:20px">Products</div>
     <h1 class="h-lg" style="margin-bottom:16px">Products.</h1>
     <p class="lede">Focused audio workflow tools for Studio One and Fender Studio Pro. One shipping now. More in development.</p>
   </div>
 </section>
 
-<section style="padding:0 0 96px">
+<section style="padding:0 0 64px">
   <div class="wrap">
     <div class="p-grid">
 
@@ -89,13 +89,13 @@
           <h3>Select Equal Subpositions</h3>
           <p class="desc">Select matching MIDI notes by beat position across bars. Three assignable commands. Humanize-aware. Built for fast Piano Roll edits.</p>
           <div class="p-chips">
-            <span class="chip chip-green">S1 6</span>
-            <span class="chip chip-green">S1 7</span>
+            <span class="chip chip-green">Studio One 6</span>
+            <span class="chip chip-green">Studio One 7</span>
             <span class="chip chip-green">Fender Studio Pro</span>
           </div>
           <div class="p-bottom">
-            <div class="p-price"><span class="old">$19</span><span class="new">$15</span><span class="sale-tag">SALE</span></div>
-            <span class="btn btn-primary" style="padding:10px 18px;font-size:12px">View / Buy — $15 before tax →</span>
+            <div class="p-price"><span class="old">$19</span><span class="new">$15</span><span class="sale-tag">Save $4</span></div>
+            <span class="btn btn-primary" style="padding:10px 18px;font-size:12px">Buy $15 →</span>
           </div>
         </div>
       </a>
@@ -103,7 +103,7 @@
       <div class="glass p-card coming">
         <div class="p-card-body">
           <div class="p-card-type">Plugin · Arrangement</div>
-          <h3>Next arrangement tool</h3>
+          <h3>Arrangement tool</h3>
           <p class="desc">Next workflow tool in the pipeline. Stay tuned for the announcement.</p>
           <div class="p-chips"><span class="chip">S1 · Fender Studio Pro</span></div>
           <div class="p-bottom">
@@ -128,13 +128,13 @@
 
     </div>
 
-    <div style="margin-top:48px;padding:32px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-md);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+    <div style="margin-top:28px;padding:24px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-md);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
       <div>
-        <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:6px">NEW TOOLS ARRIVING</div>
+        <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:6px">New tools</div>
         <h3 class="h-sm">Get notified when new tools ship.</h3>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com?subject=Notify%20me%20about%20new%20shmlv%20tools" class="btn btn-primary">Notify me by email <span class="arrow">→</span></a>
+        <a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com?subject=Notify%20me%20about%20new%20shmlv%20tools" class="btn btn-primary">Notify me <span class="arrow">→</span></a>
         <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">YouTube</a>
       </div>
     </div>
@@ -148,12 +148,12 @@
     <div class="foot-grid">
       <div class="foot-col foot-brand"><a href="/" class="brand"><span class="brand-word">shmlv<span class="brand-dot">.</span></span><span class="brand-sub">/ audio tools</span></a><p style="margin-top:12px">Small, surgical workflow tools for music producers.</p></div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="/products/">All products</a></li><li><a href="/products/select-equal-subpositions/">Select Equal Subpositions</a></li><li><a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">Docs</a></li></ul></div>
-      <div class="foot-col"><h4>Learn</h4><ul><li><a href="/learn/">Watch</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Follow</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
+      <div class="foot-col"><h4>Demos</h4><ul><li><a href="/learn/">Demos</a></li><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/">Changelog</a></li><li><a href="/support/">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Contact</h4><ul><li><a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">YouTube</a></li><li><a data-event="Support Clicked" data-event-label="support@shmlv.com" href="mailto:support@shmlv.com">support@shmlv.com</a></li><li><a href="/about/">About</a></li></ul></div>
     </div>
     <div class="foot-bar">
-      <div>SHMLV © 2026 — ALL RIGHTS RESERVED</div>
-      <div class="meta"><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/refund.html">Refund</a></div>
+      <div>shmlv © 2026 — All rights reserved</div>
+      <div class="meta"><a href="/legal/terms.html">Terms</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/refund.html">Refunds</a></div>
     </div>
   </div>
 </footer>

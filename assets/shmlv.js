@@ -40,7 +40,7 @@
       body.classList.toggle("nav-open", open);
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
-      menuButton.textContent = open ? "Close" : "Menu";
+      menuButton.textContent = open ? "Close menu" : "Open menu";
       syncMenuFocus(open);
       if (!open && focusWasInMenu) menuButton.focus({ preventScroll: true });
     };
@@ -77,18 +77,12 @@
   });
 
   const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)");
-  const syncVideoMotion = () => {
-    document.querySelectorAll("video[autoplay]").forEach((video) => {
-      if (reducedMotion?.matches) {
-        video.pause();
-        video.removeAttribute("autoplay");
-      }
-    });
-  };
-  syncVideoMotion();
-  reducedMotion?.addEventListener?.("change", syncVideoMotion);
+  const demoVideos = Array.from(document.querySelectorAll(".demo-video"));
+  const playDemo = (video) => video.play().catch(() => {
+    video.closest(".video-shell")?.classList.add("is-paused");
+  });
 
-  document.querySelectorAll("video[autoplay]").forEach((video, index) => {
+  demoVideos.forEach((video, index) => {
     const parent = video.parentElement;
     if (!parent || parent.querySelector(".video-toggle")) return;
     parent.classList.add("video-shell");
@@ -96,6 +90,7 @@
     button.type = "button";
     button.className = "video-toggle";
     const syncButton = () => {
+      parent.classList.toggle("is-paused", video.paused);
       button.setAttribute("aria-pressed", String(!video.paused));
       button.textContent = video.paused ? "Play" : "Pause";
       button.setAttribute("aria-label", `${button.textContent} demo video ${index + 1}`);
@@ -103,11 +98,10 @@
     syncButton();
     button.addEventListener("click", () => {
       if (video.paused) {
-        video.play().catch(() => {});
+        playDemo(video);
       } else {
         video.pause();
       }
-      syncButton();
       track("Demo Video Toggled", { label: video.getAttribute("aria-label") || `Demo video ${index + 1}`, playing: !video.paused });
     });
     video.addEventListener("play", syncButton);
@@ -115,6 +109,30 @@
     parent.appendChild(button);
     requestAnimationFrame(syncButton);
   });
+
+  const syncVideoMotion = () => {
+    demoVideos.forEach((video) => {
+      if (reducedMotion?.matches) video.pause();
+      else if (video.hasAttribute("autoplay") && isElementVisible(video)) playDemo(video);
+    });
+  };
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting && video.hasAttribute("autoplay") && !reducedMotion?.matches) {
+          playDemo(video);
+        } else if (!entry.isIntersecting) {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    demoVideos.forEach((video) => videoObserver.observe(video));
+  }
+
+  syncVideoMotion();
+  reducedMotion?.addEventListener?.("change", syncVideoMotion);
 
   document.querySelectorAll("[data-youtube-id]").forEach((button) => {
     const frame = button.closest(".yt-lite");
@@ -205,5 +223,10 @@
   function track(name, props = {}) {
     if (!name) return;
     document.dispatchEvent(new CustomEvent("shmlv:event", { detail: { name, ...props } }));
+  }
+
+  function isElementVisible(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.bottom > 0 && rect.top < window.innerHeight;
   }
 })();
