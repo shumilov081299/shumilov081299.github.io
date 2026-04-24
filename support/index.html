@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Studio One MIDI Script Support &amp; Install Help — shmlv.</title>
+<title>shmlv.</title>
 <meta name="description" content="Install help, compatibility checks, refunds, and troubleshooting for Select Equal Subpositions in Studio One 6/7 and Fender Studio Pro.">
 <link rel="canonical" href="https://shmlv.com/support/">
 <meta property="og:type" content="website">
@@ -17,7 +17,8 @@
 <meta name="twitter:title" content="Studio One MIDI Script Support &amp; Install Help — shmlv.">
 <meta name="twitter:description" content="Install help, compatibility checks, refunds, and troubleshooting for Select Equal Subpositions in Studio One 6/7 and Fender Studio Pro.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <script type="application/ld+json">
 {
@@ -128,26 +129,25 @@
       <h2 class="h-md" style="margin-bottom:12px">Installation <span class="serif-italic blue">guide</span>.</h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="install-grid">
-      <div class="glass glass-md">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="install-grid compact-install-grid">
+      <div class="glass glass-md install-card">
         <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;background:var(--blue);border-radius:50%"></span>Windows</div>
         <h3 class="h-sm" style="margin-bottom:12px">Copy to Scripts folder</h3>
         <p class="body" style="font-size:13px;margin-bottom:12px">Place the <code>.package</code> file in your host app's Scripts folder:</p>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 6\Scripts\</code>
         <code class="code-block">C:\Program Files\PreSonus\Studio One 7\Scripts\</code>
         <code class="code-block">C:\Program Files\Fender\Studio\Scripts\</code>
-        <p class="body" style="font-size:13px;margin-top:12px">You may need admin permission. Restart your DAW, then go to Keyboard Shortcuts and assign keys. Keep a backup of the downloaded <code>.package</code> file in case a DAW update overwrites unmanaged app folders.</p>
       </div>
-      <div class="glass glass-md">
+      <div class="glass glass-md install-card">
         <div class="mono" style="font-size:11px;color:var(--fg-mute);letter-spacing:0.12em;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;background:var(--blue);border-radius:50%"></span>macOS</div>
         <h3 class="h-sm" style="margin-bottom:12px">Show package contents</h3>
         <p class="body" style="font-size:13px;margin-bottom:12px">Right-click the .app → Show Package Contents → <code>Contents/Scripts/</code>:</p>
         <code class="code-block">/Applications/Studio One 6.app/Contents/Scripts/</code>
         <code class="code-block">/Applications/Studio One 7.app/Contents/Scripts/</code>
         <code class="code-block">/Applications/Fender Studio.app/Contents/Scripts/</code>
-        <p class="body" style="font-size:13px;margin-top:12px">Restart your DAW. Go to Keyboard Shortcuts and assign keys. Keep a backup of the downloaded <code>.package</code> file in case a DAW update overwrites unmanaged app folders.</p>
       </div>
     </div>
+    <div class="install-note">After copying, restart the DAW completely, then open Keyboard Shortcuts and assign keys. Keep a backup of the downloaded <code>.package</code> file in case an app update overwrites unmanaged folders.</div>
     <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
       <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/" class="btn btn-ghost">Docs</a>
       <a data-event="Changelog Clicked" data-event-label="Changelog" href="/changelog/" class="btn btn-ghost">Changelog</a>
@@ -232,7 +232,12 @@
 
 </div>
 
-<style>@media(max-width:700px){.install-grid,.support-grid{grid-template-columns:1fr!important}}</style>
+<style>
+.compact-install-grid{align-items:start!important}
+.install-card{align-self:start;padding:18px!important}
+.install-note{margin-top:12px;padding:14px 16px;border:1px solid var(--glass-border-hot);background:rgba(77,123,255,.08);border-radius:var(--r-sm);color:var(--fg-dim);font-size:13px;line-height:1.55}
+@media(max-width:700px){.install-grid,.support-grid{grid-template-columns:1fr!important}}
+</style>
 
 <script src="/assets/shmlv.js" defer></script>
 </body>

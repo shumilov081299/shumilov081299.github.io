@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Select Equal Subpositions Demo for Studio One — shmlv.</title>
+<title>shmlv.</title>
 <meta name="description" content="Watch the same-beat MIDI selection workflow for Studio One and Fender Studio Pro: all notes, same pitch, and exact selected pitch set.">
 <link rel="canonical" href="https://shmlv.com/learn/">
 <meta property="og:type" content="website">
@@ -17,7 +17,8 @@
 <meta name="twitter:title" content="Select Equal Subpositions Demo for Studio One — shmlv.">
 <meta name="twitter:description" content="Watch the same-beat MIDI selection workflow for Studio One and Fender Studio Pro: all notes, same pitch, and exact selected pitch set.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
 .v-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -34,8 +35,13 @@
 .v-body h3{font-size:16px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
 .v-body p{color:var(--fg-dim);font-size:13px;line-height:1.55;margin:0}
 .v-body .btn{margin-top:16px;align-self:flex-start;padding:10px 14px;font-size:12px}
-.featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:18px;align-items:start}
-.featured-copy{display:flex;flex-direction:column;justify-content:flex-start}
+.featured-watch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:18px;align-items:stretch}
+.featured-copy{display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.featured-copy-main{display:grid;gap:10px}
+.featured-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px}
+.featured-fact{padding:10px;border:1px solid var(--glass-border);border-radius:var(--r-xs);background:var(--glass-light)}
+.featured-fact strong{display:block;font-size:13px;color:var(--fg);margin-bottom:2px}
+.featured-fact span{display:block;font-family:var(--ff-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-mute)}
 .featured-copy .hero-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:10px}
 .featured-copy .hero-actions .btn{width:100%}
 @media(max-width:900px){.featured-watch{grid-template-columns:1fr}.featured-copy{text-align:center}.featured-copy .hero-actions{justify-content:center}}
@@ -85,9 +91,17 @@
         <button type="button" class="yt-lite-button" data-event="YouTube Embed Played" data-event-label="Watch featured demo" data-youtube-id="zcJn9W7NcEM" data-youtube-title="Select Equal Subpositions — Full Demo" aria-label="Play Select Equal Subpositions full demo"></button>
       </div>
       <div class="glass glass-md featured-copy">
-        <div class="section-label">Demo</div>
-        <h2 class="h-sm" style="margin-bottom:10px">Select Equal Subpositions for Studio One</h2>
-        <p class="body" style="font-size:14px;margin-bottom:20px">Watch the same-beat selection workflow: all notes, same pitch, and exact selected pitch set.</p>
+        <div class="featured-copy-main">
+          <div class="section-label">Demo</div>
+          <h2 class="h-sm">Select Equal Subpositions for Studio One</h2>
+          <p class="body" style="font-size:14px">Watch the same-beat selection workflow: all notes, same pitch, and exact selected pitch set.</p>
+          <div class="featured-facts">
+            <div class="featured-fact"><strong>3 modes</strong><span>same-beat select</span></div>
+            <div class="featured-fact"><strong>$15</strong><span>intro offer</span></div>
+            <div class="featured-fact"><strong>S1 6/7</strong><span>Fender Studio Pro</span></div>
+            <div class="featured-fact"><strong>No account</strong><span>email delivery</span></div>
+          </div>
+        </div>
         <div class="hero-actions" style="display:flex;gap:10px;flex-wrap:wrap">
           <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary">YouTube</a>
           <a href="/products/select-equal-subpositions/" class="btn btn-ghost">View product</a>

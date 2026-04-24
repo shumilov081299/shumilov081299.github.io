@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro | shmlv.</title>
+<title>shmlv.</title>
 <meta name="description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <link rel="canonical" href="https://shmlv.com/products/select-equal-subpositions/">
 <meta property="og:type" content="product">
@@ -17,7 +17,8 @@
 <meta name="twitter:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro">
 <meta name="twitter:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
-<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <script type="application/ld+json">
 {
@@ -124,27 +125,29 @@
 .pdp-page .section{padding:48px 0}
 .pdp-page .section-lg{padding:64px 0}
 .pdp-page .divider{opacity:.62}
-.pdp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:32px;align-items:start;padding:34px 0 28px}
+.pdp-hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-areas:"copy media" "buy media" "proof proof";gap:18px 28px;align-items:start;padding:34px 0 28px}
 .pdp-hero > *{min-width:0}
-@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;gap:24px;padding:34px 0 28px}}
-.pdp-media-stack{display:grid;gap:14px;align-content:start;min-width:0}
+.pdp-copy{grid-area:copy}
+@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;grid-template-areas:"copy" "media" "buy" "proof";gap:16px;padding:30px 0 24px}}
 .hero-visual{position:relative;overflow:hidden;padding:0}
-.hero-visual .frame{padding:6px;background:var(--ink-2);border-bottom:1px solid var(--line)}
+.pdp-hero .hero-visual{grid-area:media;align-self:stretch;display:flex;flex-direction:column}
+.pdp-hero .hero-visual .demo-video{height:100%;object-fit:cover}
+.hero-visual .frame{flex:1;display:flex;padding:6px;background:var(--ink-2);border-bottom:1px solid var(--line)}
 .hero-visual img{width:100%;border-radius:var(--r-xs);display:block}
 .hero-visual .caption{padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.1em;text-transform:uppercase}
 .hero-crumb{flex-wrap:wrap;min-width:0}
-.purchase-card{min-width:0;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:14px}
-.pdp-media-stack .purchase-card{margin-bottom:0}
-.hero-meta-panel{padding:14px;display:grid;gap:12px}
+.purchase-card{grid-area:buy;min-width:0;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:0}
+.hero-meta-panel{grid-area:proof;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .hero-meta-panel .trust-row{gap:10px}
 .pdp-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:stretch}
 .pdp-actions .btn{min-width:0;width:100%}
 .purchase-links{margin-top:14px;color:var(--fg-dim);font-size:13px;line-height:1.65}
 .purchase-links a{color:var(--blue-text);text-decoration:underline;text-underline-offset:3px}
-.checkout-proof{margin-top:16px;padding:14px 16px;border:1px solid var(--glass-border-hot);border-radius:var(--r-sm);background:rgba(77,123,255,.08);color:var(--fg-dim);font-size:13px;line-height:1.6}
+.checkout-proof{margin-top:12px;padding:10px 12px;border:1px solid var(--glass-border-hot);border-radius:var(--r-sm);background:rgba(77,123,255,.08);color:var(--fg-dim);font-size:13px;line-height:1.55}
 .checkout-proof strong{display:block;color:var(--fg);font-size:13px;margin-bottom:4px}
 .purchase-note{font-family:var(--ff-mono);font-size:10px;color:var(--fg-mute);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:640px){.pdp-actions{grid-template-columns:minmax(0,1fr)}.pdp-actions .btn{width:100%;max-width:100%;white-space:normal}.pdp-hero .h-lg{font-size:clamp(34px,12vw,52px);line-height:1.02}.pdp-hero .lede{font-size:16px;overflow-wrap:anywhere}.pdp-page .wrap,.pdp-hero,.purchase-card,.hero-visual{max-width:100%;overflow:hidden}.hero-crumb{font-size:10px;letter-spacing:.1em}}
+@media(max-width:900px){.pdp-hero .hero-visual{align-self:start;display:block}.pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:16/9;object-fit:cover}.hero-visual .frame{display:block}}
 .final-purchase{max-width:620px;margin:0 auto 18px;padding:18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;text-align:left}
 .final-purchase .price-new{font-size:52px}
 .final-purchase p{margin:0}
@@ -171,7 +174,7 @@
 @media(max-width:600px){.features{grid-template-columns:1fr}}
 .feat{padding:18px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-sm);backdrop-filter:blur(12px);box-shadow:var(--glass-highlight)}
 .feat h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.feat h3::before{content:"";width:6px;height:6px;background:var(--blue-2);border-radius:50%;box-shadow:0 0 8px var(--blue-glow)}
+.feat h3::before{content:"";display:inline-block;flex:0 0 auto;width:6px;height:6px;background:var(--blue-2);border-radius:999px;box-shadow:0 0 8px var(--blue-glow)}
 .feat p{font-size:13px;color:var(--fg-dim);line-height:1.6;margin:0}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
 @media(max-width:900px){.proof-grid{grid-template-columns:1fr}}
@@ -179,7 +182,7 @@
 .proof-card h3{font-size:15px;font-weight:800;margin-bottom:10px}
 .proof-card ul{list-style:none;display:grid;gap:8px;color:var(--fg-dim);font-size:13px;line-height:1.55}
 .proof-card li{position:relative;padding-left:18px}
-.proof-card li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;background:var(--blue-2);border-radius:50%;box-shadow:0 0 8px var(--blue-glow)}
+.proof-card li::before{content:"";position:absolute;left:0;top:.65em;display:block;width:6px;height:6px;background:var(--blue-2);border-radius:999px;box-shadow:0 0 8px var(--blue-glow)}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:800px){.compare{grid-template-columns:1fr}}
 .compare-panel{padding:20px;border:1px solid var(--glass-border);border-radius:var(--r-md);background:var(--glass);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight)}
@@ -234,7 +237,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- HERO -->
 <div class="wrap">
 <section class="pdp-hero">
-  <div>
+  <div class="pdp-copy">
     <div class="reveal hero-crumb" style="display:flex;gap:8px;align-items:center;margin-bottom:18px;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.15em;text-transform:uppercase">
       <a href="/" style="color:var(--fg-mute)">shmlv</a>
       <span>/</span>
@@ -253,53 +256,52 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
   </div>
 
   <!-- right visual -->
-  <div class="pdp-media-stack">
-    <div class="glass hero-visual" id="demo" style="position:relative">
-      <div class="corners"></div>
-      <div class="caption">
-        <span>All Notes demo</span>
-        <span class="mono" style="color:var(--green)">MP4 loop</span>
-      </div>
-      <div class="frame">
-        <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
-      </div>
-      <div class="caption">
-        <span>STUDIO ONE 7 / PIANO ROLL</span>
-        <span>0:00 / 0:08</span>
-      </div>
+  <div class="glass hero-visual" id="demo" style="position:relative">
+    <div class="corners"></div>
+    <div class="caption">
+      <span>All Notes demo</span>
+      <span class="mono" style="color:var(--green)">MP4 loop</span>
     </div>
+    <div class="frame">
+      <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
+    </div>
+    <div class="caption">
+      <span>STUDIO ONE 7 / PIANO ROLL</span>
+      <span>0:00 / 0:08</span>
+    </div>
+  </div>
 
-    <div class="purchase-card">
-      <div class="price-row" style="margin-bottom:8px">
+  <div class="purchase-card">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-bottom:12px">
+      <div class="price-row">
         <span class="price-old">$19</span>
         <span class="price-new">$15</span>
       </div>
-      <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+      <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap">
         <span class="sale-tag">Save $4</span>
-        <span class="purchase-note">$15 · Payhip checkout · v1.x updates</span>
+        <span class="purchase-note">v1.x updates</span>
       </div>
-      <div class="pdp-actions">
-        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy $15</a>
-      </div>
-      <p class="purchase-links"><a href="#demo">Watch the demo</a> or <a data-event="Docs Clicked" data-event-label="Select Equal Subpositions docs" href="/docs/select-equal-subpositions/">read setup docs</a>.</p>
-      <div class="checkout-proof"><strong>Compatibility</strong>Studio One 6/7 and Fender Studio Pro. Windows/macOS tested. One <code>.package</code> file. No account, license key, telemetry, or daemon.</div>
-      <p class="purchase-note" style="margin-top:12px;line-height:1.6">Instant delivery by email · Payhip shows tax before payment · Refund policy applies</p>
     </div>
+    <div class="pdp-actions">
+      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy $15</a>
+    </div>
+    <div class="checkout-proof"><strong>Compatibility</strong>Studio One 6/7 and Fender Studio Pro. Windows/macOS tested. One <code>.package</code> file. No account, license key, telemetry, or daemon.</div>
+    <p class="purchase-note" style="margin-top:10px;line-height:1.55">Instant email delivery · Payhip shows tax before payment · Refund policy applies</p>
+  </div>
 
-    <div class="glass hero-meta-panel">
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span class="chip chip-green">Studio One 6</span>
-        <span class="chip chip-green">Studio One 7</span>
-        <span class="chip chip-green">Fender Studio Pro</span>
-        <span class="chip chip-blue">Windows</span>
-        <span class="chip chip-blue">macOS Intel</span>
-        <span class="chip chip-blue">macOS Apple Silicon</span>
-      </div>
-      <div class="reveal-4 trust-row">
-        <span>Download link by email</span>
-        <span>No account or license key</span>
-        <span>No telemetry or license daemon</span>
-      </div>
+  <div class="glass hero-meta-panel">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="chip chip-green">Studio One 6</span>
+      <span class="chip chip-green">Studio One 7</span>
+      <span class="chip chip-green">Fender Studio Pro</span>
+      <span class="chip chip-blue">Windows</span>
+      <span class="chip chip-blue">macOS Intel</span>
+      <span class="chip chip-blue">macOS Apple Silicon</span>
+    </div>
+    <div class="reveal-4 trust-row">
+      <span>Download link by email</span>
+      <span>No account or license key</span>
+      <span>No telemetry or license daemon</span>
     </div>
   </div>
 </section>
