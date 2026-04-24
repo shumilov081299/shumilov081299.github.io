@@ -24,12 +24,9 @@
 <link rel="stylesheet" href="/assets/shmlv.css">
 <style>
 .p-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.65fr);gap:24px;align-items:start}
-.p-grid .p-card:first-child{grid-row:span 2;align-self:stretch}
+.p-grid .p-card:first-child{align-self:start}
 .p-card{min-width:0;display:flex;flex-direction:column;padding:0;overflow:hidden;transition:all .25s var(--ease)}
 .p-card:hover{transform:translateY(-2px)}
-.p-card-img{background:var(--ink-2);padding:12px;border-bottom:1px solid var(--line)}
-.p-card-img img{width:100%;border-radius:var(--r-xs)}
-.p-card.featured .p-card-img{display:none}
 .p-card.featured .p-card-body{padding:24px 26px}
 .p-card.featured .p-card-type::after{content:"AVAILABLE NOW";display:inline-flex;margin-left:10px;padding:3px 8px;border:1px solid rgba(59,214,123,.25);border-radius:var(--r-xs);color:var(--green);background:rgba(59,214,123,.08)}
 .p-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
@@ -41,15 +38,12 @@
 .p-price{display:flex;align-items:baseline;gap:8px}
 .p-price .old{font-size:14px;text-decoration:line-through;color:var(--red);opacity:.6;font-weight:600}
 .p-price .new{font-family:var(--ff-display);font-weight:900;font-size:24px;letter-spacing:-0.02em}
-.coming{position:relative;opacity:0.72;pointer-events:none}
+.coming{position:relative;opacity:0.72;pointer-events:none;grid-column:2}
 .coming::after{content:"COMING SOON";position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:10px;font-weight:700;color:var(--fg-mute);letter-spacing:0.15em;background:var(--glass-light);border:1px solid var(--glass-border);padding:4px 10px;border-radius:var(--r-xs);z-index:2}
-.coming .p-card-img{display:none;background:repeating-linear-gradient(45deg,var(--ink-2),var(--ink-2) 8px,var(--ink-3) 8px,var(--ink-3) 16px);min-height:140px;align-items:center;justify-content:center}
 .coming .p-card-body{padding:18px}
 .coming h3{font-size:17px}
 .coming .desc{font-size:13px;margin-bottom:12px}
-.coming .p-card-img::before{content:"TBA";font-family:var(--ff-mono);font-size:40px;font-weight:900;color:var(--fg-mute);letter-spacing:0.1em;opacity:0.4}
-.coming .p-card-img img{display:none}
-@media(max-width:1040px){.p-grid{grid-template-columns:1fr 1fr}.p-grid .p-card:first-child{grid-column:1/-1;grid-row:auto}}
+@media(max-width:1040px){.p-grid{grid-template-columns:1fr 1fr}.p-grid .p-card:first-child{grid-column:1/-1}.coming{grid-column:auto}}
 @media(max-width:620px){.p-grid{grid-template-columns:minmax(0,1fr)}.p-grid .p-card:first-child{grid-column:auto}}
 @media(max-width:460px){.p-bottom{align-items:stretch}.p-bottom .btn{width:100%}.p-price{width:100%;justify-content:space-between}}
 </style>
@@ -89,7 +83,6 @@
     <div class="p-grid">
 
       <a href="/products/select-equal-subpositions/" class="glass p-card featured">
-        <div class="p-card-img"><video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions"><source src="/demo_all_notes.mp4" type="video/mp4"></video></div>
         <div class="p-card-body">
           <div class="p-card-type">Script · MIDI Editing</div>
           <h3>Select Equal Subpositions</h3>
@@ -107,7 +100,6 @@
       </a>
 
       <div class="glass p-card coming">
-        <div class="p-card-img"></div>
         <div class="p-card-body">
           <div class="p-card-type">Plugin · Arrangement</div>
           <h3>Next arrangement tool</h3>
@@ -121,7 +113,6 @@
       </div>
 
       <div class="glass p-card coming">
-        <div class="p-card-img"></div>
         <div class="p-card-body">
           <div class="p-card-type">Script · Utility</div>
           <h3>Next utility script</h3>

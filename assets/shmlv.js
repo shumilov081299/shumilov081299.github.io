@@ -101,6 +101,24 @@
   syncVideoMotion();
   reducedMotion?.addEventListener?.("change", syncVideoMotion);
 
+  document.querySelectorAll("[data-youtube-id]").forEach((button) => {
+    const frame = button.closest(".yt-lite");
+    if (!frame) return;
+    button.addEventListener("click", () => {
+      const id = button.dataset.youtubeId;
+      if (!id || frame.querySelector("iframe")) return;
+      const iframe = document.createElement("iframe");
+      iframe.title = button.dataset.youtubeTitle || "YouTube video";
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0`;
+      iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer";
+      frame.appendChild(iframe);
+      button.hidden = true;
+    });
+  });
+
   const mobileBuy = document.querySelector(".mobile-buy");
   const heroBuy = document.querySelector("#buy");
   if (mobileBuy && heroBuy) {
