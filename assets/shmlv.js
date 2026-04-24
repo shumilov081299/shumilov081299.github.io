@@ -113,7 +113,7 @@
       iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
       iframe.loading = "lazy";
-      iframe.referrerPolicy = "no-referrer";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
       frame.appendChild(iframe);
       button.hidden = true;
     });
