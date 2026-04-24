@@ -77,9 +77,17 @@
   });
 
   const demoVideos = Array.from(document.querySelectorAll(".demo-video"));
-  const playDemo = (video) => video.play().catch(() => {
-    video.closest(".video-shell")?.classList.add("is-paused");
-  });
+  const reduceMotionQuery = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+  const shouldPlayDemo = () => !(reduceMotionQuery?.matches);
+  const playDemo = (video) => {
+    if (!shouldPlayDemo()) {
+      video.pause();
+      return;
+    }
+    video.play().catch(() => {
+      video.closest(".video-shell")?.classList.add("is-paused");
+    });
+  };
 
   demoVideos.forEach((video) => {
     video.muted = true;
@@ -98,7 +106,7 @@
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        if (entry.isIntersecting && video.hasAttribute("autoplay")) {
+        if (entry.isIntersecting && video.hasAttribute("autoplay") && shouldPlayDemo()) {
           playDemo(video);
         } else if (!entry.isIntersecting) {
           video.pause();
@@ -109,6 +117,7 @@
   }
 
   syncVideoMotion();
+  reduceMotionQuery?.addEventListener?.("change", syncVideoMotion);
 
   document.querySelectorAll("[data-youtube-id]").forEach((button) => {
     const frame = button.closest(".yt-lite");

@@ -17,8 +17,8 @@
 <meta name="twitter:title" content="shmlv. — Studio One MIDI workflow tools">
 <meta name="twitter:description" content="Select Equal Subpositions is a focused MIDI editing script for Studio One 6/7 and Fender Studio Pro. Select matching beat positions across bars with three assignable shortcuts.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
-<link rel="icon" href="/favicon.ico?v=2" sizes="any">
-<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" href="/favicon.png?v=3" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <script type="application/ld+json">
 {
@@ -96,8 +96,8 @@
           Pick a note in the Piano Roll, press a shortcut, and select notes at the same beat position across the MIDI part. Built for Studio One 6/7 and Fender Studio Pro.
         </p>
         <div class="reveal-3 hero-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px">
-          <a href="/products/select-equal-subpositions/" class="btn btn-primary btn-lg">Buy $15</a>
-          <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost btn-lg">Watch demo</a>
+          <a href="/products/select-equal-subpositions/#buy" class="btn btn-primary btn-lg">Buy $15</a>
+          <a href="#demo" class="btn btn-ghost btn-lg">Watch demo</a>
         </div>
         <div class="reveal-4 trust-row">
           <span>Payhip checkout</span>
@@ -128,7 +128,7 @@
               <span style="font-family:var(--ff-display);font-weight:900;font-size:32px;letter-spacing:-0.02em">$15</span>
               <span class="sale-tag">Save $4</span>
             </div>
-            <a href="/products/select-equal-subpositions/" class="btn btn-primary">Buy</a>
+            <a href="/products/select-equal-subpositions/#buy" class="btn btn-primary">Buy $15</a>
           </div>
         </div>
         <div style="border-top:1px solid var(--line);background:var(--ink-2);padding:8px">
@@ -174,19 +174,23 @@
 <hr class="divider">
 
 <!-- WATCH IT WORK -->
-<section class="section">
+<section class="section" id="demo">
   <div class="wrap">
     <div style="text-align:center;max-width:620px;margin:0 auto 32px">
       <div class="section-label">02 · SEE IT MOVE</div>
       <h2 class="h-lg" style="margin-bottom:16px">Watch it <span class="serif-italic blue">work</span>.</h2>
       <p class="body">Demos and workflow examples for same-beat MIDI selection in real Piano Roll edits.</p>
     </div>
-    <div class="glass watch-frame yt-lite" style="padding:0;overflow:hidden;max-width:860px;margin:0 auto;aspect-ratio:16/9;position:relative">
+    <div class="glass" style="padding:0;overflow:hidden;max-width:860px;margin:0 auto;position:relative;--poster:url('/assets/posters/demo_all_notes.webp')">
       <div class="corners"></div>
-      <button type="button" class="yt-lite-button" data-event="YouTube Embed Played" data-event-label="Homepage demo" data-youtube-id="zcJn9W7NcEM" data-youtube-title="Select Equal Subpositions demo" aria-label="Play Select Equal Subpositions demo"></button>
+      <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" style="aspect-ratio:1280/408;object-fit:contain;border-radius:0" aria-label="Select Equal Subpositions autoplay demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
+      <div style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-family:var(--ff-mono);font-size:10px;color:var(--fg-mute);letter-spacing:.1em;text-transform:uppercase">
+        <span>All Notes demo</span>
+        <span style="color:var(--green)">Silent loop</span>
+      </div>
     </div>
     <div style="text-align:center;margin-top:22px">
-      <a data-event="YouTube Clicked" data-event-label="YouTube" href="https://www.youtube.com/@shmlvaudio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">YouTube</a>
+      <a data-event="YouTube Clicked" data-event-label="Homepage full demo" href="https://youtu.be/zcJn9W7NcEM" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-ghost">Watch full demo</a>
     </div>
   </div>
 </section>

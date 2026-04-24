@@ -17,8 +17,8 @@
 <meta name="twitter:title" content="Select Equal Subpositions — same-beat MIDI selection for Studio One &amp; Fender Studio Pro">
 <meta name="twitter:description" content="Select MIDI notes by matching beat position across bars. Three assignable modes for Studio One 6/7 and Fender Studio Pro.">
 <meta name="twitter:image" content="https://shmlv.com/assets/og-shmlv.png">
-<link rel="icon" href="/favicon.ico?v=2" sizes="any">
-<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" href="/favicon.png?v=3" type="image/png">
 <link rel="stylesheet" href="/assets/shmlv.css">
 <script type="application/ld+json">
 {
@@ -123,13 +123,15 @@
 </script>
 <style>
 .pdp-page .section{padding:36px 0}
+.pdp-page section[id]{scroll-margin-top:110px}
 .pdp-page .section-lg{padding:50px 0}
 .pdp-page .divider{opacity:.62}
 .pdp-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start;padding:28px 0 24px}
 .pdp-hero > *{min-width:0}
 .pdp-hero-left,.pdp-hero-right{display:grid;align-content:start;gap:16px;min-width:0}
+.pdp-hero-right{grid-template-rows:auto auto}
 .pdp-copy{min-width:0}
-@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;grid-template-areas:"copy" "media" "buy" "proof";gap:16px;padding:30px 0 24px}.pdp-hero-left,.pdp-hero-right{display:contents}.pdp-copy{grid-area:copy}.pdp-hero .hero-visual{grid-area:media}.purchase-card{grid-area:buy}.hero-meta-panel{grid-area:proof}}
+@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;grid-template-areas:"copy" "buy" "media" "proof";gap:16px;padding:30px 0 24px}.pdp-hero-left,.pdp-hero-right{display:contents}.pdp-copy{grid-area:copy}.pdp-hero .hero-visual{grid-area:media}.purchase-card{grid-area:buy}.hero-meta-panel{grid-area:proof;align-self:start;align-content:start}.pdp-hero-right{grid-template-rows:auto}}
 .hero-visual{position:relative;overflow:hidden;padding:0}
 .pdp-hero .hero-visual{align-self:start;display:block}
 .pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:1280/408;object-fit:contain}
@@ -138,8 +140,13 @@
 .hero-visual .caption{padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.1em;text-transform:uppercase}
 .hero-crumb{flex-wrap:wrap;min-width:0}
 .purchase-card{min-width:0;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:0;scroll-margin-top:110px}
+.purchase-card .price-new{font-size:clamp(50px,5vw,64px)}
 .hero-meta-panel{align-self:start;padding:14px;display:grid;align-content:start;gap:12px}
 .hero-meta-panel .trust-row{gap:10px}
+.hero-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.hero-proof-item{min-width:0;padding:10px;border:1px solid var(--glass-border);border-radius:var(--r-xs);background:var(--glass-light)}
+.hero-proof-item strong{display:block;color:var(--fg);font-size:12px;line-height:1.15;margin-bottom:4px;white-space:nowrap}
+.hero-proof-item span{display:block;color:var(--fg-mute);font-family:var(--ff-mono);font-size:9px;line-height:1.25;letter-spacing:.08em;text-transform:uppercase}
 .pdp-section-intro{max-width:680px;margin-bottom:14px}
 .pdp-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:stretch}
 .pdp-actions .btn{min-width:0;width:100%}
@@ -148,7 +155,7 @@
 .checkout-proof{margin-top:12px;padding:10px 12px;border:1px solid var(--glass-border-hot);border-radius:var(--r-sm);background:rgba(77,123,255,.08);color:var(--fg-dim);font-size:13px;line-height:1.55}
 .checkout-proof strong{display:block;color:var(--fg);font-size:13px;margin-bottom:4px}
 .purchase-note{font-family:var(--ff-mono);font-size:10px;color:var(--fg-mute);letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:640px){.pdp-actions{grid-template-columns:minmax(0,1fr)}.pdp-actions .btn{width:100%;max-width:100%;white-space:normal}.pdp-hero .h-lg{font-size:clamp(34px,12vw,52px);line-height:1.02}.pdp-hero .lede{font-size:16px;overflow-wrap:anywhere}.pdp-page .wrap,.pdp-hero,.purchase-card,.hero-visual{max-width:100%;overflow:hidden}.hero-crumb{font-size:10px;letter-spacing:.1em}}
+@media(max-width:640px){.pdp-actions{grid-template-columns:minmax(0,1fr)}.pdp-actions .btn{width:100%;max-width:100%;white-space:normal}.pdp-hero .h-lg{font-size:clamp(34px,12vw,52px);line-height:1.02}.pdp-hero .lede{font-size:16px;overflow-wrap:anywhere}.pdp-page .wrap,.pdp-hero,.purchase-card,.hero-visual{max-width:100%;overflow:hidden}.hero-crumb{font-size:10px;letter-spacing:.1em}.hero-proof-grid{grid-template-columns:1fr 1fr}.hero-proof-item strong{white-space:normal}}
 @media(max-width:900px){.pdp-hero .hero-visual{align-self:start;display:block}.pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:1280/408;object-fit:contain}.hero-visual .frame{display:block}}
 .final-purchase{max-width:620px;margin:0 auto 18px;padding:18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;text-align:left}
 .final-purchase .price-new{font-size:52px}
@@ -178,7 +185,7 @@
 .feat h3{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .feat h3::before{content:"";display:inline-block;flex:0 0 auto;width:6px;height:6px;background:var(--blue-2);border-radius:999px;box-shadow:0 0 8px var(--blue-glow)}
 .feat p{font-size:13px;color:var(--fg-dim);line-height:1.6;margin:0}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
 @media(max-width:900px){.proof-grid{grid-template-columns:1fr}}
 .proof-card{padding:16px;background:var(--glass-light);border:1px solid var(--glass-border);border-radius:var(--r-sm)}
 .proof-card h3{font-size:15px;font-weight:800;margin-bottom:10px}
@@ -253,7 +260,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
         Select Equal <span class="serif-italic blue">Subpositions</span>
       </h1>
       <p class="reveal-2 lede" style="margin-bottom:0">
-        Logic-style same-beat MIDI selection for Studio One and Fender Studio Pro. Select one note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
+        Select the same beat in every bar: pick one MIDI note and instantly grab matching positions across the whole part. Built for Studio One and Fender Studio Pro. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
       </p>
     </div>
 
@@ -293,13 +300,13 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
     </div>
 
     <div class="glass hero-meta-panel">
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span class="chip chip-green">Studio One 6</span>
-        <span class="chip chip-green">Studio One 7</span>
-        <span class="chip chip-green">Fender Studio Pro</span>
-        <span class="chip chip-blue">Windows</span>
-        <span class="chip chip-blue">macOS Intel</span>
-        <span class="chip chip-blue">macOS Apple Silicon</span>
+      <div class="hero-proof-grid">
+        <div class="hero-proof-item"><strong>Studio One 6/7</strong><span>supported host</span></div>
+        <div class="hero-proof-item"><strong>Fender Studio</strong><span>Pro supported</span></div>
+        <div class="hero-proof-item"><strong>Win + macOS</strong><span>tested builds</span></div>
+        <div class="hero-proof-item"><strong>Email delivery</strong><span>instant link</span></div>
+        <div class="hero-proof-item"><strong>No account</strong><span>no login wall</span></div>
+        <div class="hero-proof-item"><strong>v1.x updates</strong><span>included</span></div>
       </div>
       <div class="reveal-4 trust-row">
         <span>Download link by email</span>
@@ -314,7 +321,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- WHAT IT SOLVES -->
-<section class="section">
+<section class="section" id="problem">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Problem</div>
@@ -345,7 +352,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- THREE MODES -->
-<section class="section">
+<section class="section" id="modes">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">How it works</div>
@@ -385,7 +392,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- FEATURES -->
-<section class="section">
+<section class="section" id="features">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Features</div>
@@ -406,7 +413,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- WHAT YOU GET -->
-<section class="section">
+<section class="section" id="delivery">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Delivery</div>
@@ -445,7 +452,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- COMPARISON -->
-<section class="section">
+<section class="section" id="comparison">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Before / after</div>
@@ -478,7 +485,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- COMPAT -->
-<section class="section">
+<section class="section" id="compatibility">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Compatibility</div>
@@ -502,7 +509,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- REQUIREMENTS -->
-<section class="section">
+<section class="section" id="requirements">
   <div class="wrap">
     <div class="pdp-section-intro">
       <div class="section-label">Requirements</div>
@@ -541,7 +548,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- INSTALL -->
-<section class="section">
+<section class="section" id="install">
   <div class="wrap" style="max-width:880px">
     <div style="margin-bottom:28px">
       <div class="section-label">Setup</div>
@@ -579,7 +586,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <hr class="divider">
 
 <!-- FAQ -->
-<section class="section">
+<section class="section" id="faq">
   <div class="wrap" style="max-width:880px">
     <div style="margin-bottom:18px">
       <div class="section-label">FAQ</div>
