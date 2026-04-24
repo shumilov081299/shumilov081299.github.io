@@ -122,23 +122,25 @@
 }
 </script>
 <style>
-.pdp-page .section{padding:48px 0}
-.pdp-page .section-lg{padding:64px 0}
+.pdp-page .section{padding:36px 0}
+.pdp-page .section-lg{padding:50px 0}
 .pdp-page .divider{opacity:.62}
-.pdp-hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);grid-template-areas:"copy media" "buy media" "proof proof";gap:18px 28px;align-items:start;padding:34px 0 28px}
+.pdp-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start;padding:28px 0 24px}
 .pdp-hero > *{min-width:0}
-.pdp-copy{grid-area:copy}
-@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;grid-template-areas:"copy" "media" "buy" "proof";gap:16px;padding:30px 0 24px}}
+.pdp-hero-left,.pdp-hero-right{display:grid;align-content:start;gap:16px;min-width:0}
+.pdp-copy{min-width:0}
+@media(max-width:900px){.pdp-hero{grid-template-columns:1fr;grid-template-areas:"copy" "media" "buy" "proof";gap:16px;padding:30px 0 24px}.pdp-hero-left,.pdp-hero-right{display:contents}.pdp-copy{grid-area:copy}.pdp-hero .hero-visual{grid-area:media}.purchase-card{grid-area:buy}.hero-meta-panel{grid-area:proof}}
 .hero-visual{position:relative;overflow:hidden;padding:0}
-.pdp-hero .hero-visual{grid-area:media;align-self:stretch;display:flex;flex-direction:column}
-.pdp-hero .hero-visual .demo-video{height:100%;object-fit:cover}
-.hero-visual .frame{flex:1;display:flex;padding:6px;background:var(--ink-2);border-bottom:1px solid var(--line)}
+.pdp-hero .hero-visual{align-self:start;display:block}
+.pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:1280/408;object-fit:contain}
+.hero-visual .frame{display:block;padding:6px;background:var(--ink-2);border-bottom:1px solid var(--line)}
 .hero-visual img{width:100%;border-radius:var(--r-xs);display:block}
 .hero-visual .caption{padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.1em;text-transform:uppercase}
 .hero-crumb{flex-wrap:wrap;min-width:0}
-.purchase-card{grid-area:buy;min-width:0;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:0}
-.hero-meta-panel{grid-area:proof;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.purchase-card{min-width:0;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);backdrop-filter:blur(16px);box-shadow:var(--glass-highlight);margin-bottom:0;scroll-margin-top:110px}
+.hero-meta-panel{align-self:start;padding:14px;display:grid;align-content:start;gap:12px}
 .hero-meta-panel .trust-row{gap:10px}
+.pdp-section-intro{max-width:680px;margin-bottom:14px}
 .pdp-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:stretch}
 .pdp-actions .btn{min-width:0;width:100%}
 .purchase-links{margin-top:14px;color:var(--fg-dim);font-size:13px;line-height:1.65}
@@ -147,7 +149,7 @@
 .checkout-proof strong{display:block;color:var(--fg);font-size:13px;margin-bottom:4px}
 .purchase-note{font-family:var(--ff-mono);font-size:10px;color:var(--fg-mute);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:640px){.pdp-actions{grid-template-columns:minmax(0,1fr)}.pdp-actions .btn{width:100%;max-width:100%;white-space:normal}.pdp-hero .h-lg{font-size:clamp(34px,12vw,52px);line-height:1.02}.pdp-hero .lede{font-size:16px;overflow-wrap:anywhere}.pdp-page .wrap,.pdp-hero,.purchase-card,.hero-visual{max-width:100%;overflow:hidden}.hero-crumb{font-size:10px;letter-spacing:.1em}}
-@media(max-width:900px){.pdp-hero .hero-visual{align-self:start;display:block}.pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:16/9;object-fit:cover}.hero-visual .frame{display:block}}
+@media(max-width:900px){.pdp-hero .hero-visual{align-self:start;display:block}.pdp-hero .hero-visual .demo-video{height:auto;aspect-ratio:1280/408;object-fit:contain}.hero-visual .frame{display:block}}
 .final-purchase{max-width:620px;margin:0 auto 18px;padding:18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;text-align:left}
 .final-purchase .price-new{font-size:52px}
 .final-purchase p{margin:0}
@@ -158,7 +160,7 @@
 @media(max-width:900px){.mode-block,.mode-block.is-reverse{grid-template-columns:1fr;padding:18px}.mode-block.is-reverse .mode-body{order:-1}}
 .mode-media{background:var(--ink-2);padding:6px;border-radius:var(--r-sm);border:1px solid var(--line)}
 .mode-media{width:100%;max-width:560px;justify-self:center}
-.mode-media .demo-video{max-height:280px;object-fit:contain}
+.mode-media .demo-video{aspect-ratio:1280/408;max-height:280px;object-fit:contain}
 .mode-media img{width:100%;border-radius:var(--r-xs);cursor:pointer;display:block}
 .mode-number{font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.2em;margin-bottom:10px}
 .mode-body h3{margin-bottom:10px}
@@ -237,71 +239,73 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- HERO -->
 <div class="wrap">
 <section class="pdp-hero">
-  <div class="pdp-copy">
-    <div class="reveal hero-crumb" style="display:flex;gap:8px;align-items:center;margin-bottom:18px;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.15em;text-transform:uppercase">
-      <a href="/" style="color:var(--fg-mute)">shmlv</a>
-      <span>/</span>
-      <a href="/products/" style="color:var(--fg-mute)">products</a>
-      <span>/</span>
-      <span style="color:var(--fg)">select equal subpositions</span>
-    </div>
-    <div class="reveal kicker" style="margin-bottom:20px">01 · MIDI EDITING SCRIPT</div>
-    <h1 class="reveal-2 h-lg" style="margin-bottom:20px">
-      Select Equal <span class="serif-italic blue">Subpositions</span>
-    </h1>
-    <p class="reveal-2 lede" style="margin-bottom:22px">
-      Logic-style same-beat MIDI selection for Studio One and Fender Studio Pro. Select one note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
-    </p>
-
-  </div>
-
-  <!-- right visual -->
-  <div class="glass hero-visual" id="demo" style="position:relative">
-    <div class="corners"></div>
-    <div class="caption">
-      <span>All Notes demo</span>
-      <span class="mono" style="color:var(--green)">MP4 loop</span>
-    </div>
-    <div class="frame">
-      <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
-    </div>
-    <div class="caption">
-      <span>STUDIO ONE 7 / PIANO ROLL</span>
-      <span>0:00 / 0:08</span>
-    </div>
-  </div>
-
-  <div class="purchase-card">
-    <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-bottom:12px">
-      <div class="price-row">
-        <span class="price-old">$19</span>
-        <span class="price-new">$15</span>
+  <div class="pdp-hero-left">
+    <div class="pdp-copy">
+      <div class="reveal hero-crumb" style="display:flex;gap:8px;align-items:center;margin-bottom:18px;font-family:var(--ff-mono);font-size:11px;color:var(--fg-mute);letter-spacing:0.15em;text-transform:uppercase">
+        <a href="/" style="color:var(--fg-mute)">shmlv</a>
+        <span>/</span>
+        <a href="/products/" style="color:var(--fg-mute)">products</a>
+        <span>/</span>
+        <span style="color:var(--fg)">select equal subpositions</span>
       </div>
-      <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap">
-        <span class="sale-tag">Save $4</span>
-        <span class="purchase-note">v1.x updates</span>
+      <div class="reveal kicker" style="margin-bottom:20px">01 · MIDI EDITING SCRIPT</div>
+      <h1 class="reveal-2 h-lg" style="margin-bottom:20px">
+        Select Equal <span class="serif-italic blue">Subpositions</span>
+      </h1>
+      <p class="reveal-2 lede" style="margin-bottom:0">
+        Logic-style same-beat MIDI selection for Studio One and Fender Studio Pro. Select one note and instantly select matching beat positions across the MIDI part. <span class="em">Three assignable shortcuts: all notes at this position, same pitch at this position, or exact selected pitch set at this position.</span>
+      </p>
+    </div>
+
+    <div class="purchase-card" id="buy">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-bottom:12px">
+        <div class="price-row">
+          <span class="price-old">$19</span>
+          <span class="price-new">$15</span>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap">
+          <span class="sale-tag">Save $4</span>
+          <span class="purchase-note">v1.x updates</span>
+        </div>
       </div>
+      <div class="pdp-actions">
+        <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg">Buy $15</a>
+      </div>
+      <div class="checkout-proof"><strong>Compatibility</strong>Studio One 6/7 and Fender Studio Pro. Windows/macOS tested. One <code>.package</code> file. No account, license key, telemetry, or daemon.</div>
+      <p class="purchase-note" style="margin-top:10px;line-height:1.55">Instant email delivery · Payhip shows tax before payment · Refund policy applies</p>
     </div>
-    <div class="pdp-actions">
-      <a data-event="Buy Clicked" data-event-label="Payhip checkout" href="https://payhip.com/buy?s=1&cart_links%5B%5D=YHkep&qty%5BYHkep%5D=1" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn btn-primary btn-lg" id="buy">Buy $15</a>
-    </div>
-    <div class="checkout-proof"><strong>Compatibility</strong>Studio One 6/7 and Fender Studio Pro. Windows/macOS tested. One <code>.package</code> file. No account, license key, telemetry, or daemon.</div>
-    <p class="purchase-note" style="margin-top:10px;line-height:1.55">Instant email delivery · Payhip shows tax before payment · Refund policy applies</p>
   </div>
 
-  <div class="glass hero-meta-panel">
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <span class="chip chip-green">Studio One 6</span>
-      <span class="chip chip-green">Studio One 7</span>
-      <span class="chip chip-green">Fender Studio Pro</span>
-      <span class="chip chip-blue">Windows</span>
-      <span class="chip chip-blue">macOS Intel</span>
-      <span class="chip chip-blue">macOS Apple Silicon</span>
+  <div class="pdp-hero-right">
+    <div class="glass hero-visual" id="demo" style="position:relative">
+      <div class="corners"></div>
+      <div class="caption">
+        <span>All Notes demo</span>
+        <span class="mono" style="color:var(--green)">MP4 loop</span>
+      </div>
+      <div class="frame">
+        <video class="demo-video" autoplay muted loop playsinline preload="metadata" poster="/assets/posters/demo_all_notes.webp" aria-label="Select Equal Subpositions demo"><source src="/demo_all_notes.mp4" type="video/mp4"></video>
+      </div>
+      <div class="caption">
+        <span>STUDIO ONE 7 / PIANO ROLL</span>
+        <span>0:00 / 0:08</span>
+      </div>
     </div>
-    <div class="reveal-4 trust-row">
-      <span>Download link by email</span>
-      <span>No account or license key</span>
-      <span>No telemetry or license daemon</span>
+
+    <div class="glass hero-meta-panel">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip chip-green">Studio One 6</span>
+        <span class="chip chip-green">Studio One 7</span>
+        <span class="chip chip-green">Fender Studio Pro</span>
+        <span class="chip chip-blue">Windows</span>
+        <span class="chip chip-blue">macOS Intel</span>
+        <span class="chip chip-blue">macOS Apple Silicon</span>
+      </div>
+      <div class="reveal-4 trust-row">
+        <span>Download link by email</span>
+        <span>No account or license key</span>
+        <span>No telemetry or license daemon</span>
+      </div>
     </div>
   </div>
 </section>
@@ -312,7 +316,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- WHAT IT SOLVES -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Problem</div>
       <h2 class="h-md" style="margin-bottom:14px">What it <span class="serif-italic blue">solves</span>.</h2>
       <p class="body">Four everyday MIDI editing headaches — each reduced to a focused keyboard command.</p>
@@ -343,7 +347,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- THREE MODES -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">How it works</div>
       <h2 class="h-md" style="margin-bottom:14px">Three <span class="serif-italic blue">focused</span> modes.</h2>
       <p class="body">One package. Three assignable shortcuts. Each does exactly one job — precisely.</p>
@@ -383,7 +387,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- FEATURES -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Features</div>
       <h2 class="h-md" style="margin-bottom:14px">Key <span class="serif-italic blue">features</span>.</h2>
       <p class="body">Built for real MIDI — humanized notes, common time signatures, and practical Studio One display modes.</p>
@@ -404,7 +408,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- WHAT YOU GET -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Delivery</div>
       <h2 class="h-md" style="margin-bottom:14px">What you <span class="serif-italic blue">get</span>.</h2>
       <p class="body">No installer. No background app. No subscription. One package file, three commands, clear setup.</p>
@@ -443,7 +447,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- COMPARISON -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Before / after</div>
       <h2 class="h-md" style="margin-bottom:14px">Manual selection vs <span class="serif-italic blue">one shortcut cluster</span>.</h2>
       <p class="body">The point is not another feature. The point is removing the repeated micro-work that breaks editing flow.</p>
@@ -476,7 +480,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- COMPAT -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Compatibility</div>
       <h2 class="h-md" style="margin-bottom:14px"><span class="serif-italic blue">Tested</span> on the listed hosts.</h2>
       <p class="body">Verified before v1.0 release on Studio One 6, Studio One 7, and Fender Studio Pro across Windows, macOS Intel, and Apple Silicon. This is an independent third-party script; shmlv is not affiliated with PreSonus, Fender, or Studio One.</p>
@@ -500,7 +504,7 @@ body.show-mobile-buy .mobile-buy{transform:none;pointer-events:auto}
 <!-- REQUIREMENTS -->
 <section class="section">
   <div class="wrap">
-    <div style="max-width:680px;margin-bottom:22px">
+    <div class="pdp-section-intro">
       <div class="section-label">Requirements</div>
       <h2 class="h-md" style="margin-bottom:14px">Requirements and <span class="serif-italic blue">limits</span>.</h2>
       <p class="body">Clear boundaries make the purchase safer. If your setup is outside this list, email first.</p>

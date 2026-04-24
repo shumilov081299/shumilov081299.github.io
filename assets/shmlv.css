@@ -154,11 +154,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .yt-lite:focus-within{box-shadow:0 0 0 2px var(--blue-text),var(--glass-highlight),var(--glass-shadow)}
 .yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
 
-.video-shell{position:relative}
-.video-toggle{position:absolute;right:10px;bottom:10px;z-index:4;min-width:44px;min-height:32px;padding:7px 10px;border:1px solid rgba(255,255,255,.22);border-radius:var(--r-sm);background:rgba(5,6,11,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-family:var(--ff-mono);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 12px 36px -18px rgba(0,0,0,.8)}
-.video-shell.is-paused .video-toggle{background:linear-gradient(180deg,var(--blue-2),var(--blue));border-color:rgba(126,150,255,.45)}
-.video-toggle:hover{border-color:var(--glass-border-hot);background:rgba(16,19,30,.88)}
-
 /* === chips === */
 .chip{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;font-family:var(--ff-mono);font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;border-radius:var(--r-xs);background:var(--glass-light);border:1px solid var(--glass-border);color:var(--fg-dim)}
 .chip-green{background:rgba(59,214,123,0.08);border-color:rgba(59,214,123,0.25);color:var(--green)}

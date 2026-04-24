@@ -76,44 +76,21 @@
     });
   });
 
-  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)");
   const demoVideos = Array.from(document.querySelectorAll(".demo-video"));
   const playDemo = (video) => video.play().catch(() => {
     video.closest(".video-shell")?.classList.add("is-paused");
   });
 
-  demoVideos.forEach((video, index) => {
-    const parent = video.parentElement;
-    if (!parent || parent.querySelector(".video-toggle")) return;
-    parent.classList.add("video-shell");
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "video-toggle";
-    const syncButton = () => {
-      parent.classList.toggle("is-paused", video.paused);
-      button.setAttribute("aria-pressed", String(!video.paused));
-      button.textContent = video.paused ? "Play" : "Pause";
-      button.setAttribute("aria-label", `${button.textContent} demo video ${index + 1}`);
-    };
-    syncButton();
-    button.addEventListener("click", () => {
-      if (video.paused) {
-        playDemo(video);
-      } else {
-        video.pause();
-      }
-      track("Demo Video Toggled", { label: video.getAttribute("aria-label") || `Demo video ${index + 1}`, playing: !video.paused });
-    });
-    video.addEventListener("play", syncButton);
-    video.addEventListener("pause", syncButton);
-    parent.appendChild(button);
-    requestAnimationFrame(syncButton);
+  demoVideos.forEach((video) => {
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    if (!video.hasAttribute("preload")) video.preload = "metadata";
   });
 
   const syncVideoMotion = () => {
     demoVideos.forEach((video) => {
-      if (reducedMotion?.matches) video.pause();
-      else if (video.hasAttribute("autoplay") && isElementVisible(video)) playDemo(video);
+      if (video.hasAttribute("autoplay") && isElementVisible(video)) playDemo(video);
     });
   };
 
@@ -121,7 +98,7 @@
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        if (entry.isIntersecting && video.hasAttribute("autoplay") && !reducedMotion?.matches) {
+        if (entry.isIntersecting && video.hasAttribute("autoplay")) {
           playDemo(video);
         } else if (!entry.isIntersecting) {
           video.pause();
@@ -132,7 +109,6 @@
   }
 
   syncVideoMotion();
-  reducedMotion?.addEventListener?.("change", syncVideoMotion);
 
   document.querySelectorAll("[data-youtube-id]").forEach((button) => {
     const frame = button.closest(".yt-lite");
