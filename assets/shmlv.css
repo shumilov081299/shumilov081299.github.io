@@ -248,6 +248,21 @@ code{font-family:var(--ff-mono);font-size:13px;background:var(--ink-2);border:1p
 .reveal-3{animation:fadeUp .8s .16s var(--ease) both}
 .reveal-4{animation:fadeUp .8s .24s var(--ease) both}
 
+/* === T-003b: utility extracts === */
+.section-head-compact{padding:44px 0 22px}
+.section-head-legal{padding:48px 0 32px}
+.section-tail-48{padding:0 0 48px}
+.wrap-narrow{max-width:880px}
+.wrap-center-720{max-width:720px;text-align:center}
+.mb-12{margin-bottom:12px}
+.mb-14{margin-bottom:14px}
+.mb-16{margin-bottom:16px}
+.mb-20{margin-bottom:20px}
+.mb-22{margin-bottom:22px}
+.mb-24{margin-bottom:24px}
+.cluster-10{display:flex;gap:10px;flex-wrap:wrap}
+.check-list{display:grid;gap:10px;color:var(--fg-dim);font-size:14px;line-height:1.65;padding-left:18px}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
 }
