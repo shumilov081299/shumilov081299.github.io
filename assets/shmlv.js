@@ -208,6 +208,9 @@
   function track(name, props = {}) {
     if (!name) return;
     document.dispatchEvent(new CustomEvent("shmlv:event", { detail: { name, ...props } }));
+    if (typeof window.plausible === "function") {
+      window.plausible(name, { props });
+    }
   }
 
   function isElementVisible(element) {
